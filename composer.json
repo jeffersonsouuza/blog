@@ -1,0 +1,20 @@
+{
+    "name": "jeffersonsouuza/blog",
+    "description": "blog de teste php",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Source\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jefferson Souza",
+            "email": "jeffersonsouza03@hotmail.com"
+        }
+    ],
+    "require": {
+        "ext-mysqli": "*"
+    }
+}

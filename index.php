@@ -11,13 +11,13 @@ if (!array_key_exists($caminho, $rotas)) {
     exit();
 }
 
-//session_start();
-//$ehRotaDeLogin = mb_stripos($caminho, 'login');
-//
-//if (!isset($_SESSION['logado']) && $caminho !== '/login' && $ehRotaDeLogin === false) {
-//   header('Location: /phpweb-master/index.php/login');
-//   exit();
-//}
+session_start();
+$ehRotaDeLogin = mb_stripos($caminho, 'login');
+
+if (!isset($_SESSION['logado']) && $caminho !== '/login' && $ehRotaDeLogin === false) {
+   header('Location: /blog-php/index.php/login');
+   exit();
+}
 
 $classeControladora = $rotas[$caminho];
 $controlador = new $classeControladora();
