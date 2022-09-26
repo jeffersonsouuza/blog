@@ -50,11 +50,10 @@ INSERT INTO `artigos` (`id`, `titulo`, `conteudo`, `status`) VALUES
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
-Create table `usuarios` (
-ID Int UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
-email Varchar(30),
-senha Varchar(40),
-Primary Key (ID)) ENGINE = MyISAM;
+CREATE TABLE usuarios (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(50) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
 
-INSERT INTO `usuarios` (`email`, `senha`) VALUES
-('jefferson@gmail.com', '123456');
