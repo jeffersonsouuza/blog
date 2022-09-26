@@ -3,7 +3,6 @@
 namespace Source\Entity;
 
 use mysqli;
-use Source\Infra\DatabaseConnection;
 
 class Artigo implements InterfaceArtigo
 {
