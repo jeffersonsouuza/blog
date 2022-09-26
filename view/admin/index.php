@@ -1,14 +1,14 @@
 <?php
-
-require_once __DIR__ . "/../../vendor/autoload.php";
-
-use Source\Entity\Artigo;
-use Source\Infra\DatabaseConnection;
-
-$artigo = new Artigo(mysql: DatabaseConnection::create());
-$artigos = $artigo->exibirTodos();
-
-?>
+//
+//require_once __DIR__ . "/../../vendor/autoload.php";
+//
+//use Source\Entity\Artigo;
+//use Source\Infra\DatabaseConnection;
+//
+//$artigo = new Artigo(mysql: DatabaseConnection::create());
+//$artigos = $artigo->exibirTodos();
+//
+//?>
 
 <?php
 include __DIR__ . '/../html/inicioHTML.php';
