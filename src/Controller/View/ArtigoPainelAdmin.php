@@ -19,7 +19,7 @@ class ArtigoPainelAdmin implements InterfaceController
         $artigo = new Artigo(mysql: DatabaseConnection::create());
         $artigos = $artigo->exibirTodos();
 
-        require __DIR__ . "/../../../view/admin/index.php";
+        require __DIR__ . '/../../../view/admin/index.php';
 
     }
 }
