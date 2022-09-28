@@ -12,13 +12,13 @@ use Source\Controller\View\{ArtigoEditar,
     ArtigoLogin,
     ArtigoPainelAdmin,
     ArtigoSelecionado,
-    ArtigoListarDocumentos};
+    ArtigosListarDocumentos};
 
 $rotas = [
     '/novo-artigo' => ArtigoFormularioNovo::class,
     '/salvar-artigo' => ArtigoAdicionar::class,
     '/painel-admin' => ArtigoPainelAdmin::class,
-    '/listar-artigos' => ArtigoListarDocumentos::class,
+    '/listar-artigos' => ArtigosListarDocumentos::class,
     '/artigo-selecionado' => ArtigoSelecionado::class,
     '/editar-artigo' => ArtigoEditar::class,
     '/salvar-edicao' => ArtigoSalvarEdicao::class,
@@ -27,7 +27,7 @@ $rotas = [
     "/login" => ArtigoLogin::class,
     "/salvar-usuario" => UsuarioSalvar::class,
     "/realizar-login" => ArtigoRealizarLogin::class,
-   // "/logout" => ArtigoDeslogar::class,
+    "/logout" => ArtigoDeslogar::class,
 ];
 
 return $rotas;

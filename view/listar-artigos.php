@@ -2,7 +2,7 @@
 include __DIR__ . '/html/inicioHTML.php';
 ?>
 
-    <section id="container" class="bg-light m-5 p-5 p-3">
+    <section id="container" class="bg-light mx-5 my-4 p-5">
         <h1 class="fs-1 pb-3">Artigos:</h1>
 
         <form action="" >

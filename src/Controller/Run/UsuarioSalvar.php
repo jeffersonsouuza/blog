@@ -17,22 +17,27 @@ class UsuarioSalvar implements InterfaceController
         $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
 
         $usuario = new Usuario(DatabaseConnection::create());
-        //$usuarios = $usuario->senhaEstaCorreta($senha);
+        $usuarios = $usuario->exibirTodos();
+
+        foreach ($usuarios as $user) {
+            if ($user['email'] === $email) {
+                $this->defineMensagem('danger', 'Usuário ja cadastrado');
+                header('Location: /blog-php/index.php/login');
+                exit();
+            }
+        }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && $email && $senha) {
             $usuario = new Usuario(DatabaseConnection::create());
             $usuario->adicionar($_POST['email'], md5($_POST['senha']));
+            $this->defineMensagem('success', 'Usuário Cadastrado!');
             header('Location: /blog-php/index.php/painel-admin');
 
         } elseif ($email == "" || $senha == "") {
-            header('Location: /blog-php/index.php/login');
+            $this->defineMensagem('danger', 'E-mail ou senha inválidos');
         }
 
-        //TODO
-        // validar usuario duplicado
-        // se o campo de entrada esta vazio e se é nulo
-        // validar a seha
-        // pesquisar validações de cadastro
+        header('Location: /blog-php/index.php/login');
 
     }
 }

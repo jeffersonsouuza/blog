@@ -3,6 +3,9 @@ include __DIR__ . '/../html/inicioHTML.php';
 ?>
 
 <section id="container" class="bg-light m-5 p-3">
+
+    <h1 class="text-primary fs-1 px-4 pt-2">Conecte-se ao seu Blog:</h1>
+
     <div class="row">
         <div class="col-6 px-5 py-4 border border-primary border-top-0 border-bottom-0 border-start-0">
         <h1 class="form-text fs-3 pb-3">Acesse sua conta:</h1>

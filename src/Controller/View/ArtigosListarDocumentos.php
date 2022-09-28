@@ -6,7 +6,7 @@ use Source\Controller\InterfaceController;
 use Source\Entity\Artigo;
 use Source\Infra\DatabaseConnection;
 
-class ArtigosListar implements InterfaceController
+class ArtigosListarDocumentos implements InterfaceController
 {
 
     public function processaRequisicao(): void
