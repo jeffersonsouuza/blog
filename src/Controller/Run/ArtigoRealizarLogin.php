@@ -18,41 +18,35 @@ class ArtigoRealizarLogin implements InterfaceController
         $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
         $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
+        if ($email && $senha) {
+            $login = $this->login($email, $senha);
+        } else {
+            $this->defineMensagem('danger', 'Digite o e-mail ou senha corretamente.');
+            header('Location: /blog-php/index.php/login');
+            return;
+        }
+
+        if (!$login) {
+            $this->defineMensagem('danger', 'E-mail ou Senha inválidos!');
+            header('Location: /blog-php/index.php/login');
+        }
+    }
+
+    public function login($email, $senha): bool
+    {
         $usuario = new Usuario(DatabaseConnection::create());
-        $usuarios = $usuario->exibirTodos();
+        $usuariosLista = $usuario->exibirTodos();
 
-        foreach ($usuarios as $user) {
-            if ($user['email'] !== $email) {
-                $this->defineMensagem('danger', 'E-mail inválido!');
-                header('Location: /blog-php/index.php/login');
-               return;
-            }
-
-            if ($user['senha'] !== $senha) {
-                $this->defineMensagem('danger', 'Senha inválida!');
-                header('Location: /blog-php/index.php/login');
-                return;
+        foreach ($usuariosLista as $user) {
+            if ($user['email'] === $email && $user['senha'] === md5($senha)) {
+                $this->defineMensagem('success', 'Usuário conectado!');
+                $_SESSION['logado'] = true;
+                header('Location: /blog-php/index.php/painel-admin');
+                return true;
             }
         }
 
-        if (is_null($email) || $email === false) {
-            $this->defineMensagem('danger', 'E-mail ou senha inválidos!');
-            header('Location: /blog-php/index.php/login');
-            return;
-        }
-
-        if (is_null($senha) || $senha === false) {
-            $this->defineMensagem('danger', 'E-mail ou senha inválidos!');
-            header('Location: /blog-php/index.php/login');
-            return;
-        }
-
-        $this->defineMensagem('success', 'Usuário conectado!');
-
-        $_SESSION['logado'] = true;
-
-        header('Location: /blog-php/index.php/painel-admin');
-
+        return false;
     }
 
 }

@@ -1,0 +1,53 @@
+version: '3'
+services:
+    webserver:
+        image: 'php:8.0-apache'
+        container_name: global-apache-php-8.0
+        build:
+            context: ./.docker
+            dockerfile: Dockerfile
+        ports:
+            - '8088:80'
+        depends_on:
+            - mysql
+        volumes:
+            - ../:/var/www/html
+        networks:
+            - phpweb-master
+    mysql:
+        image: 'mysql/mysql-server:8.0'
+        ports:
+            - '3308:3306'
+        environment:
+            MYSQL_ROOT_PASSWORD: '123456789@Abc'
+            MYSQL_ROOT_HOST: "%"
+            MYSQL_DATABASE: 'blog-php'
+            MYSQL_USER: 'blog-php'
+            MYSQL_PASSWORD: '123456789@Abc'
+            MYSQL_ALLOW_EMPTY_PASSWORD: 1
+            MYSQL_ALLOW_PUBLIC_KEY_RETRIEVAL: 1
+        volumes:
+            - 'phpweb-master-mysql:/var/lib/mysql'
+        networks:
+            - phpweb-master
+        healthcheck:
+            test: ["CMD", "mysqladmin", "ping", "-p123456789@Abc"]
+            retries: 3
+            timeout: 5s
+    phpmyadmin:
+        image: phpmyadmin
+        networks:
+            - phpweb-master
+        ports:
+            - 8082:80
+        environment:
+            - PMA_ARBITRARY=0
+            - PMA_PORT=3306
+            - PMA_HOST=mysql
+networks:
+    phpweb-master:
+        driver: bridge
+volumes:
+    phpweb-master-mysql:
+        driver: local
+
