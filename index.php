@@ -1,10 +1,11 @@
 <?php
 
 require __DIR__ . '/vendor/autoload.php';
+require_once 'boot.php';
 
 $caminho = $_SERVER['PATH_INFO'] ?? '/';
 
-$rotas = require __DIR__ . '/config/routes.php';
+$rotas = require __APP_FOLDER__ . '/routes/routes.php';
 
 if (!array_key_exists($caminho, $rotas)) {
     http_response_code(404);
