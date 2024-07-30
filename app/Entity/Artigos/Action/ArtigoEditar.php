@@ -15,7 +15,7 @@ class ArtigoEditar implements InterfaceController
             $artigo = new Artigo(DatabaseConnection::create());
             $artigo->editar($_POST['id'], $_POST['titulo'], $_POST['conteudo'], $_POST['status']);
 
-            header('Location: ' . __SYSTEM_URL__ . '/admin/listar-artigos');
+            header('Location: ' . __SYSTEM_ADMIN_URL__ . '/listar-artigos');
         }
     }
 }

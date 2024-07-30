@@ -4,7 +4,7 @@ include __PUBLIC_FOLDER__ . '/view/html/inicioHTML.php';
 
 <div id="container" class="bg-light m-5 p-3">
     <h1 class="form-text fs-3 pb-3">Você realmente deseja excluir o artigo?</h1>
-    <form method="POST" action="/blog-php/index.php/salvar-excluir">
+    <form method="POST" action="<?=__SYSTEM_ADMIN_URL__?>/salvar-excluir">
         <h5> Titulo do Artigo: </h5>
         <p><?php echo $art['titulo'] ?></p>
 

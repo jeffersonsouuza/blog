@@ -4,7 +4,7 @@ include __PUBLIC_FOLDER__ . '/view/html/inicioHTML.php';
 
 <div id="container" class="bg-light m-5 p-3">
     <h1 class="fs-1 pb-3 form-text">Editar Artigo</h1>
-    <form action="/blog-php/index.php/salvar-edicao" method="POST">
+    <form action="<?=__SYSTEM_ADMIN_URL__?>/salvar-edicao" method="POST">
         <p>
             <label class="form-label" for="titulo">Digite o novo título do artigo:</label>
             <input class="form-control" type="text" name="titulo" id="titulo" value="<?php echo $art['titulo']; ?>" />

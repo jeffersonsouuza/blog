@@ -15,23 +15,23 @@
     <?php if (isset($_SESSION['logado'])): ?>
         <nav class="navbar navbar-expand-lg bg-light mx-5 my-3 p-3">
             <div class="container-fluid ms-5">
-                <a class="navbar-brand fs-3 text-primary" href="/blog-php/index.php/listar-artigos">Meu Blog</a>
+                <a class="navbar-brand fs-3 text-primary" href="<?=__SYSTEM_URL__?>/listar-artigos">Meu Blog</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0 fs-5">
                         <li class="nav-item">
-                            <a class="nav-link text-primary active" aria-current="page" href="/blog-php/index.php/listar-artigos">Home</a>
+                            <a class="nav-link text-primary active" aria-current="page" href="<?=__SYSTEM_URL__?>/listar-artigos">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-primary" aria-current="page" href="/blog-php/index.php/admin/listar-artigos">Painel Admin</a>
+                            <a class="nav-link text-primary" aria-current="page" href="/blog-php/index.php/admin/listar-artigos">Artigos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-primary" aria-current="page" href="/blog-php/index.php/login">Login</a>
+                            <a class="nav-link text-primary" aria-current="page" href="<?=__SYSTEM_ADMIN_URL__?>/login">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-primary" aria-current="page" href="/blog-php/index.php/logout">Sair</a>
+                            <a class="nav-link text-primary" aria-current="page" href="<?=__SYSTEM_ADMIN_URL__?>/logout">Sair</a>
                         </li>
                     </ul>
                 </div>

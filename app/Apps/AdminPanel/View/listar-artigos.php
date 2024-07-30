@@ -44,14 +44,14 @@ include __PUBLIC_FOLDER__ . '/view/html/inicioHTML.php';
                         <?php } ?>
 
                 </td>
-                <td><a class="btn btn-info" href="/blog-php/index.php/editar-artigo?id=<?php echo $art['id']; ?>">Editar</a></td>
-                <td><a class="btn btn-danger" href="/blog-php/index.php/excluir-artigo?id=<?php echo $art['id']; ?>">Excluir</a></td>
+                <td><a class="btn btn-info" href="<?=__SYSTEM_ADMIN_URL__?>/editar-artigo?id=<?php echo $art['id']; ?>">Editar</a></td>
+                <td><a class="btn btn-danger" href="<?=__SYSTEM_ADMIN_URL__?>/excluir-artigo?id=<?php echo $art['id']; ?>">Excluir</a></td>
             </tr>
             <?php endforeach; ?>
             </tbody>
         </table>
 
-        <a class="btn btn-primary" href="/blog-php/index.php/novo-artigo">Adicionar Artigo</a>
+        <a class="btn btn-primary" href="<?=__SYSTEM_ADMIN_URL__?>/novo-artigo">Adicionar Artigo</a>
 
     </div>
     </div>
