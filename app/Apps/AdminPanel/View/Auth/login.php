@@ -10,7 +10,7 @@ include __PUBLIC_FOLDER__ . '/view/html/inicioHTML.php';
         <div class="col-6 px-5 py-4 border border-primary border-top-0 border-bottom-0 border-start-0">
             <h1 class="form-text fs-3 pb-3">Acesse sua conta:</h1>
 
-            <form action="/blog-php/index.php/realizar-login" method="POST">
+            <form action="<?=__SYSTEM_ADMIN_URL__?>/realizar-login" method="POST">
                 <div class="form-group mb-4">
                     <label for="email">E-mail</label>
                     <input type="email" name="email" id="email" class="form-control">
@@ -27,7 +27,7 @@ include __PUBLIC_FOLDER__ . '/view/html/inicioHTML.php';
         <div class="col-6 px-5 py-4">
             <h1 class="form-text fs-3 pb-3">Cadastrar Usuário:</h1>
 
-            <form action="/blog-php/index.php/salvar-usuario" method="POST">
+            <form action="<?=__SYSTEM_ADMIN_URL__?>/salvar-usuario" method="POST">
                 <div class="form-group mb-4">
                     <label for="registrar-email">E-mail</label>
                     <input type="email" name="email" id="registrar-email" class="form-control">

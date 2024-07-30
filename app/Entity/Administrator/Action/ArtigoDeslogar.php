@@ -10,6 +10,6 @@ class ArtigoDeslogar implements InterfaceController
     public function processaRequisicao(): void
     {
         session_destroy();
-        header('Location: ' . __SYSTEM_URL__ . '/login');
+        header('Location: ' . __SYSTEM_ADMIN_URL__ . '/login');
     }
 }

@@ -18,7 +18,7 @@ class ArtigoRealizarLogin implements InterfaceController
         $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
         $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-        $redirecionarLogin = 'Location: ' . __SYSTEM_URL__ . '/login';
+        $redirecionarLogin = 'Location: ' . __SYSTEM_ADMIN_URL__ . '/login';
 
         if ($email && $senha) {
             $login = $this->login($email, $senha);
@@ -43,7 +43,7 @@ class ArtigoRealizarLogin implements InterfaceController
             if ($user['email'] === $email && $user['senha'] === md5($senha)) {
                 $this->defineMensagem('success', 'Usuário conectado!');
                 $_SESSION['logado'] = true;
-                header('Location: ' . __SYSTEM_URL__ . '/admin/listar-artigos');
+                header('Location: ' . __SYSTEM_ADMIN_URL__ . '/listar-artigos');
                 return true;
             }
         }

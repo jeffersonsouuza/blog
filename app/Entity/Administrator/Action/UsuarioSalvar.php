@@ -29,7 +29,7 @@ class UsuarioSalvar implements InterfaceController
             $this->cadastrarUsuario($email, $senha);
         }
 
-        header('Location: ' . __SYSTEM_URL__ . '/login');
+        header('Location: ' . __SYSTEM_ADMIN_URL__ . '/login');
 
     }
 
@@ -38,7 +38,7 @@ class UsuarioSalvar implements InterfaceController
         foreach ($usuarios as $user) {
             if ($user['email'] === $email) {
                 $this->defineMensagem('danger', 'Usuário ja cadastrado');
-                header('Location: ' . __SYSTEM_URL__ . '/login');
+                header('Location: ' . __SYSTEM_ADMIN_URL__ . '/login');
                 return false;
             }
         }
@@ -51,7 +51,7 @@ class UsuarioSalvar implements InterfaceController
             $usuario = new Usuario(DatabaseConnection::create());
             $usuario->adicionar($email, md5($senha));
             $this->defineMensagem('success', 'Usuário Cadastrado!');
-            header('Location: ' . __SYSTEM_URL__ . '/admin/listar-artigos');
+            header('Location: ' . __SYSTEM_ADMIN_URL__ . '/listar-artigos');
             exit();
         }
     }

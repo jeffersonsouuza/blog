@@ -15,19 +15,21 @@ use app\Entity\Artigos\Action\ArtigoAdicionar;
 use app\Entity\Artigos\Action\ArtigoExcluir;
 
 $rotas = [
-    '/novo-artigo' => NovoArtigo::class,
-    '/salvar-artigo' => ArtigoAdicionar::class,
+    "/admin/login" => LoginArtigo::class,
+    "/admin/realizar-login" => ArtigoRealizarLogin::class,
+    "/admin/salvar-usuario" => UsuarioSalvar::class,
+    "/admin/logout" => ArtigoDeslogar::class,
+
     '/admin/listar-artigos' => ListarArtigos::class,
+    '/admin/novo-artigo' => NovoArtigo::class,
+    '/admin/salvar-artigo' => ArtigoAdicionar::class,
+    '/admin/editar-artigo' => EditarArtigo::class,
+    '/admin/salvar-edicao' => ArtigoEditar::class,
+    '/admin/excluir-artigo' => ExcluirArtigo::class,
+    '/admin/salvar-excluir' => ArtigoExcluir::class,
+
     '/listar-artigos' => MostrarArtigos::class,
     '/artigo' => ExibirArtigo::class,
-    '/editar-artigo' => EditarArtigo::class,
-    '/salvar-edicao' => ArtigoEditar::class,
-    '/excluir-artigo' => ExcluirArtigo::class,
-    '/salvar-excluir' => ArtigoExcluir::class,
-    "/login" => LoginArtigo::class,
-    "/salvar-usuario" => UsuarioSalvar::class,
-    "/realizar-login" => ArtigoRealizarLogin::class,
-    "/logout" => ArtigoDeslogar::class,
 ];
 
 return $rotas;

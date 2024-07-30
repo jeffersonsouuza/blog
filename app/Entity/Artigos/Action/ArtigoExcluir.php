@@ -15,7 +15,7 @@ class ArtigoExcluir implements InterfaceController
             $artigo = new Artigo(DatabaseConnection::create());
             $artigo->remover($_POST['id']);
 
-            header('Location: ' . __SYSTEM_URL__ . '/admin/listar-artigos');
+            header('Location: ' . __SYSTEM_ADMIN_URL__ . '/listar-artigos');
         }
     }
 }
