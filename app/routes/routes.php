@@ -1,5 +1,6 @@
 <?php
 
+use app\Apps\AdminPanel\Controler\Dashboard;
 use app\Apps\AdminPanel\Controler\Auth\{LoginArtigo};
 use app\Apps\AdminPanel\Controler\EditarArtigo;
 use app\Apps\AdminPanel\Controler\ExcluirArtigo;
@@ -18,8 +19,11 @@ $rotas = [
     "/admin/login" => LoginArtigo::class,
     "/admin/realizar-login" => ArtigoRealizarLogin::class,
     "/admin/salvar-usuario" => UsuarioSalvar::class,
+    "/admin/cadastrar-usuario" => UsuarioSalvar::class,
+    "/admin/alterar-senha" => UsuarioSalvar::class,
     "/admin/logout" => ArtigoDeslogar::class,
 
+    '/admin/dashboard' => Dashboard::class,
     '/admin/listar-artigos' => ListarArtigos::class,
     '/admin/novo-artigo' => NovoArtigo::class,
     '/admin/salvar-artigo' => ArtigoAdicionar::class,
