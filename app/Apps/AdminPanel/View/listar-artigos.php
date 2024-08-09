@@ -11,7 +11,7 @@ $artigos = $artigo->exibirTodos();
 ?>
 
 <?php
-include __PUBLIC_FOLDER__ . '/view/html/inicioHTML.php';
+include __PUBLIC_FOLDER__ . '/view/inicioHTML.php';
 ?>
 
 <body class="bg-primary">
@@ -57,4 +57,4 @@ include __PUBLIC_FOLDER__ . '/view/html/inicioHTML.php';
     </div>
 
 <?php
-include __PUBLIC_FOLDER__ . '/view/html/finalHTML.php';
+include __PUBLIC_FOLDER__ . '/view/finalHTML.php';

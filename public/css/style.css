@@ -1,52 +1,70 @@
 body {
-  background-color: #4B7399;
-  font-family: Verdana, Helvetica, Arial, serif;
-  font-size: 14px;
+    margin: 0 !important;
 }
 
-#container {
-  width: 75%;
-  margin: 0 auto;
-  background-color: #FFF;
-  padding: 20px 40px;
-  border: solid 1px black;
-  margin-top: 20px;
+h1,
+h2,
+h3,
+h4,
+ul,
+p,
+blockquote,
+dd,
+figure {
+    margin: 0 !important;
 }
 
-a {
-  text-decoration: none;
+#sidebarMenu {
+    position: relative;
+    overflow: hidden;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+#sidebarMenu figure img,
+#navbarMenuMobile figure img {
+    width: 85% !important;
+    height: 2.5rem !important;
 }
 
-#artigo-admin {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
+#sidebarMenu .novo-artigo:hover {
+    background-color: #EB2E64;
+    border-color: #EB2E64;
 }
 
-#artigo-admin:hover {
-  background-color: #cccccc;
+#sidebarMenu ul:nth-of-type(2) {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
-.botao {
-  padding: 5px;
-  background-color: rgb(65, 113, 158);
-  color: #ffffff;
-  font-weight: bold;
-  border: solid 1px rgb(4, 58, 109);
+#sidebarMenu ul:nth-of-type(2) li:nth-of-type(2) {
+    color: #BB0404;
 }
 
-.campo-form {
-  margin: 10px 0;
-  display: block;
+#sidebarMenu p,
+#navbarMenu .perfil-usuario p:nth-child(2),
+#navbarMenu p,
+#navbarMobileContent p {
+    font-size: 0.7rem;
 }
 
-.botao-block {
-  display: block;
-  width: max-content;
+#navbarMenu h1 {
+    font-size: 1.7rem;
+    color: #BB0404;
+}
+
+#navbarMenu ul li i,
+#navbarMobileContent i:not(#toggleIconUser) {
+    color: #BB0404 !important;
+}
+
+@media (max-width: 1200px){
+    #sidebarMenu .novo-artigo {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 2000px){
+    .corpo-documento {
+        padding: 0 20rem 0 20rem !important;
+    }
 }

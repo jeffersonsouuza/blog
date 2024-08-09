@@ -43,7 +43,7 @@ class ArtigoRealizarLogin implements InterfaceController
             if ($user['email'] === $email && $user['senha'] === md5($senha)) {
                 $this->defineMensagem('success', 'Usuário conectado!');
                 $_SESSION['logado'] = true;
-                header('Location: ' . __SYSTEM_ADMIN_URL__ . '/listar-artigos');
+                header('Location: ' . __SYSTEM_ADMIN_URL__ . '/dashboard');
                 return true;
             }
         }
