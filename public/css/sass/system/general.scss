@@ -1,0 +1,21 @@
+body {
+  margin: 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+ul,
+p,
+blockquote,
+dd,
+figure {
+  margin: 0 !important;
+}
+
+@media (min-width: 2000px){
+  .corpo-documento {
+    padding: 0 20rem 0 20rem !important;
+  }
+}
