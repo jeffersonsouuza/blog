@@ -1,5 +1,5 @@
 body {
-    margin: 0 !important;
+  margin: 0 !important;
 }
 
 h1,
@@ -11,60 +11,61 @@ p,
 blockquote,
 dd,
 figure {
-    margin: 0 !important;
+  margin: 0 !important;
 }
 
+@media (min-width: 2000px) {
+  .corpo-documento {
+    padding: 0 20rem 0 20rem !important;
+  }
+}
 #sidebarMenu {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
-
-#sidebarMenu figure img,
-#navbarMenuMobile figure img {
-    width: 85% !important;
-    height: 2.5rem !important;
+#sidebarMenu figure img {
+  width: 85% !important;
+  height: 2.5rem !important;
 }
-
 #sidebarMenu .novo-artigo:hover {
-    background-color: #EB2E64;
-    border-color: #EB2E64;
+  background-color: #EB2E64;
+  border-color: #EB2E64;
 }
-
 #sidebarMenu ul:nth-of-type(2) {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+#sidebarMenu ul:nth-of-type(2) li:nth-of-type(2) {
+  color: #BB0404;
 }
 
-#sidebarMenu ul:nth-of-type(2) li:nth-of-type(2) {
-    color: #BB0404;
+#navbarMenu h1 {
+  font-size: 1.7rem;
+  color: #BB0404;
+}
+
+#navbarMenuMobile figure img {
+  width: 85% !important;
+  height: 2.5rem !important;
 }
 
 #sidebarMenu p,
 #navbarMenu .perfil-usuario p:nth-child(2),
 #navbarMenu p,
 #navbarMobileContent p {
-    font-size: 0.7rem;
-}
-
-#navbarMenu h1 {
-    font-size: 1.7rem;
-    color: #BB0404;
+  font-size: 0.7rem;
 }
 
 #navbarMenu ul li i,
 #navbarMobileContent i:not(#toggleIconUser) {
-    color: #BB0404 !important;
+  color: #BB0404 !important;
 }
 
-@media (max-width: 1200px){
-    #sidebarMenu .novo-artigo {
-        font-size: 0.8rem;
-    }
+@media (max-width: 1200px) {
+  #sidebarMenu .novo-artigo {
+    font-size: 0.8rem;
+  }
 }
 
-@media (min-width: 2000px){
-    .corpo-documento {
-        padding: 0 20rem 0 20rem !important;
-    }
-}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,61 @@
+@import "variables";
+
+#sidebarMenu {
+  position: relative;
+  overflow: hidden;
+
+  figure img {
+    width: 85% !important;
+    height: 2.5rem !important;
+  }
+
+  .novo-artigo:hover {
+    background-color: $secondary-color-light;
+    border-color: $secondary-color-light;
+  }
+
+  ul:nth-of-type(2) {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  ul:nth-of-type(2) li:nth-of-type(2) {
+    color: $secondary-color;
+  }
+
+}
+
+#navbarMenu {
+  h1 {
+    font-size: 1.7rem;
+    color: $secondary-color;
+  }
+}
+
+#navbarMenuMobile {
+  figure img {
+    width: 85% !important;
+    height: 2.5rem !important;
+  }
+}
+
+#sidebarMenu p,
+#navbarMenu .perfil-usuario p:nth-child(2),
+#navbarMenu p,
+#navbarMobileContent p {
+  font-size: 0.7rem;
+}
+
+#navbarMenu ul li i,
+#navbarMobileContent i:not(#toggleIconUser) {
+  color: $secondary-color !important;
+}
+
+@media (max-width: 1200px){
+  #sidebarMenu {
+    .novo-artigo {
+      font-size: 0.8rem;
+    }
+  }
+}
