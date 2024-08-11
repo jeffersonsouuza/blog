@@ -10,12 +10,35 @@ ul,
 p,
 blockquote,
 dd,
-figure {
+figure,
+div,
+footer {
   margin: 0 !important;
+}
+
+.login {
+  .esquecer-senha a,
+  label,
+  footer {
+    font-size: 0.8rem;
+  }
+  .logo-login {
+    width: 55%;
+    height: 2.5rem;
+  }
 }
 
 @media (min-width: 2000px){
   .corpo-documento {
     padding: 0 20rem 0 20rem !important;
+  }
+  .login {
+    section:nth-child(2) {
+      padding: 0 5rem 0 5rem !important;
+    }
+    .logo-login {
+      width: 60%;
+      height: 4rem;
+    }
   }
 }

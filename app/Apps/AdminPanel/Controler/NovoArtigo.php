@@ -9,6 +9,6 @@ class NovoArtigo implements InterfaceController
     public function processaRequisicao(): void
     {
         $title = 'Novo Artigo';
-        require __ADMIN_FOLDER__ . '/View/novo-artigo.php';
+        require __ADMIN_FOLDER__ . '/View/Artigo/novo-artigo.php';
     }
 }

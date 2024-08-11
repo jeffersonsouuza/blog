@@ -14,7 +14,7 @@ class ListarArtigos implements InterfaceController
 
         $title = 'Artigos';
 
-        require __ADMIN_FOLDER__ . "/View/listar-artigos.php";
+        require __ADMIN_FOLDER__ . "/View/Artigo/listar-artigos.php";
 
     }
 }

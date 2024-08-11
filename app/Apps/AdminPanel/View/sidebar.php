@@ -2,7 +2,7 @@
     <div class="pt-3 mb-4">
         <a class="navbar-brand" href="<?=__SYSTEM_ADMIN_URL__?>/dashboard">
             <figure class="d-flex justify-content-center align-items-center m-0">
-                <img src="../../public/imagens/logo-brasatour.png" width="2929" height="512" alt="Logo BrasaTour">
+                <img src="<?=__SYSTEM_ROOT_URL__?>/public/imagens/logo-brasatour.png" width="2929" height="512" alt="Logo BrasaTour">
             </figure>
         </a>
     </div>
