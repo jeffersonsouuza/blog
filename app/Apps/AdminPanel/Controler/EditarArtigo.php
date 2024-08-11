@@ -16,6 +16,6 @@ class EditarArtigo implements InterfaceController
         $artigo = new Artigo(DatabaseConnection::create());
         $art = $artigo->procurarPorId($_GET['id']);
 
-        require __ADMIN_FOLDER__ . '/View/editar-artigo.php';
+        require __ADMIN_FOLDER__ . '/View/Artigo/editar-artigo.php';
     }
 }

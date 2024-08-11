@@ -16,6 +16,6 @@ class ExcluirArtigo implements InterfaceController
         $artigo = new Artigo(DatabaseConnection::create());
         $art = $artigo->procurarPorId($_GET['id']);
 
-        require __ADMIN_FOLDER__ . '/View/excluir-artigo.php';
+        require __ADMIN_FOLDER__ . '/View/Artigo/excluir-artigo.php';
     }
 }

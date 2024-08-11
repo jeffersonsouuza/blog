@@ -9,7 +9,7 @@
                 <p class="navbar-text py-0 my-0">Administrador</p>
             </div>
             <div class="dropdown">
-                <img src="../../public/imagens/avatar-perfil.png" class="rounded-circle ms-4 dropdown-toggle"
+                <img src="<?=__SYSTEM_ROOT_URL__?>/public/imagens/avatar-perfil.png" class="rounded-circle ms-4 dropdown-toggle"
                      data-bs-toggle="dropdown" aria-expanded="false" width="45" height="45" alt="Imagem Perfil Usuário">
                 <ul class="dropdown-menu dropdown-menu-end mt-4">
                     <li>
@@ -47,7 +47,7 @@
         <div class="d-flex justify-content-center align-items-center">
             <a class="navbar-brand" href="<?=__SYSTEM_ADMIN_URL__?>/dashboard">
                 <figure class="">
-                    <img src="../../public/imagens/logo-brasatour.png" width="2929" height="512" alt="Logo BrasaTour">
+                    <img src="<?=__SYSTEM_ROOT_URL__?>/public/imagens/logo-brasatour.png" width="2929" height="512" alt="Logo BrasaTour">
                 </figure>
             </a>
         </div>

@@ -1,8 +1,8 @@
 <?php
-include __PUBLIC_FOLDER__ . '/view/inicioHTML.php';
+include __ADMIN_FOLDER__ . '/View/layoutInicio.php';
 ?>
 
 
 <?php
-include __PUBLIC_FOLDER__ . '/view/finalHTML.php';
+include __ADMIN_FOLDER__ . '/View/layoutFinal.php';
 ?>
