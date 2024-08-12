@@ -9,9 +9,17 @@
     height: 2.5rem !important;
   }
 
-  .novo-artigo:hover {
-    background-color: $secondary-color-light;
-    border-color: $secondary-color-light;
+  .novo-artigo {
+    border-color: $highlight-color;
+    color: $highlight-color;
+    font-weight: 600;
+    transition: 0.7s;
+    &:hover {
+      background-color: $highlight-color-light !important;
+      border-color: $highlight-color-light !important;
+      color: $white;
+      transition: 0.7s;
+    }
   }
 
   ul:nth-of-type(2) {
@@ -21,7 +29,7 @@
   }
 
   ul:nth-of-type(2) li:nth-of-type(2) {
-    color: $secondary-color;
+    color: $highlight-color;
   }
 
 }
@@ -29,7 +37,7 @@
 #navbarMenu {
   h1 {
     font-size: 1.7rem;
-    color: $secondary-color;
+    color: $highlight-color;
   }
 }
 
@@ -49,7 +57,7 @@
 
 #navbarMenu ul li i,
 #navbarMobileContent i:not(#toggleIconUser) {
-  color: $secondary-color !important;
+  color: $highlight-color !important;
 }
 
 @media (max-width: 1200px){

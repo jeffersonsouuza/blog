@@ -1,7 +1,11 @@
 body {
-  margin: 0 !important;
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
 
+body,
 h1,
 h2,
 h3,
@@ -46,9 +50,17 @@ footer {
   width: 85% !important;
   height: 2.5rem !important;
 }
+#sidebarMenu .novo-artigo {
+  border-color: #BB0404;
+  color: #BB0404;
+  font-weight: 600;
+  transition: 0.7s;
+}
 #sidebarMenu .novo-artigo:hover {
-  background-color: #EB2E64;
-  border-color: #EB2E64;
+  background-color: #EB2E64 !important;
+  border-color: #EB2E64 !important;
+  color: #FFFFFF;
+  transition: 0.7s;
 }
 #sidebarMenu ul:nth-of-type(2) {
   position: absolute;
