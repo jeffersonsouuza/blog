@@ -11,6 +11,11 @@ include __PUBLIC_FOLDER__ . '/view/inicioHTML.php';
         </section>
 
         <section class="col-md-6 col-lg-5 col-xl-4 p-4 p-xl-5 d-flex justify-content-center flex-column">
+
+            <section class="mb-3">
+                <?php require __PUBLIC_FOLDER__ . '/view/component/message.php'; ?>
+            </section>
+
             <figure class="mb-5 d-flex justify-content-center">
                 <img class="img-fluid logo-login" src="<?=__SYSTEM_ROOT_URL__?>/public/imagens/logo-brasatour.png" width="2929" height="512" alt="Jericoacoara">
             </figure>

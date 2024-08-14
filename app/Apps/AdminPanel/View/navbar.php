@@ -1,9 +1,10 @@
-<nav id="navbarMenu" class="navbar navbar-expand-lg bg-white rounded shadow-sm d-none d-lg-block">
-    <div class="container-fluid">
-        <div class="col-md-3 col-lg-2">
-            <h1 class="navbar-brand fw-bold m-0"><?=$title?></h1>
+<nav id="navbarMenu" class="navbar navbar-expand-lg bg-white d-none d-lg-block">
+    <div class="container-fluid py-2">
+        <div class="col-md-3 col-lg-5">
+            <h2 class="fw-bold m-0 main-title fs-6">Bom dia, Jefferson</h2>
+            <p>Segunda, 23 de maio de 2024</p>
         </div>
-        <div class="col-md-6 col-lg-8 d-flex align-items-center justify-content-end perfil-usuario">
+        <div class="col-md-6 col-lg-7 d-flex align-items-center justify-content-end perfil-usuario">
             <div class="text-end">
                 <p class="py-0 my-0">Jefferson Souza</p>
                 <p class="navbar-text py-0 my-0">Administrador</p>
@@ -42,7 +43,7 @@
     </div>
 </nav>
 
-<nav id="navbarMenuMobile" class="navbar navbar-expand-lg bg-white rounded shadow-sm d-lg-none">
+<nav id="navbarMenuMobile" class="navbar navbar-expand-lg bg-white d-lg-none mb-3">
     <div class="container-fluid">
         <div class="d-flex justify-content-center align-items-center">
             <a class="navbar-brand" href="<?=__SYSTEM_ADMIN_URL__?>/dashboard">

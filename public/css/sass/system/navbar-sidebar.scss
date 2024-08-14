@@ -35,9 +35,31 @@
 }
 
 #navbarMenu {
-  h1 {
-    font-size: 1.7rem;
-    color: $highlight-color;
+  .input-group {
+    position: relative;
+
+    input {
+      padding-left: 40px;
+
+      &::placeholder {
+        color: $main-text;
+        font-weight: 300;
+      }
+
+      &:focus {
+        border-color: $highlight-color-extra-light;
+      }
+    }
+
+    i {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: $main-text;
+      z-index: 100;
+    }
   }
 }
 

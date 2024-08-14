@@ -28,6 +28,11 @@ class Artigo implements InterfaceArtigo
         $removerArtigo->execute();
     }
 
+    public function exibirTodosComPaginacao($inicio, $limite): array
+    {
+        return $this->mysql->query('SELECT * FROM artigos order by id desc LIMIT '.$inicio.','. $limite)->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function exibirTodos(): array
     {
         return $this->mysql->query('SELECT id, conteudo, titulo, status FROM artigos')->fetch_all(MYSQLI_ASSOC);

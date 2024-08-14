@@ -1,4 +1,4 @@
-<nav id="sidebarMenu" class="d-lg-block rounded bg-white sidebar collapse d-print-none vh-100 shadow-sm ">
+<nav id="sidebarMenu" class="d-lg-block bg-white sidebar collapse d-print-none shadow-sm min-vh-100 p-xxl-3">
     <div class="pt-3 mb-4">
         <a class="navbar-brand" href="<?=__SYSTEM_ADMIN_URL__?>/dashboard">
             <figure class="d-flex justify-content-center align-items-center m-0">
@@ -29,8 +29,8 @@
                 </a>
             </li>
         </ul>
+        <hr>
         <ul class="navbar-nav flex-column list-group pe-3">
-            <li class="border-bottom border-success mb-2"></li>
             <li class="nav-item list-group-item border border-0 p-0 ms-lg-2 ms-xl-3">
                 <a class="nav-link fw-medium" aria-current="page" href="">
                     <i class="bi-box-arrow-up-right fs-5 me-2 me-xl-3"></i>
