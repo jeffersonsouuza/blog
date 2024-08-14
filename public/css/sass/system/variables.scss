@@ -1,6 +1,49 @@
+// Cores do Projeto
 $white: #FFFFFF;
 $main-text: #5C6E9A;
 $main-text-bold: #2F3F67;
 $highlight-color: #BB0404;
 $highlight-color-light: #EB2E64;
 $highlight-color-extra-light: #F04855;
+
+.text-white {
+  color: #FFFFFF !important;
+}
+
+.text-blue-light {
+  color: #5C6E9A !important;
+}
+
+.text-blue-extra-light {
+  color: #2F3F67 !important;
+}
+
+.text-red {
+  color: #BB0404 !important;
+}
+
+.text-red-light {
+  color: #EB2E64 !important;
+}
+
+.text-red-light {
+  color: #F04855 !important;
+}
+
+// Tamanho da Fonte
+$font-1: 1rem !important;
+$font-2: 0.9rem !important;
+$font-3: 0.8rem !important;
+
+.fs-1 {
+  font-size: 1rem !important;
+}
+
+.fs-2 {
+  font-size: 0.9rem !important;
+}
+
+.fs-3 {
+  font-size: 0.8rem !important;
+}
+

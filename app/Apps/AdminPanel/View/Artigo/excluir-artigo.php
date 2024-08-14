@@ -1,5 +1,5 @@
 <?php
-include __PUBLIC_FOLDER__ . '/view/inicioHTML.php';
+include __ADMIN_FOLDER__ . '/View/layoutInicio.php';
 ?>
 
 <div id="container" class="bg-light m-5 p-3">
@@ -15,5 +15,5 @@ include __PUBLIC_FOLDER__ . '/view/inicioHTML.php';
 </div>
 
 <?php
-include __PUBLIC_FOLDER__ . '/view/finalHTML.php';
+include __ADMIN_FOLDER__ . '/View/layoutFinal.php';
 ?>

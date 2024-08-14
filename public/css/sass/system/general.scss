@@ -1,8 +1,12 @@
+@import "variables";
+
 body {
   font-family: "Mulish", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 600;
+  font-weight: 300;
   font-style: normal;
+  color: $main-text !important;
+  font-size: $font-2;
 }
 
 body,
@@ -16,19 +20,50 @@ blockquote,
 dd,
 figure,
 div,
-footer {
+footer,
+aside,
+main,
+input,
+label,
+datalist {
   margin: 0 !important;
 }
 
 .login {
   .esquecer-senha a,
   label,
-  footer {
+  footer, input {
     font-size: 0.8rem;
   }
   .logo-login {
     width: 55%;
     height: 2.5rem;
+  }
+}
+
+.main-title {
+  font-size: 1.7rem;
+  color: $highlight-color;
+}
+
+.tooltip-inner {
+  background-color: $main-text;
+  color: #fff;
+  font-size: $font-2;
+  margin: 0.6rem !important;
+}
+
+.tooltip-arrow {
+  display: none !important;
+}
+
+table tr {
+  font-size: $font-3 !important;
+}
+
+@media (min-width: 992px){
+  main {
+    margin-left: 16.6667% !important;
   }
 }
 

@@ -2,24 +2,15 @@
 include __PUBLIC_FOLDER__ . '/view/inicioHTML.php';
 ?>
 
-<div class="bg-body-tertiary py-2 p-lg-1 p-xl-2 overflow-x-hidden corpo-documento">
+<div class="bg-body-tertiary overflow-x-hidden">
 
-    <div class="row m-0 p-0">
-        <aside class="col-lg-2">
+    <div class="row m-0 w-100">
+        <aside class="col-lg-2 ps-0 pe-1 position-fixed">
             <?php require __ADMIN_FOLDER__ . '/View/sidebar.php'; ?>
         </aside>
 
-        <main class="col-lg-10">
-            <header class="mb-3">
-                <?php require __ADMIN_FOLDER__ . '/View/navbar.php'; ?>
-            </header>
+        <main class="col-lg-10 ps-0">
+                <section class="col-lg-10 bg-white min-vh-100 px-4 w-100">
+                    <?php require __ADMIN_FOLDER__ . '/View/navbar.php'; ?>
 
-            <!--    exibir mensagem de erro ou sucesso-->
-            <?php if (isset($_SESSION['mensagem'])): ?>
-                <div class="alert alert-<?= $_SESSION['tipo_mensagem'] ?> p-3">
-                    <?= $_SESSION['mensagem'] ?>
-                </div>
-            <?php
-                unset($_SESSION['mensagem'], $_SESSION['tipo_mensagem']);
-                endif;
-            ?>
+                    <?php require __PUBLIC_FOLDER__ . '/view/component/message.php'; ?>
