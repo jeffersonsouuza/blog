@@ -9,3 +9,16 @@ alternaImagemLogin.init();
 .map(function (tooltipTriggerEl) {
 	return new bootstrap.Tooltip(tooltipTriggerEl)
 })
+
+// Habilita o `Bootstrap Validation`.
+Array.prototype.slice.call(document.querySelectorAll('.needs-validation'))
+	.forEach(function (form) {
+		form.addEventListener('submit', function (event) {
+			if (!form.checkValidity()) {
+				event.preventDefault()
+				event.stopPropagation()
+			}
+			
+			form.classList.add('was-validated')
+		}, false)
+	});

@@ -61,6 +61,44 @@ table tr {
   font-size: $font-3 !important;
 }
 
+label {
+  color: $main-text-bold;
+  font-weight: 600;
+  font-size: $font-3;
+}
+
+input,
+textarea,
+select {
+  background-color: rgba(92, 110, 154, 0.09) !important;
+  border: none !important;
+  color: $main-text-bold !important;
+  font-weight: 300 !important;
+}
+
+input,
+select,
+textarea {
+  border-radius: 2px !important;
+  box-shadow: 0 0 6px -15px rgba(0,0,0,0.1);
+  &:focus {
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1) !important;
+  }
+}
+
+button[type=submit] {
+  background-color: $main-text-bold;
+  border-color: $main-text-bold;
+  &:hover {
+    background-color: $main-text;
+    border-color: $main-text;
+  }
+}
+
+.modal-dialog {
+  margin: auto !important;
+}
+
 @media (min-width: 992px){
   main {
     margin-left: 16.6667% !important;
