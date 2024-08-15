@@ -3,11 +3,11 @@
 }
 
 .text-blue-light {
-  color: #5C6E9A !important;
+  color: #2F3F67 !important;
 }
 
 .text-blue-extra-light {
-  color: #2F3F67 !important;
+  color: #5C6E9A !important;
 }
 
 .text-red {
@@ -93,6 +93,41 @@ table tr {
   font-size: 0.8rem !important !important;
 }
 
+label {
+  color: #2F3F67;
+  font-weight: 600;
+  font-size: 0.8rem !important;
+}
+
+input,
+textarea,
+select {
+  background-color: rgba(92, 110, 154, 0.09) !important;
+  border: none !important;
+  color: #2F3F67 !important;
+  font-weight: 300 !important;
+  border-radius: 2px !important;
+  box-shadow: 0 0 6px -15px rgba(0, 0, 0, 0.1);
+}
+input:focus,
+textarea:focus,
+select:focus {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+}
+
+button[type=submit] {
+  background-color: #2F3F67;
+  border-color: #2F3F67;
+}
+button[type=submit]:hover {
+  background-color: #5C6E9A;
+  border-color: #5C6E9A;
+}
+
+.modal-dialog {
+  margin: auto !important;
+}
+
 @media (min-width: 992px) {
   main {
     margin-left: 16.6667% !important;
@@ -115,11 +150,11 @@ table tr {
 }
 
 .text-blue-light {
-  color: #5C6E9A !important;
+  color: #2F3F67 !important;
 }
 
 .text-blue-extra-light {
-  color: #2F3F67 !important;
+  color: #5C6E9A !important;
 }
 
 .text-red {
@@ -225,11 +260,11 @@ table tr {
 }
 
 .text-blue-light {
-  color: #5C6E9A !important;
+  color: #2F3F67 !important;
 }
 
 .text-blue-extra-light {
-  color: #2F3F67 !important;
+  color: #5C6E9A !important;
 }
 
 .text-red {
@@ -261,11 +296,11 @@ table tr {
 }
 
 .text-blue-light {
-  color: #5C6E9A !important;
+  color: #2F3F67 !important;
 }
 
 .text-blue-extra-light {
-  color: #2F3F67 !important;
+  color: #5C6E9A !important;
 }
 
 .text-red {
@@ -290,11 +325,6 @@ table tr {
 
 .fs-3 {
   font-size: 0.8rem !important;
-}
-
-.lista-artigos .a {
-  border-color: #5C6E9A;
-  font-weight: 600;
 }
 
 /*# sourceMappingURL=style.css.map */

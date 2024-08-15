@@ -10,7 +10,7 @@ include __PUBLIC_FOLDER__ . '/view/inicioHTML.php';
         </aside>
 
         <main class="col-lg-10 ps-0">
-                <section class="col-lg-10 bg-white min-vh-100 px-4 w-100">
+                <section class="col-lg-10 bg-white min-vh-100 px-md-4 w-100">
                     <?php require __ADMIN_FOLDER__ . '/View/navbar.php'; ?>
 
                     <?php require __PUBLIC_FOLDER__ . '/view/component/message.php'; ?>
