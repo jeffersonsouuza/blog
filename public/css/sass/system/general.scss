@@ -74,11 +74,6 @@ select {
   border: none !important;
   color: $main-text-bold !important;
   font-weight: 300 !important;
-}
-
-input,
-select,
-textarea {
   border-radius: 2px !important;
   box-shadow: 0 0 6px -15px rgba(0,0,0,0.1);
   &:focus {

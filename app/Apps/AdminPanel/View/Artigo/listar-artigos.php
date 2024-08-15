@@ -32,18 +32,23 @@ if ($quantidadeArtigos === 0) {
 
 ?>
 
-<section class="lista-artigos overflow-auto">
+<section class="overflow-auto">
     <div class="container-fluid pb-3 pt-2">
-        <div class="row mb-3">
-            <div class="d-flex justify-content-between align-items-center p-0">
+        <div class="row mb-3 w-100 p-0">
+            <div class="col-md-6 px-0">
                 <h1 class="fw-bold main-title"><?=$title?></h1>
-                <div>
-                    <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Novo Artigo">
-                        <a type="button" href="<?=__SYSTEM_ADMIN_URL__?>/novo-artigo" class="btn btn-outline-secondary btn-sm">
-                            <i class="bi-plus-lg"></i>
-                        </a>
-                    </span>
-                </div>
+            </div>
+            <div class="col-md-6 pt-3 pt-md-0 px-0 d-md-flex justify-content-md-end align-items-md-center">
+                <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Voltar">
+                    <a type="button" href="javascript:history.back()" class="btn btn-outline-secondary btn-sm">
+                        <i class="bi-arrow-return-left"></i>
+                    </a>
+                </span>
+                <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Novo Artigo">
+                    <a type="button" href="<?=__SYSTEM_ADMIN_URL__?>/novo-artigo" class="btn btn-outline-secondary btn-sm ms-2">
+                        <i class="bi-plus-lg"></i>
+                    </a>
+                </span>
             </div>
         </div>
 
@@ -70,8 +75,12 @@ if ($quantidadeArtigos === 0) {
                             <tr>
                                 <?php if (!empty($art)): ?>
                                     <th class="py-2" scope="row"><?php echo $art['id']; ?></th>
-                                    <td class="py-2"><a class="btn btn-outline-primary btn-sm" href=""><i class="bi-box-arrow-up-right"></i></a></td>
-                                    <td class="py-2"><?php echo $art['titulo']; ?></td>
+                                    <td class="py-2">
+                                        <a class="btn btn-outline-primary btn-sm" href="<?=__SYSTEM_ADMIN_URL__?>/mostrar-artigo?id=<?php echo $art['id'];?>">
+                                            <i class="bi-box-arrow-up-right"></i>
+                                        </a>
+                                    </td>
+                                    <td class="py-2"><a class="text-decoration-none" href="<?=__SYSTEM_ADMIN_URL__?>/mostrar-artigo?id=<?php echo $art['id']; ?>"><?php echo $art['titulo'];?></a></td>
                                     <td class="py-2">19 May, 2024</td>
                                     <td class="py-2">
                                         <?php if ($art['status'] == 1): ?>
@@ -80,10 +89,42 @@ if ($quantidadeArtigos === 0) {
                                             <a class="btn btn-danger pe-none btn-sm" style="width: 4.5rem;">Inativo</a>
                                         <?php endif; ?>
                                     </td>
-                                    <td class="py-2"><a class="btn btn-outline-primary btn-sm" href="<?=__SYSTEM_ADMIN_URL__?>/editar-artigo?id=<?php echo $art['id']; ?>"><i class="bi-pencil-square"></i></a></td>
-                                    <td class="py-2"><a class="btn btn-outline-danger btn-sm" href="<?=__SYSTEM_ADMIN_URL__?>/excluir-artigo?id=<?php echo $art['id']; ?>"><i class="bi-x-square"></i></a></td>
+                                    <td class="py-2">
+                                        <a class="btn btn-outline-primary btn-sm" href="<?=__SYSTEM_ADMIN_URL__?>/editar-artigo?id=<?php echo $art['id']; ?>">
+                                            <i class="bi-pencil-square"></i>
+                                        </a>
+                                    </td>
+                                    <td class="py-2">
+                                        <a class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <i class="bi-x-square"></i>
+                                        </a>
+                                    </td>
                                 <?php endif; ?>
                             </tr>
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content py-3">
+                                        <div class="modal-header">
+                                            <h2 class="modal-title fs-5 text-blue-light" id="exampleModalLabel">Excluir Artigo  <?='#'.$art['id']?></h2>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h3 class="mb-3 h6">Você realmente deseja excluir este artigo?</h3>
+                                            <p class="text-blue-light fw-bold mb-2">Titulo do Artigo:</p>
+                                            <p class="text-blue-extra-light"><?=$art['titulo']?></p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                            <button typeof="submit" form="excluir" class="btn btn-outline-danger">Excluir</button>
+                                        </div>
+                                    </div>
+                                    <form action="<?=__SYSTEM_ADMIN_URL__?>/salvar-excluir" method="POST" id="excluir" class="p-0">
+                                        <div>
+                                            <input type="hidden" name="id" value="<?php echo $art['id']; ?>" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         <?php endforeach; ?>
                     <?php else: ?>
                         <tr>

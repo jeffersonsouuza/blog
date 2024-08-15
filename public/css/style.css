@@ -90,7 +90,7 @@ datalist {
 }
 
 table tr {
-  font-size: 0.8rem !important;
+  font-size: 0.8rem !important !important;
 }
 
 label {
@@ -106,17 +106,12 @@ select {
   border: none !important;
   color: #2F3F67 !important;
   font-weight: 300 !important;
-}
-
-input,
-select,
-textarea {
   border-radius: 2px !important;
   box-shadow: 0 0 6px -15px rgba(0, 0, 0, 0.1);
 }
 input:focus,
-select:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
 }
 
@@ -330,11 +325,6 @@ button[type=submit]:hover {
 
 .fs-3 {
   font-size: 0.8rem !important;
-}
-
-.lista-artigos .a {
-  border-color: #5C6E9A;
-  font-weight: 600;
 }
 
 /*# sourceMappingURL=style.css.map */

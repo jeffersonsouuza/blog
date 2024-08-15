@@ -3,9 +3,9 @@
 use app\Apps\AdminPanel\Controler\Dashboard;
 use app\Apps\AdminPanel\Controler\Auth\{LoginArtigo};
 use app\Apps\AdminPanel\Controler\EditarArtigo;
-use app\Apps\AdminPanel\Controler\ExcluirArtigo;
 use app\Apps\AdminPanel\Controler\ListarArtigos;
 use app\Apps\AdminPanel\Controler\NovoArtigo;
+use app\Apps\AdminPanel\Controler\MostrarArtigo;
 use app\Apps\HomePanel\Controller\ExibirArtigo;
 use app\Apps\HomePanel\Controller\MostrarArtigos;
 use app\Entity\Administrator\Action\ArtigoDeslogar;
@@ -25,11 +25,11 @@ $rotas = [
 
     '/admin/dashboard' => Dashboard::class,
     '/admin/listar-artigos' => ListarArtigos::class,
+    '/admin/mostrar-artigo' => MostrarArtigo::class,
     '/admin/novo-artigo' => NovoArtigo::class,
     '/admin/salvar-artigo' => ArtigoAdicionar::class,
     '/admin/editar-artigo' => EditarArtigo::class,
     '/admin/salvar-edicao' => ArtigoEditar::class,
-    '/admin/excluir-artigo' => ExcluirArtigo::class,
     '/admin/salvar-excluir' => ArtigoExcluir::class,
 
     '/listar-artigos' => MostrarArtigos::class,

@@ -5,6 +5,12 @@ use app\Entity\Artigos\Status as StatusArtigo;
 include __ADMIN_FOLDER__ . '/View/layoutInicio.php';
 ?>
 
+<style>
+    .bg-transparent {
+        background-color: transparent !important;
+    }
+</style>
+
 <section class="overflow-auto">
     <div class="container-fluid pb-3 pt-2">
         <div class="row mb-3 w-100 p-0">
@@ -32,6 +38,11 @@ include __ADMIN_FOLDER__ . '/View/layoutInicio.php';
                         <i class="bi-plus-lg"></i>
                     </a>
                 </span>
+                <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Editar">
+                    <a type="button" href="<?=__SYSTEM_ADMIN_URL__?>/editar-artigo?id=<?php echo $art['id']; ?>" class="btn btn-outline-secondary btn-sm ms-2">
+                        <i class="bi-pencil-square"></i>
+                    </a>
+                </span>
                 <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Excluir">
                     <button type="button" class="btn btn-outline-danger btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="bi-x-square"></i>
@@ -42,43 +53,26 @@ include __ADMIN_FOLDER__ . '/View/layoutInicio.php';
 
         <hr class="mb-3">
 
-        <form action="<?=__SYSTEM_ADMIN_URL__?>/salvar-edicao" method="POST" class="p-0 needs-validation" novalidate>
-            <div class="row">
-                <div class="col-lg-8 col-xl-6 position-relative px-0">
-                    <div class="mb-3">
-                        <label class="form-label m-1 m-1" for="titulo">Digite o novo título do artigo:</label>
-                        <input class="form-control" type="text" name="titulo" id="titulo" value="<?php echo $art['titulo']; ?>" required/>
-                        <div class="invalid-feedback">Preencha o titulo corretamente.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="status" class="form-label m-1">Status</label>
-                        <select class="form-select" id="status" name="status" required>
-                            <option value="<?= StatusArtigo::ATIVO?>" <?= $art['status'] === StatusArtigo::ATIVO ? 'selected' : '' ?>>
-                                <?= StatusArtigo::name(StatusArtigo::ATIVO)?>
-                            </option>
-                            <option value="<?= StatusArtigo::INATIVO?>" <?= $art['status'] === StatusArtigo::INATIVO ? 'selected' : '' ?>>
-                                <?= StatusArtigo::name(StatusArtigo::INATIVO)?>
-                            </option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label m-1" for="conteudo">Digite o novo conteúdo do artigo:</label>
-                        <textarea class="form-control" name="conteudo" id="titulo" rows="13" required><?=$art['conteudo']?></textarea>
-                        <div class="invalid-feedback">Preencha o conteúdo corretamente.</div>
-                    </div>
-                    <div>
-                        <input type="hidden" name="id" value="<?php echo $art['id']; ?>" />
-                    </div>
-                    <div class="col-md-6 my-4 w-100">
-                        <button type="submit" class="btn btn-primary w-100">Editar Artigo</button>
-                    </div>
+        <div class="row">
+            <div class="col-lg-8 col-xl-6 position-relative px-0">
+                <div class="mb-3">
+                    <label class="form-label m-1" for="titulo">Título do artigo:</label>
+                    <input class="form-control bg-transparent" type="text" name="titulo" id="titulo" value="<?php echo $art['titulo']; ?>" disabled/>
                 </div>
-
-                <div class="col-lg-4 col-xl-6">
-
+                <div class="mb-3">
+                    <label for="status" class="form-label m-1">Status:</label>
+                    <input class="form-control bg-transparent" type="text" id="status" name="status" value="<?= StatusArtigo::name($art['status'])?>" disabled>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label m-1" for="conteudo">Conteúdo do artigo:</label>
+                    <textarea class="form-control bg-transparent" name="conteudo" id="titulo" rows="13" disabled><?=$art['conteudo']?></textarea>
                 </div>
             </div>
-        </form>
+
+            <div class="col-lg-4 col-xl-6">
+
+            </div>
+        </div>
     </div>
 </section>
 
@@ -86,7 +80,7 @@ include __ADMIN_FOLDER__ . '/View/layoutInicio.php';
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title fs-5 text-blue-light" id="exampleModalLabel">Excluir Artigo  <?='#'.$art['id']?></h2>
+                <h2 class="modal-title fs-5 text-blue-light" id="exampleModalLabel">Excluir Artigo <?='#'.$art['id']?></h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
