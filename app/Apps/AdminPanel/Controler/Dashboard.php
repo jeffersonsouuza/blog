@@ -3,8 +3,6 @@
 namespace app\Apps\AdminPanel\Controler;
 
 use app\Apps\InterfaceController;
-use app\Core\Infra\DatabaseConnection;
-use app\Entity\Artigos\Artigo;
 
 class Dashboard implements InterfaceController
 {

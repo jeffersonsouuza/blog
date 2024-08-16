@@ -3,7 +3,7 @@
 require_once __ROOT_FOLDER__ . "/vendor/autoload.php";
 include __ADMIN_FOLDER__ . '/View/layoutInicio.php';
 
-use app\Core\Infra\DatabaseConnection;
+use app\Core\DatabaseConnection;
 use app\Entity\Artigos\Artigo;
 
 $numeroPagina = 1;

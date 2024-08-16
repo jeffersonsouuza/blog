@@ -3,7 +3,7 @@
 namespace app\Entity\Artigos\Action;
 
 use app\Apps\InterfaceController;
-use app\Core\Infra\DatabaseConnection;
+use app\Core\DatabaseConnection;
 use app\Entity\Artigos\Artigo;
 
 class ArtigoAdicionar implements InterfaceController

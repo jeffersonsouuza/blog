@@ -25,7 +25,12 @@ class Usuario
 
     public function exibirTodos(): array
     {
-        return $this->mysql->query('SELECT email, senha FROM usuarios')->fetch_all(MYSQLI_ASSOC);
+        return $this->mysql->query('SELECT * FROM usuarios')->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function exibirDadosUsuario($id): array
+    {
+        return $this->mysql->query('SELECT * FROM usuarios WHERE id='.$id)->fetch_all(MYSQLI_ASSOC);
     }
 
     public function senhaEstaCorreta(string $senhaPura): bool

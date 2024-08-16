@@ -3,7 +3,7 @@
 namespace app\Entity\Administrator\Action;
 
 use app\Apps\InterfaceController;
-use app\Core\Infra\DatabaseConnection;
+use app\Core\DatabaseConnection;
 use app\Entity\Administrator\Usuario;
 use app\Helper\FlashMessageTrait;
 

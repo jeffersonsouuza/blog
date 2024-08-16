@@ -3,7 +3,7 @@
 namespace app\Entity\Administrator\Action;
 
 use app\Apps\InterfaceController;
-use app\Core\Infra\DatabaseConnection;
+use app\Core\DatabaseConnection;
 use app\Entity\Administrator\Usuario;
 use app\Helper\FlashMessageTrait;
 
@@ -43,6 +43,8 @@ class ArtigoRealizarLogin implements InterfaceController
             if ($user['email'] === $email && $user['senha'] === md5($senha)) {
                 $this->defineMensagem('success', 'Usuário conectado!');
                 $_SESSION['logado'] = true;
+                $_SESSION['id_usuario'] = $user['id'];
+                $_SESSION['email_usuario'] = $user['email'];
                 header('Location: ' . __SYSTEM_ADMIN_URL__ . '/dashboard');
                 return true;
             }

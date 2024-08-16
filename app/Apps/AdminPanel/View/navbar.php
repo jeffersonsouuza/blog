@@ -1,12 +1,21 @@
+<?php
+
+use app\Core\DatabaseConnection;
+use app\Entity\Administrator\Usuario;
+
+$usuarios = new Usuario( DatabaseConnection::create());
+$usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
+?>
+
 <nav id="navbarMenu" class="navbar navbar-expand-lg bg-white d-none d-lg-block">
     <div class="container-fluid py-2">
         <div class="col-md-3 col-lg-5">
-            <h2 class="fw-bold m-0 main-title fs-6">Bom dia, Jefferson</h2>
-            <p>Segunda, 23 de maio de 2024</p>
+            <h2 class="fw-bold m-0 main-title fs-6 mb-1"><span class="periodo-do-dia"></span>, <?=strtok($usuario[0]['nome'], ' ')?></h2>
+            <p class="data-atual"></p>
         </div>
         <div class="col-md-6 col-lg-7 d-flex align-items-center justify-content-end perfil-usuario">
             <div class="text-end">
-                <p class="py-0 my-0">Jefferson Souza</p>
+                <p class="py-0 my-0"><?=$usuario[0]['nome']?></p>
                 <p class="navbar-text py-0 my-0">Administrador</p>
             </div>
             <div class="dropdown">

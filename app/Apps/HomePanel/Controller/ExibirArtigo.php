@@ -3,7 +3,7 @@
 namespace app\Apps\HomePanel\Controller;
 
 use app\Apps\InterfaceController;
-use app\Core\Infra\DatabaseConnection;
+use app\Core\DatabaseConnection;
 use app\Entity\Artigos\Artigo;
 
 class ExibirArtigo implements InterfaceController

@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Core\Infra;
+namespace app\Core;
 
 use mysqli;
 
