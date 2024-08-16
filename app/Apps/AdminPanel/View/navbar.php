@@ -10,38 +10,40 @@ $usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
 <nav id="navbarMenu" class="navbar navbar-expand-lg bg-white d-none d-lg-block">
     <div class="container-fluid py-2">
         <div class="col-md-3 col-lg-5">
-            <h2 class="fw-bold m-0 main-title fs-6 mb-1"><span class="periodo-do-dia"></span>, <?=strtok($usuario[0]['nome'], ' ')?></h2>
+            <h2 class="fw-bold m-0 nav-title fs-6 mb-1"><span class="periodo-do-dia"></span>, <?=strtok($usuario[0]['nome'], ' ')?></h2>
             <p class="data-atual"></p>
         </div>
         <div class="col-md-6 col-lg-7 d-flex align-items-center justify-content-end perfil-usuario">
             <div class="text-end">
-                <p class="py-0 my-0"><?=$usuario[0]['nome']?></p>
+                <p class="py-0 my-0 text-secondary fw-bold"><?=$usuario[0]['nome']?></p>
                 <p class="navbar-text py-0 my-0">Administrador</p>
             </div>
             <div class="dropdown">
-                <img src="<?=__SYSTEM_ROOT_URL__?>/public/imagens/avatar-perfil.png" class="rounded-circle ms-4 dropdown-toggle"
-                     data-bs-toggle="dropdown" aria-expanded="false" width="45" height="45" alt="Imagem Perfil Usuário">
-                <ul class="dropdown-menu dropdown-menu-end mt-4">
-                    <li>
-                        <a class="dropdown-item" href="<?=__SYSTEM_ADMIN_URL__?>/usuario">
+                <div class="area-click-nav" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi-person-circle fs-4 ms-4"></i>
+                    <i class="bi-arrow-down-short fs-6" id="toggle-class-nav"></i>
+                </div>
+                <ul class="dropdown-menu dropdown-menu-end shadow-sm mt-4 py-4 px-2">
+                    <li class="">
+                        <a class="dropdown-item py-3" href="<?=__SYSTEM_ADMIN_URL__?>/usuario">
                             <i class="bi-person mx-2"></i>
                             Perfil do Usuário
                         </a>
                     </li>
-                    <li>
-                        <a class="dropdown-item" href="<?=__SYSTEM_ADMIN_URL__?>/alterar-senha">
+                    <li class="">
+                        <a class="dropdown-item py-3" href="<?=__SYSTEM_ADMIN_URL__?>/alterar-senha">
                             <i class="bi-lock mx-2"></i>
                             Alterar Senha
                         </a>
                     </li>
-                    <li>
-                        <a class="dropdown-item" href="<?=__SYSTEM_ADMIN_URL__?>/cadastrar-usuario">
+                    <li class="">
+                        <a class="dropdown-item py-3" href="<?=__SYSTEM_ADMIN_URL__?>/cadastrar-usuario">
                             <i class="bi-person-plus mx-2"></i>
                             Cadastrar Usuário
                         </a>
                     </li>
-                    <li>
-                        <a class="dropdown-item" href="<?=__SYSTEM_ADMIN_URL__?>/logout">
+                    <li class="">
+                        <a class="dropdown-item py-3" href="<?=__SYSTEM_ADMIN_URL__?>/logout">
                             <i class="bi-box-arrow-right mx-2"></i>
                             Sair
                         </a>
@@ -61,88 +63,90 @@ $usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
                 </figure>
             </a>
         </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobileContent" aria-controls="navbarMobileContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
             <span class="navbar-toggler-icon"></span>
         </button>
     </div>
 </nav>
 
-<div class="collapse navbar-collapse bg-white rounded shadow-sm d-lg-none mt-3" id="navbarMobileContent">
-    <div class="container-fluid p-3">
-        <p class="text-uppercase text-body-secondary">menu</p>
-        <ul class="navbar-nav flex-column list-group mb-3">
-            <li class="nav-item list-group-item border border-0 p-0 ms-lg-2 ms-xl-3">
-                <a class="nav-link" aria-current="page" href="<?=__SYSTEM_ADMIN_URL__?>/dashboard">
-                    <i class="bi-speedometer2 fs-5 me-2 me-xl-3"></i>
-                    Dashboard
-                </a>
-            </li>
-            <li class="nav-item list-group-item  border border-0 p-0 ms-lg-2 ms-xl-3">
-                <a class="nav-link" aria-current="page" href="<?=__SYSTEM_ADMIN_URL__?>/listar-artigos">
-                    <i class="bi-card-text fs-5 me-2 me-xl-3"></i>
-                    Artigos
-                </a>
-            </li>
-        </ul>
+<div class="offcanvas offcanvas-start w-100" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+        <div class="d-flex justify-content-center align-items-center">
+            <a class="navbar-brand" href="<?=__SYSTEM_ADMIN_URL__?>/dashboard">
+                <figure class="">
+                    <img src="<?=__SYSTEM_ROOT_URL__?>/public/imagens/logo-brasatour.png" width="2929" height="512" alt="Logo BrasaTour">
+                </figure>
+            </a>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="container-fluid p-3">
+            <p class="text-uppercase text-body-secondary mb-3">menu</p>
+            <ul class="list-group mb-3">
+                <li class="list-group-item bg-body-tertiary border border-0 rounded-1 shadow-sm mb-4 p-4">
+                    <a class="text-capitalize text-decoration-none text-secondary fw-bold" href="<?=__SYSTEM_ADMIN_URL__?>/dashboard">
+                        Dashboard
+                    </a>
+                </li>
+                <li class="list-group-item bg-body-tertiary border border-0 rounded-1 shadow-sm mb-4 p-4">
+                    <a class="text-capitalize text-decoration-none text-secondary fw-bold" href="<?=__SYSTEM_ADMIN_URL__?>/listar-artigos">
+                        Artigos
+                    </a>
+                </li>
+            </ul>
+        </div>
 
-        <p class="text-uppercase text-body-secondary">configurações</p>
-        <ul class="navbar-nav flex-column list-group mb-3">
-            <li class="nav-item list-group-item border border-0 p-0 mb-2 ms-lg-2 ms-xl-3">
-                <a class="nav-link" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                    <i class="bi-person fs-5 me-2 me-xl-3"></i>
-                    Perfil
-                    <i class="bi-arrow-down-short" id="toggleIconUser"></i>
-                </a>
-                <div class="collapse" id="collapseExample">
-                    <ul class="navbar-nav flex-column list-group">
-                        <li>
-                            <a class="dropdown-item" href="<?=__SYSTEM_ADMIN_URL__?>/usuario">
-                                <i class="bi-arrow-return-right mx-2"></i>
-                                Dados da Conta
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="<?=__SYSTEM_ADMIN_URL__?>/alterar-senha">
-                                <i class="bi-arrow-return-right mx-2"></i>
-                                Alterar Senha
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="<?=__SYSTEM_ADMIN_URL__?>/cadastrar-usuario">
-                                <i class="bi-arrow-return-right mx-2"></i>
-                                Cadastrar Usuário
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
+        <div class="container-fluid p-3">
+            <p class="text-uppercase text-body-secondary mb-3">configurações</p>
+            <ul class="list-group mb-3">
+                <li class="list-group-item bg-body-tertiary border border-0 rounded-1 shadow-sm mb-4 p-4">
+                    <a class="text-capitalize text-decoration-none text-secondary fw-bold" href="#collapseExample"
+                       data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        Perfil
+                        <i class="bi-arrow-down-short" id="toggleIconUser"></i>
+                    </a>
+                    <div class="collapse" id="collapseExample">
+                        <ul class="navbar-nav flex-column list-group">
+                            <li class="my-3">
+                                <a class="dropdown-item" href="<?=__SYSTEM_ADMIN_URL__?>/usuario">
+                                    <i class="bi-arrow-return-right mx-2"></i>
+                                    Dados da Conta
+                                </a>
+                            </li>
+                            <li class="mb-3">
+                                <a class="dropdown-item" href="<?=__SYSTEM_ADMIN_URL__?>/alterar-senha">
+                                    <i class="bi-arrow-return-right mx-2"></i>
+                                    Alterar Senha
+                                </a>
+                            </li>
+                            <li class="mb-3">
+                                <a class="dropdown-item" href="<?=__SYSTEM_ADMIN_URL__?>/cadastrar-usuario">
+                                    <i class="bi-arrow-return-right mx-2"></i>
+                                    Cadastrar Usuário
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
-        <ul class="navbar-nav flex-column list-group">
-            <li class="nav-item list-group-item border border-0 p-0 ms-lg-2 ms-xl-3">
-                <a class="nav-link fw-medium" aria-current="page" href="">
-                    <i class="bi-box-arrow-up-right fs-5 me-2 me-xl-3"></i>
-                    Ver Blog
-                </a>
-            </li>
-            <li class="nav-item list-group-item border border-0 p-0 ms-lg-2 ms-xl-3">
-                <a class="nav-link" aria-current="page" href="<?=__SYSTEM_ADMIN_URL__?>/logout">
-                    <i class="bi-box-arrow-right fs-5 me-2 me-xl-3"></i>
-                    Sair
-                </a>
-            </li>
-        </ul>
+        <div class="container-fluid p-3">
+            <ul class="list-group mb-3">
+                <li class="list-group-item shadow-sm px-4 py-3">
+                    <a class="text-capitalize text-decoration-none text-danger fw-bold" href="<?=__SYSTEM_ADMIN_URL__?>/dashboard">
+                        <i class="bi-box-arrow-up-right fs-5 me-2 me-xl-3"></i>
+                        Ver Blog
+                    </a>
+                </li>
+                <li class="list-group-item shadow-sm px-4 py-3">
+                    <a class="text-capitalize text-decoration-none text-secondary fw-bold" href="<?=__SYSTEM_ADMIN_URL__?>/logout">
+                        <i class="bi-box-arrow-right fs-5 me-2 me-xl-3"></i>
+                        Sair
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
-
-<script>
-	const toggleIconUser = document.querySelector('#toggleIconUser');
-	const [arrowDown, arrowUp] = ['bi-arrow-down-short', 'bi-arrow-up-short'];
-
-    function toggleIcon(event) {
-	    event.target.classList.toggle(arrowDown);
-	    event.target.classList.toggle(arrowUp);
-    }
-
-    toggleIconUser.addEventListener('click', (event) => toggleIcon(event));
-</script>

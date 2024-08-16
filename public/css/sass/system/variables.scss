@@ -2,15 +2,21 @@
 $white: #FFFFFF;
 $main-text: #5C6E9A;
 $main-text-bold: #2F3F67;
+$text-body-tertiary: #F2F2F7;
+
 $highlight-color: #BB0404;
 $highlight-color-light: #EB2E64;
 $highlight-color-extra-light: #F04855;
+
+.bg-body-tertiary {
+  background-color: #F2F2F7 !important
+}
 
 .text-white {
   color: #FFFFFF !important;
 }
 
-.text-blue-light {
+.text-secondary {
   color: #2F3F67 !important;
 }
 
@@ -18,7 +24,7 @@ $highlight-color-extra-light: #F04855;
   color: #5C6E9A !important;
 }
 
-.text-red {
+.text-danger {
   color: #BB0404 !important;
 }
 

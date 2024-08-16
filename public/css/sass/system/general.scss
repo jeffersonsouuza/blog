@@ -7,6 +7,7 @@ body {
   font-style: normal;
   color: $main-text !important;
   font-size: $font-2;
+  letter-spacing: 0.03rem;
 }
 
 body,
@@ -92,6 +93,27 @@ button[type=submit] {
 
 .modal-dialog {
   margin: auto !important;
+}
+
+.dropdown-menu a {
+  font-size: $font-2;
+  &:hover {
+    background-color: $text-body-tertiary;
+  }
+}
+
+/* Define a barra de rolagem */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Estilos da barra de rolagem aplicados no Firefox */
+@-moz-document url-prefix() {
+  * {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
 }
 
 @media (min-width: 992px){

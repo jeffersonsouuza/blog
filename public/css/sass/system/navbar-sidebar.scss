@@ -3,11 +3,7 @@
 #sidebarMenu {
   position: relative;
   overflow: hidden;
-
-  figure img {
-    width: 85% !important;
-    height: 2.5rem !important;
-  }
+  font-size: $font-2 !important;
 
   .novo-artigo {
     border-color: $highlight-color;
@@ -27,11 +23,6 @@
     bottom: 0;
     width: 100%;
   }
-
-  ul:nth-of-type(2) li:nth-of-type(2) {
-    color: $highlight-color;
-  }
-
 }
 
 #navbarMenu {
@@ -61,12 +52,18 @@
       z-index: 100;
     }
   }
+  .nav-title {
+    font-size: 1.7rem;
+    color: $main-text-bold;
+  }
 }
 
-#navbarMenuMobile {
+#sidebarMenu,
+#navbarMenuMobile,
+.offcanvas {
   figure img {
-    width: 85% !important;
-    height: 2.5rem !important;
+    width: 100% !important;
+    height: 2.1rem !important;
   }
 }
 
@@ -86,6 +83,9 @@
   #sidebarMenu {
     .novo-artigo {
       font-size: 0.8rem;
+      i {
+        display: none !important;
+      }
     }
   }
 }

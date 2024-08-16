@@ -1,6 +1,7 @@
 import AlternaImagens from "./Classes/AlternaImagens.js";
 import PeriodoDoDia from "./Classes/PeriodoDoDia.js";
 import DataAtual from "./Classes/DataAtual.js";
+import ToggleClass from "./Classes/ToggleClass.js";
 
 let alternaImagemLogin = new AlternaImagens('imagemLogin', ['login-jericoacoara.jpg', 'login-rio-de-janeiro.jpg'], 3000);
 alternaImagemLogin.init();
@@ -10,6 +11,12 @@ periodoDoDia.init();
 
 let dataAtual = new DataAtual('data-atual');
 dataAtual.init();
+
+let toggleClass = new ToggleClass('.area-click', '#toggleIconUser', 'bi-arrow-down-short', 'bi-arrow-up-short');
+toggleClass.init();
+
+let toggleClassNavUser = new ToggleClass('.area-click-nav', '#toggle-class-nav', 'bi-arrow-down-short', 'bi-arrow-up-short');
+toggleClassNavUser.init();
 	
 // Habilita o `Bootstrap Tooltip`
 [].slice

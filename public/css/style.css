@@ -1,8 +1,12 @@
+.bg-body-tertiary {
+  background-color: #F2F2F7 !important;
+}
+
 .text-white {
   color: #FFFFFF !important;
 }
 
-.text-blue-light {
+.text-secondary {
   color: #2F3F67 !important;
 }
 
@@ -10,7 +14,7 @@
   color: #5C6E9A !important;
 }
 
-.text-red {
+.text-danger {
   color: #BB0404 !important;
 }
 
@@ -41,6 +45,7 @@ body {
   font-style: normal;
   color: #5C6E9A !important;
   font-size: 0.9rem !important;
+  letter-spacing: 0.03rem;
 }
 
 body,
@@ -128,6 +133,26 @@ button[type=submit]:hover {
   margin: auto !important;
 }
 
+.dropdown-menu a {
+  font-size: 0.9rem !important;
+}
+.dropdown-menu a:hover {
+  background-color: #F2F2F7;
+}
+
+/* Define a barra de rolagem */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Estilos da barra de rolagem aplicados no Firefox */
+@-moz-document url-prefix() {
+  * {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+}
 @media (min-width: 992px) {
   main {
     margin-left: 16.6667% !important;
@@ -145,11 +170,15 @@ button[type=submit]:hover {
     height: 4rem;
   }
 }
+.bg-body-tertiary {
+  background-color: #F2F2F7 !important;
+}
+
 .text-white {
   color: #FFFFFF !important;
 }
 
-.text-blue-light {
+.text-secondary {
   color: #2F3F67 !important;
 }
 
@@ -157,7 +186,7 @@ button[type=submit]:hover {
   color: #5C6E9A !important;
 }
 
-.text-red {
+.text-danger {
   color: #BB0404 !important;
 }
 
@@ -184,10 +213,7 @@ button[type=submit]:hover {
 #sidebarMenu {
   position: relative;
   overflow: hidden;
-}
-#sidebarMenu figure img {
-  width: 85% !important;
-  height: 2.5rem !important;
+  font-size: 0.9rem !important !important;
 }
 #sidebarMenu .novo-artigo {
   border-color: #BB0404;
@@ -205,9 +231,6 @@ button[type=submit]:hover {
   position: absolute;
   bottom: 0;
   width: 100%;
-}
-#sidebarMenu ul:nth-of-type(2) li:nth-of-type(2) {
-  color: #BB0404;
 }
 
 #navbarMenu .input-group {
@@ -232,10 +255,16 @@ button[type=submit]:hover {
   color: #5C6E9A;
   z-index: 100;
 }
+#navbarMenu .nav-title {
+  font-size: 1.7rem;
+  color: #2F3F67;
+}
 
-#navbarMenuMobile figure img {
-  width: 85% !important;
-  height: 2.5rem !important;
+#sidebarMenu figure img,
+#navbarMenuMobile figure img,
+.offcanvas figure img {
+  width: 100% !important;
+  height: 2.1rem !important;
 }
 
 #sidebarMenu p,
@@ -254,12 +283,19 @@ button[type=submit]:hover {
   #sidebarMenu .novo-artigo {
     font-size: 0.8rem;
   }
+  #sidebarMenu .novo-artigo i {
+    display: none !important;
+  }
 }
+.bg-body-tertiary {
+  background-color: #F2F2F7 !important;
+}
+
 .text-white {
   color: #FFFFFF !important;
 }
 
-.text-blue-light {
+.text-secondary {
   color: #2F3F67 !important;
 }
 
@@ -267,7 +303,7 @@ button[type=submit]:hover {
   color: #5C6E9A !important;
 }
 
-.text-red {
+.text-danger {
   color: #BB0404 !important;
 }
 
@@ -291,11 +327,15 @@ button[type=submit]:hover {
   font-size: 0.8rem !important;
 }
 
+.bg-body-tertiary {
+  background-color: #F2F2F7 !important;
+}
+
 .text-white {
   color: #FFFFFF !important;
 }
 
-.text-blue-light {
+.text-secondary {
   color: #2F3F67 !important;
 }
 
@@ -303,7 +343,7 @@ button[type=submit]:hover {
   color: #5C6E9A !important;
 }
 
-.text-red {
+.text-danger {
   color: #BB0404 !important;
 }
 
