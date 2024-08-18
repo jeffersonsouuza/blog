@@ -1,12 +1,12 @@
 <?php
-include __PUBLIC_FOLDER__ . '/view/inicioHTML.php';
+include __PUBLIC_FOLDER__ . '/view/startHTML.php';
 ?>
 
 <div class="bg-body-tertiary overflow-x-hidden login">
     <div class="row w-100 vh-100 vw-100 d-flex m-0 p-0">
         <section class="col-md-6 col-lg-7 col-xl-8 m-0 p-0">
             <figure class="m-0 p-0 h-100">
-                <img class="img-fluid object-fit-cover h-100 w-100 imagemLogin" src="<?=__SYSTEM_ROOT_URL__?>/public/imagens/login-jericoacoara.jpg" alt="Jericoacoara">
+                <img class="img-fluid object-fit-cover h-100 w-100 loginImage" src="<?=__SYSTEM_ROOT_URL__?>/public/imagens/login-jericoacoara.jpg" alt="Jericoacoara">
             </figure>
         </section>
 
@@ -31,7 +31,7 @@ include __PUBLIC_FOLDER__ . '/view/inicioHTML.php';
                 <div class="form-group mb-4">
                     <label class="ms-1" for="senha">Senha</label>
                     <input type="password" name="senha" id="senha" class="form-control" placeholder="digite a senha">
-                    <div class="pt-2 d-flex justify-content-end esquecer-senha">
+                    <div class="pt-2 d-flex justify-content-end link-forget-password">
                         <a href="" class="text-decoration-none">esqueceu sua senha?</a>
                     </div>
                 </div>
@@ -72,6 +72,6 @@ include __PUBLIC_FOLDER__ . '/view/inicioHTML.php';
 <!--</section>-->
 
 <?php
-include __PUBLIC_FOLDER__ . '/view/finalHTML.php';
+include __PUBLIC_FOLDER__ . '/view/endHTML.php';
 ?>
 

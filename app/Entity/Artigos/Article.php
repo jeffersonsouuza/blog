@@ -5,7 +5,7 @@ namespace app\Entity\Artigos;
 use app\Entity\InterfaceArtigo;
 use mysqli;
 
-class Artigo implements InterfaceArtigo
+class Article implements InterfaceArtigo
 {
     private mysqli $mysql;
 

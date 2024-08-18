@@ -1,13 +1,13 @@
 <?php
 
-namespace app\Entity\Administrator\Action;
+namespace app\Entity\Usuarios\Action;
 
 use app\Apps\InterfaceController;
 use app\Core\DatabaseConnection;
-use app\Entity\Administrator\Usuario;
+use app\Entity\Usuarios\User;
 use app\Helper\FlashMessageTrait;
 
-class UsuarioSalvar implements InterfaceController
+class CreateUserAction implements InterfaceController
 {
     use FlashMessageTrait;
 
@@ -16,7 +16,7 @@ class UsuarioSalvar implements InterfaceController
         $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
         $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
 
-        $usuario = new Usuario(DatabaseConnection::create());
+        $usuario = new User(DatabaseConnection::create());
         $usuarios = $usuario->exibirTodos();
 
         if ($email === "" || $senha === "") {
@@ -48,7 +48,7 @@ class UsuarioSalvar implements InterfaceController
     private function cadastrarUsuario(string $email, string $senha): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && $email && $senha) {
-            $usuario = new Usuario(DatabaseConnection::create());
+            $usuario = new User(DatabaseConnection::create());
             $usuario->adicionar($email, md5($senha));
             $this->defineMensagem('success', 'Usuário Cadastrado!');
             header('Location: ' . __SYSTEM_ADMIN_URL__ . '/listar-artigos');

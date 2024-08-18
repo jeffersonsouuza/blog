@@ -9,7 +9,7 @@
     <div class="">
         <div class="d-flex justify-content-center align-items-center mb-5">
             <a href="<?=__SYSTEM_ADMIN_URL__?>/novo-artigo" type="button"
-               class="btn btn-outline-primary rounded-pill shadow-sm text-uppercase w-100 novo-artigo">
+               class="btn btn-outline-primary rounded-pill shadow-sm text-uppercase w-100 new-article">
                 <i class="bi-plus"></i>
                 Novo Artigo
             </a>
@@ -35,7 +35,7 @@
             <p class="ms-2 ms-xl-3 text-uppercase text-body-secondary">configurações</p>
             <ul class="navbar-nav flex-column list-group">
                 <li class="nav-item list-group-item border border-0 p-0 ms-lg-2 ms-xl-3">
-                    <a class="nav-link area-click" aria-current="page" href="#collapseExample"
+                    <a class="nav-link click-area" aria-current="page" href="#collapseExample"
                        data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample">
                         <i class="bi-person me-2"></i>
                         Perfil

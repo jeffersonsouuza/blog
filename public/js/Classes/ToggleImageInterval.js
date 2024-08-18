@@ -1,4 +1,4 @@
-export default class AlternaImagens {
+export default class ToggleImageInterval {
 	constructor(classImage, arrayImagens, timeInterval) {
 		this.classImage = document.querySelector('.' + classImage);
 		this.arrayImagens = arrayImagens;

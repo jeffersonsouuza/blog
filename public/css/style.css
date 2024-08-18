@@ -1,29 +1,33 @@
-.bg-body-tertiary {
+.light-theme .bg-body-tertiary {
   background-color: #F2F2F7 !important;
 }
-
-.text-white {
+.light-theme .bg-white {
+  background-color: #FFFFFF !important;
+}
+.light-theme .text-white {
   color: #FFFFFF !important;
 }
-
-.text-secondary {
+.light-theme .text-secondary {
   color: #2F3F67 !important;
 }
-
-.text-blue-extra-light {
+.light-theme .text-secondary-extra-light {
   color: #5C6E9A !important;
 }
-
-.text-danger {
+.light-theme .text-danger {
   color: #BB0404 !important;
 }
-
-.text-red-light {
+.light-theme .text-danger-light {
+  color: #F04855 !important;
+}
+.light-theme .text-danger-extra-light {
   color: #EB2E64 !important;
 }
 
-.text-red-light {
-  color: #F04855 !important;
+.dark-theme .bg-body-tertiary {
+  background-color: #000000 !important;
+}
+.dark-theme .bg-white {
+  background-color: #000000 !important;
 }
 
 .fs-1 {
@@ -68,7 +72,7 @@ datalist {
   margin: 0 !important;
 }
 
-.login .esquecer-senha a,
+.login .link-forget-password a,
 .login label,
 .login footer, .login input {
   font-size: 0.8rem;
@@ -99,7 +103,7 @@ table tr {
 }
 
 label {
-  color: #2F3F67;
+  color: #5C6E9A;
   font-weight: 600;
   font-size: 0.8rem !important;
 }
@@ -109,7 +113,7 @@ textarea,
 select {
   background-color: rgba(92, 110, 154, 0.09) !important;
   border: none !important;
-  color: #2F3F67 !important;
+  color: #5C6E9A !important;
   font-weight: 300 !important;
   border-radius: 2px !important;
   box-shadow: 0 0 6px -15px rgba(0, 0, 0, 0.1);
@@ -121,8 +125,8 @@ select:focus {
 }
 
 button[type=submit] {
-  background-color: #2F3F67;
-  border-color: #2F3F67;
+  background-color: #5C6E9A;
+  border-color: #5C6E9A;
 }
 button[type=submit]:hover {
   background-color: #5C6E9A;
@@ -141,27 +145,32 @@ button[type=submit]:hover {
 }
 
 /* Define a barra de rolagem */
+/* Para navegadores WebKit */
 ::-webkit-scrollbar {
-  width: 0;
-  height: 0;
+  width: 2px !important;
 }
 
-/* Estilos da barra de rolagem aplicados no Firefox */
-@-moz-document url-prefix() {
-  * {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
 }
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Para Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
+}
+
 @media (min-width: 992px) {
   main {
     margin-left: 16.6667% !important;
   }
 }
 @media (min-width: 2000px) {
-  .corpo-documento {
-    padding: 0 20rem 0 20rem !important;
-  }
   .login section:nth-child(2) {
     padding: 0 5rem 0 5rem !important;
   }
@@ -170,32 +179,36 @@ button[type=submit]:hover {
     height: 4rem;
   }
 }
-.bg-body-tertiary {
+.light-theme .bg-body-tertiary {
   background-color: #F2F2F7 !important;
 }
-
-.text-white {
+.light-theme .bg-white {
+  background-color: #FFFFFF !important;
+}
+.light-theme .text-white {
   color: #FFFFFF !important;
 }
-
-.text-secondary {
+.light-theme .text-secondary {
   color: #2F3F67 !important;
 }
-
-.text-blue-extra-light {
+.light-theme .text-secondary-extra-light {
   color: #5C6E9A !important;
 }
-
-.text-danger {
+.light-theme .text-danger {
   color: #BB0404 !important;
 }
-
-.text-red-light {
+.light-theme .text-danger-light {
+  color: #F04855 !important;
+}
+.light-theme .text-danger-extra-light {
   color: #EB2E64 !important;
 }
 
-.text-red-light {
-  color: #F04855 !important;
+.dark-theme .bg-body-tertiary {
+  background-color: #000000 !important;
+}
+.dark-theme .bg-white {
+  background-color: #000000 !important;
 }
 
 .fs-1 {
@@ -215,13 +228,14 @@ button[type=submit]:hover {
   overflow: hidden;
   font-size: 0.9rem !important !important;
 }
-#sidebarMenu .novo-artigo {
+#sidebarMenu .new-article {
   border-color: #BB0404;
   color: #BB0404;
   font-weight: 600;
   transition: 0.7s;
+  font-size: 0.9rem;
 }
-#sidebarMenu .novo-artigo:hover {
+#sidebarMenu .new-article:hover {
   background-color: #EB2E64 !important;
   border-color: #EB2E64 !important;
   color: #FFFFFF;
@@ -257,7 +271,7 @@ button[type=submit]:hover {
 }
 #navbarMenu .nav-title {
   font-size: 1.7rem;
-  color: #2F3F67;
+  color: #5C6E9A;
 }
 
 #sidebarMenu figure img,
@@ -268,7 +282,7 @@ button[type=submit]:hover {
 }
 
 #sidebarMenu p,
-#navbarMenu .perfil-usuario p:nth-child(2),
+#navbarMenu .user-profile p:nth-child(2),
 #navbarMenu p,
 #navbarMobileContent p {
   font-size: 0.7rem;
@@ -280,79 +294,43 @@ button[type=submit]:hover {
 }
 
 @media (max-width: 1200px) {
-  #sidebarMenu .novo-artigo {
+  #sidebarMenu .new-article {
     font-size: 0.8rem;
   }
-  #sidebarMenu .novo-artigo i {
+  #sidebarMenu .new-article i {
     display: none !important;
   }
 }
-.bg-body-tertiary {
+.light-theme .bg-body-tertiary {
   background-color: #F2F2F7 !important;
 }
-
-.text-white {
+.light-theme .bg-white {
+  background-color: #FFFFFF !important;
+}
+.light-theme .text-white {
   color: #FFFFFF !important;
 }
-
-.text-secondary {
+.light-theme .text-secondary {
   color: #2F3F67 !important;
 }
-
-.text-blue-extra-light {
+.light-theme .text-secondary-extra-light {
   color: #5C6E9A !important;
 }
-
-.text-danger {
+.light-theme .text-danger {
   color: #BB0404 !important;
 }
-
-.text-red-light {
+.light-theme .text-danger-light {
+  color: #F04855 !important;
+}
+.light-theme .text-danger-extra-light {
   color: #EB2E64 !important;
 }
 
-.text-red-light {
-  color: #F04855 !important;
+.dark-theme .bg-body-tertiary {
+  background-color: #000000 !important;
 }
-
-.fs-1 {
-  font-size: 1rem !important;
-}
-
-.fs-2 {
-  font-size: 0.9rem !important;
-}
-
-.fs-3 {
-  font-size: 0.8rem !important;
-}
-
-.bg-body-tertiary {
-  background-color: #F2F2F7 !important;
-}
-
-.text-white {
-  color: #FFFFFF !important;
-}
-
-.text-secondary {
-  color: #2F3F67 !important;
-}
-
-.text-blue-extra-light {
-  color: #5C6E9A !important;
-}
-
-.text-danger {
-  color: #BB0404 !important;
-}
-
-.text-red-light {
-  color: #EB2E64 !important;
-}
-
-.text-red-light {
-  color: #F04855 !important;
+.dark-theme .bg-white {
+  background-color: #000000 !important;
 }
 
 .fs-1 {

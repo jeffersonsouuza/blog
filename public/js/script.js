@@ -1,21 +1,21 @@
-import AlternaImagens from "./Classes/AlternaImagens.js";
-import PeriodoDoDia from "./Classes/PeriodoDoDia.js";
-import DataAtual from "./Classes/DataAtual.js";
+import ToggleImageInterval from "./Classes/ToggleImageInterval.js";
+import PeriodOfTheDay from "./Classes/PeriodOfTheDay.js";
+import CurrenteDate from "./Classes/CurrenteDate.js";
 import ToggleClass from "./Classes/ToggleClass.js";
 
-let alternaImagemLogin = new AlternaImagens('imagemLogin', ['login-jericoacoara.jpg', 'login-rio-de-janeiro.jpg'], 3000);
-alternaImagemLogin.init();
+let toggleImageLogin = new ToggleImageInterval('loginImage', ['login-jericoacoara.jpg', 'login-rio-de-janeiro.jpg'], 3000);
+toggleImageLogin.init();
 
-let periodoDoDia = new PeriodoDoDia('periodo-do-dia');
-periodoDoDia.init();
+let periodOfTheDay = new PeriodOfTheDay('period-of-the-day');
+periodOfTheDay.init();
 
-let dataAtual = new DataAtual('data-atual');
-dataAtual.init();
+let currenteDate = new CurrenteDate('current-date');
+currenteDate.init();
 
-let toggleClass = new ToggleClass('.area-click', '#toggleIconUser', 'bi-arrow-down-short', 'bi-arrow-up-short');
+let toggleClass = new ToggleClass('.click-area', '#toggleIconUser', 'bi-arrow-down-short', 'bi-arrow-up-short');
 toggleClass.init();
 
-let toggleClassNavUser = new ToggleClass('.area-click-nav', '#toggle-class-nav', 'bi-arrow-down-short', 'bi-arrow-up-short');
+let toggleClassNavUser = new ToggleClass('.click-area-nav', '#toggle-class-nav', 'bi-arrow-down-short', 'bi-arrow-up-short');
 toggleClassNavUser.init();
 	
 // Habilita o `Bootstrap Tooltip`

@@ -22,4 +22,4 @@
 
 <style><?php require("public/css/style.css");?></style>
 
-<body class="vh-100">
+<body class="vh-100 light-theme">

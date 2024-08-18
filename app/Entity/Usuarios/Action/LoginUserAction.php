@@ -1,13 +1,13 @@
 <?php
 
-namespace app\Entity\Administrator\Action;
+namespace app\Entity\Usuarios\Action;
 
 use app\Apps\InterfaceController;
 use app\Core\DatabaseConnection;
-use app\Entity\Administrator\Usuario;
+use app\Entity\Usuarios\User;
 use app\Helper\FlashMessageTrait;
 
-class ArtigoRealizarLogin implements InterfaceController
+class LoginUserAction implements InterfaceController
 {
 
     use FlashMessageTrait;
@@ -36,7 +36,7 @@ class ArtigoRealizarLogin implements InterfaceController
 
     public function login($email, $senha): bool
     {
-        $usuario = new Usuario(DatabaseConnection::create());
+        $usuario = new User(DatabaseConnection::create());
         $usuariosLista = $usuario->exibirTodos();
 
         foreach ($usuariosLista as $user) {

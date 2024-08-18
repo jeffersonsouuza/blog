@@ -1,10 +1,10 @@
 <?php
 
-namespace app\Entity\Administrator;
+namespace app\Entity\Usuarios;
 
 use mysqli;
 
-class Usuario
+class User
 {
     private string $id;
     private string $email;

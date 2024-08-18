@@ -1,4 +1,4 @@
-export default class DataAtual {
+export default class CurrenteDate {
 	constructor(htmlClass) {
 		this.htmlClass = document.querySelector('.'+htmlClass);
 		this.data = new Date();

@@ -2,7 +2,7 @@
 
 use app\Entity\Artigos\Status as StatusArtigo;
 
-include __ADMIN_FOLDER__ . '/View/layoutInicio.php';
+include __ADMIN_FOLDER__ . '/View/startLayout.php';
 ?>
 
 <style>
@@ -86,7 +86,7 @@ include __ADMIN_FOLDER__ . '/View/layoutInicio.php';
             <div class="modal-body">
                 <h3 class="mb-3 h6">Você realmente deseja excluir este artigo?</h3>
                 <p class="text-blue-light fw-bold mb-2">Titulo do Artigo:</p>
-                <p class="text-blue-extra-light"><?=$art['titulo']?></p>
+                <p class="text-secondary-extra-light"><?=$art['titulo']?></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -102,5 +102,5 @@ include __ADMIN_FOLDER__ . '/View/layoutInicio.php';
 </div>
 
 <?php
-include __ADMIN_FOLDER__ . '/View/layoutFinal.php';
+include __ADMIN_FOLDER__ . '/View/endLayout.php';
 ?>

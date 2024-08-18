@@ -5,14 +5,15 @@
   overflow: hidden;
   font-size: $font-2 !important;
 
-  .novo-artigo {
-    border-color: $highlight-color;
-    color: $highlight-color;
+  .new-article {
+    border-color: $danger;
+    color: $danger;
     font-weight: 600;
     transition: 0.7s;
+    font-size: 0.9rem;
     &:hover {
-      background-color: $highlight-color-light !important;
-      border-color: $highlight-color-light !important;
+      background-color: $danger-light !important;
+      border-color: $danger-light !important;
       color: $white;
       transition: 0.7s;
     }
@@ -33,12 +34,12 @@
       padding-left: 40px;
 
       &::placeholder {
-        color: $main-text;
+        color: $secondary-extra-light;
         font-weight: 300;
       }
 
       &:focus {
-        border-color: $highlight-color-extra-light;
+        border-color: $danger-extra-light;
       }
     }
 
@@ -48,13 +49,13 @@
       top: 50%;
       transform: translateY(-50%);
       pointer-events: none;
-      color: $main-text;
+      color: $secondary-extra-light;
       z-index: 100;
     }
   }
   .nav-title {
     font-size: 1.7rem;
-    color: $main-text-bold;
+    color: $secondary-extra-light;
   }
 }
 
@@ -68,7 +69,7 @@
 }
 
 #sidebarMenu p,
-#navbarMenu .perfil-usuario p:nth-child(2),
+#navbarMenu .user-profile p:nth-child(2),
 #navbarMenu p,
 #navbarMobileContent p {
   font-size: 0.7rem;
@@ -76,12 +77,12 @@
 
 #navbarMenu ul li i,
 #navbarMobileContent i:not(#toggleIconUser) {
-  color: $highlight-color !important;
+  color: $danger !important;
 }
 
 @media (max-width: 1200px){
   #sidebarMenu {
-    .novo-artigo {
+    .new-article {
       font-size: 0.8rem;
       i {
         display: none !important;

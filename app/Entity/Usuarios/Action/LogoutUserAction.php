@@ -1,10 +1,10 @@
 <?php
 
-namespace app\Entity\Administrator\Action;
+namespace app\Entity\Usuarios\Action;
 
 use app\Apps\InterfaceController;
 
-class ArtigoDeslogar implements InterfaceController
+class LogoutUserAction implements InterfaceController
 {
 
     public function processaRequisicao(): void

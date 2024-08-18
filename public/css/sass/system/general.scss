@@ -5,7 +5,7 @@ body {
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
-  color: $main-text !important;
+  color: $secondary-extra-light !important;
   font-size: $font-2;
   letter-spacing: 0.03rem;
 }
@@ -31,7 +31,7 @@ datalist {
 }
 
 .login {
-  .esquecer-senha a,
+  .link-forget-password a,
   label,
   footer, input {
     font-size: 0.8rem;
@@ -44,11 +44,11 @@ datalist {
 
 .main-title {
   font-size: 1.7rem;
-  color: $highlight-color;
+  color: $danger;
 }
 
 .tooltip-inner {
-  background-color: $main-text;
+  background-color: $secondary-extra-light;
   color: #fff;
   font-size: $font-2;
   margin: 0.6rem !important;
@@ -63,7 +63,7 @@ table tr {
 }
 
 label {
-  color: $main-text-bold;
+  color: $secondary-extra-light;
   font-weight: 600;
   font-size: $font-3;
 }
@@ -73,7 +73,7 @@ textarea,
 select {
   background-color: rgba(92, 110, 154, 0.09) !important;
   border: none !important;
-  color: $main-text-bold !important;
+  color: $secondary-extra-light !important;
   font-weight: 300 !important;
   border-radius: 2px !important;
   box-shadow: 0 0 6px -15px rgba(0,0,0,0.1);
@@ -83,11 +83,11 @@ select {
 }
 
 button[type=submit] {
-  background-color: $main-text-bold;
-  border-color: $main-text-bold;
+  background-color: $secondary-extra-light;
+  border-color: $secondary-extra-light;
   &:hover {
-    background-color: $main-text;
-    border-color: $main-text;
+    background-color: $secondary-extra-light;
+    border-color: $secondary-extra-light;
   }
 }
 
@@ -98,22 +98,29 @@ button[type=submit] {
 .dropdown-menu a {
   font-size: $font-2;
   &:hover {
-    background-color: $text-body-tertiary;
+    background-color: $body-tertiary;
   }
 }
 
 /* Define a barra de rolagem */
+/* Para navegadores WebKit */
 ::-webkit-scrollbar {
-  width: 0;
-  height: 0;
+  width: 2px !important;
 }
 
-/* Estilos da barra de rolagem aplicados no Firefox */
-@-moz-document url-prefix() {
-  * {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Para Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
 }
 
 @media (min-width: 992px){
@@ -123,9 +130,6 @@ button[type=submit] {
 }
 
 @media (min-width: 2000px){
-  .corpo-documento {
-    padding: 0 20rem 0 20rem !important;
-  }
   .login {
     section:nth-child(2) {
       padding: 0 5rem 0 5rem !important;

@@ -1,40 +1,59 @@
 // Cores do Projeto
 $white: #FFFFFF;
-$main-text: #5C6E9A;
-$main-text-bold: #2F3F67;
-$text-body-tertiary: #F2F2F7;
 
-$highlight-color: #BB0404;
-$highlight-color-light: #EB2E64;
-$highlight-color-extra-light: #F04855;
+$secondary: #2F3F67;
+$secondary-extra-light: #5C6E9A;
 
-.bg-body-tertiary {
-  background-color: #F2F2F7 !important
+$body-tertiary: #F2F2F7;
+
+$danger: #BB0404;
+$danger-light: #EB2E64;
+$danger-extra-light: #F04855;
+
+.light-theme {
+  .bg-body-tertiary {
+    background-color: #F2F2F7 !important
+  }
+
+  .bg-white {
+    background-color: #FFFFFF !important;
+  }
+
+  .text-white {
+    color: #FFFFFF !important;
+  }
+
+  .text-secondary {
+    color: #2F3F67 !important;
+  }
+
+  .text-secondary-extra-light {
+    color: #5C6E9A !important;
+  }
+
+  .text-danger {
+    color: #BB0404 !important;
+  }
+
+  .text-danger-light {
+    color: #F04855 !important;
+  }
+
+  .text-danger-extra-light {
+    color: #EB2E64 !important;
+  }
 }
 
-.text-white {
-  color: #FFFFFF !important;
+.dark-theme {
+  .bg-body-tertiary {
+    background-color: #000000 !important
+  }
+
+  .bg-white {
+    background-color: #000000 !important;
+  }
 }
 
-.text-secondary {
-  color: #2F3F67 !important;
-}
-
-.text-blue-extra-light {
-  color: #5C6E9A !important;
-}
-
-.text-danger {
-  color: #BB0404 !important;
-}
-
-.text-red-light {
-  color: #EB2E64 !important;
-}
-
-.text-red-light {
-  color: #F04855 !important;
-}
 
 // Tamanho da Fonte
 $font-1: 1rem !important;

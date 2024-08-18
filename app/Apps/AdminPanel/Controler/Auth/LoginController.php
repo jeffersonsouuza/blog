@@ -4,7 +4,7 @@ namespace app\Apps\AdminPanel\Controler\Auth;
 
 use app\Apps\InterfaceController;
 
-class LoginArtigo  implements InterfaceController
+class LoginController  implements InterfaceController
 {
     public function processaRequisicao(): void
     {

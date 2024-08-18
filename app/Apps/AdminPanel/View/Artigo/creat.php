@@ -1,7 +1,7 @@
 <?php
 use app\Entity\Artigos\Status as StatusArtigo;
 
-include __ADMIN_FOLDER__ . '/View/layoutInicio.php';
+include __ADMIN_FOLDER__ . '/View/startLayout.php';
 ?>
 
 <section class="overflow-auto">
@@ -55,5 +55,5 @@ include __ADMIN_FOLDER__ . '/View/layoutInicio.php';
 </section>
 
 <?php
-include __ADMIN_FOLDER__ . '/View/layoutFinal.php';
+include __ADMIN_FOLDER__ . '/View/endLayout.php';
 ?>

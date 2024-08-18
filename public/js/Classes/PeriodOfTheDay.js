@@ -1,4 +1,4 @@
-export default class PeriodoDoDia {
+export default class PeriodOfTheDay {
 	constructor(htmlClass) {
 		this.htmlClass = document.querySelector('.'+htmlClass);
 		this.data = [

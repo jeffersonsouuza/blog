@@ -1,5 +1,5 @@
 <?php
-include __PUBLIC_FOLDER__ . '/view/inicioHTML.php';
+include __PUBLIC_FOLDER__ . '/view/startHTML.php';
 ?>
 
 <div class="bg-body-tertiary overflow-x-hidden">

@@ -1,11 +1,11 @@
 <?php
 
-namespace app\Apps\AdminPanel\Controler;
+namespace app\Apps\AdminPanel\Controler\Artigo;
 
 use app\Apps\InterfaceController;
 use app\Helper\FlashMessageTrait;
 
-class ListarArtigos implements InterfaceController
+class IndexController implements InterfaceController
 {
     use FlashMessageTrait;
 
@@ -14,7 +14,7 @@ class ListarArtigos implements InterfaceController
 
         $title = 'Artigos';
 
-        require __ADMIN_FOLDER__ . "/View/Artigo/listar-artigos.php";
+        require __ADMIN_FOLDER__ . "/View/Artigo/index.php";
 
     }
 }

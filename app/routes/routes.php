@@ -1,39 +1,42 @@
 <?php
 
+use app\Apps\AdminPanel\Controler\Artigo\CreatController;
+use app\Apps\AdminPanel\Controler\Artigo\EditController;
+use app\Apps\AdminPanel\Controler\Artigo\IndexController;
+use app\Apps\AdminPanel\Controler\Artigo\ShowController;
+use app\Apps\AdminPanel\Controler\Auth\{LoginController};
 use app\Apps\AdminPanel\Controler\Dashboard;
-use app\Apps\AdminPanel\Controler\Auth\{LoginArtigo};
-use app\Apps\AdminPanel\Controler\EditarArtigo;
-use app\Apps\AdminPanel\Controler\ListarArtigos;
-use app\Apps\AdminPanel\Controler\NovoArtigo;
-use app\Apps\AdminPanel\Controler\MostrarArtigo;
-use app\Apps\HomePanel\Controller\ExibirArtigo;
-use app\Apps\HomePanel\Controller\MostrarArtigos;
-use app\Entity\Administrator\Action\ArtigoDeslogar;
-use app\Entity\Administrator\Action\ArtigoRealizarLogin;
-use app\Entity\Administrator\Action\UsuarioSalvar;
-use app\Entity\Artigos\Action\{ArtigoEditar};
-use app\Entity\Artigos\Action\ArtigoAdicionar;
-use app\Entity\Artigos\Action\ArtigoExcluir;
+
+use app\Apps\HomePanel\Controller\Artigo\ShowController as ShowControllerWebsite;
+use app\Apps\HomePanel\Controller\Artigo\IndexController as IndexControllerWebsite;
+
+use app\Entity\Usuarios\Action\CreateUserAction;
+use app\Entity\Usuarios\Action\LogoutUserAction;
+use app\Entity\Usuarios\Action\LoginUserAction;
+
+use app\Entity\Artigos\Action\{EditArticleAction};
+use app\Entity\Artigos\Action\CreateArticleAction;
+use app\Entity\Artigos\Action\DeleteArticleAction;
 
 $rotas = [
-    "/admin/login" => LoginArtigo::class,
-    "/admin/realizar-login" => ArtigoRealizarLogin::class,
-    "/admin/salvar-usuario" => UsuarioSalvar::class,
-    "/admin/cadastrar-usuario" => UsuarioSalvar::class,
-    "/admin/alterar-senha" => UsuarioSalvar::class,
-    "/admin/logout" => ArtigoDeslogar::class,
+    "/admin/login" => LoginController::class,
+    "/admin/realizar-login" => LoginUserAction::class,
+    "/admin/salvar-usuario" => CreateUserAction::class,
+//    "/admin/cadastrar-usuario" => Create::class,
+//    "/admin/alterar-senha" => Create::class,
+    "/admin/logout" => LogoutUserAction::class,
 
     '/admin/dashboard' => Dashboard::class,
-    '/admin/listar-artigos' => ListarArtigos::class,
-    '/admin/mostrar-artigo' => MostrarArtigo::class,
-    '/admin/novo-artigo' => NovoArtigo::class,
-    '/admin/salvar-artigo' => ArtigoAdicionar::class,
-    '/admin/editar-artigo' => EditarArtigo::class,
-    '/admin/salvar-edicao' => ArtigoEditar::class,
-    '/admin/salvar-excluir' => ArtigoExcluir::class,
+    '/admin/listar-artigos' => IndexController::class,
+    '/admin/mostrar-artigo' => ShowController::class,
+    '/admin/novo-artigo' => CreatController::class,
+    '/admin/salvar-artigo' => CreateArticleAction::class,
+    '/admin/editar-artigo' => EditController::class,
+    '/admin/salvar-edicao' => EditArticleAction::class,
+    '/admin/salvar-excluir' => DeleteArticleAction::class,
 
-    '/listar-artigos' => MostrarArtigos::class,
-    '/artigo' => ExibirArtigo::class,
+    '/listar-artigos' => IndexControllerWebsite::class,
+    '/artigo' => ShowControllerWebsite::class,
 ];
 
 return $rotas;

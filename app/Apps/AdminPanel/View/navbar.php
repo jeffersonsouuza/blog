@@ -1,25 +1,25 @@
 <?php
 
 use app\Core\DatabaseConnection;
-use app\Entity\Administrator\Usuario;
+use app\Entity\Usuarios\User;
 
-$usuarios = new Usuario( DatabaseConnection::create());
+$usuarios = new User( DatabaseConnection::create());
 $usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
 ?>
 
 <nav id="navbarMenu" class="navbar navbar-expand-lg bg-white d-none d-lg-block">
     <div class="container-fluid py-2">
         <div class="col-md-3 col-lg-5">
-            <h2 class="fw-bold m-0 nav-title fs-6 mb-1"><span class="periodo-do-dia"></span>, <?=strtok($usuario[0]['nome'], ' ')?></h2>
-            <p class="data-atual"></p>
+            <h2 class="fw-bold m-0 nav-title fs-6 mb-1"><span class="period-of-the-day"></span>, <?=strtok($usuario[0]['nome'], ' ')?></h2>
+            <p class="current-date"></p>
         </div>
-        <div class="col-md-6 col-lg-7 d-flex align-items-center justify-content-end perfil-usuario">
+        <div class="col-md-6 col-lg-7 d-flex align-items-center justify-content-end user-profile">
             <div class="text-end">
                 <p class="py-0 my-0 text-secondary fw-bold"><?=$usuario[0]['nome']?></p>
                 <p class="navbar-text py-0 my-0">Administrador</p>
             </div>
             <div class="dropdown">
-                <div class="area-click-nav" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="click-area-nav" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="bi-person-circle fs-4 ms-4"></i>
                     <i class="bi-arrow-down-short fs-6" id="toggle-class-nav"></i>
                 </div>
