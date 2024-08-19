@@ -7,7 +7,7 @@ $usuarios = new User( DatabaseConnection::create());
 $usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
 ?>
 
-<nav id="navbarMenu" class="navbar navbar-expand-lg bg-white d-none d-lg-block px-md-4 shadow-sm mb-1">
+<nav id="navbarMenu" class="navbar navbar-expand-lg bg-white d-none d-lg-block px-md-4 shadow-sm">
     <div class="container-fluid px-0 py-2">
         <div class="col-md-3 col-lg-5">
             <h2 class="fw-bold m-0 nav-title fs-6 mb-1"><span class="period-of-the-day"></span>, <?=strtok($usuario[0]['nome'], ' ')?></h2>
@@ -54,7 +54,7 @@ $usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
     </div>
 </nav>
 
-<nav id="navbarMenuMobile" class="navbar navbar-expand-lg bg-white d-lg-none mb-3">
+<nav id="navbarMenuMobile" class="navbar navbar-expand-lg bg-white d-lg-none shadow-sm">
     <div class="container-fluid">
         <div class="d-flex justify-content-center align-items-center">
             <a class="navbar-brand" href="<?=__SYSTEM_ADMIN_URL__?>/dashboard">

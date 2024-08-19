@@ -16,7 +16,7 @@ if (!$numeroPagina) {
     $numeroPagina = 1;
 }
 
-$limiteArtigos = 8;
+$limiteArtigos = 10;
 
 $inicio = ($numeroPagina * $limiteArtigos) - $limiteArtigos;
 
@@ -32,24 +32,24 @@ if ($quantidadeArtigos === 0) {
 
 ?>
 
-<section class="overflow-auto bg-white p-md-4">
+<section class="overflow-auto bg-white p-4">
     <div class="container-fluid px-0">
-        <section class="w-100" style="min-height: 8vh">
-            <div class="row ">
+        <section class="w-100 mb-4 mb-md-0" style="min-height: 8vh">
+            <div class="row">
                 <div class="col-md-6 px-0">
                     <h1 class="fw-bold main-title"><?=$title?></h1>
                 </div>
                 <div class="col-md-6 pt-3 pt-md-0 px-0 d-md-flex justify-content-md-end align-items-md-center">
-                <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Voltar">
-                    <a type="button" href="javascript:history.back()" class="btn btn-outline-secondary btn-sm">
-                        <i class="bi-arrow-return-left"></i>
-                    </a>
-                </span>
-                    <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Novo Artigo">
-                    <a type="button" href="<?=__SYSTEM_ADMIN_URL__?>/novo-artigo" class="btn btn-outline-secondary btn-sm ms-2">
-                        <i class="bi-plus-lg"></i>
-                    </a>
-                </span>
+                    <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Voltar">
+                        <a type="button" href="javascript:history.back()" class="btn btn-outline-secondary">
+                            <i class="bi-arrow-return-left"></i>
+                        </a>
+                    </span>
+                        <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Novo Artigo">
+                        <a type="button" href="<?=__SYSTEM_ADMIN_URL__?>/novo-artigo" class="btn btn-outline-secondary ms-2">
+                            <i class="bi-plus-lg"></i>
+                        </a>
+                    </span>
                 </div>
             </div>
         </section>
@@ -69,8 +69,8 @@ if ($quantidadeArtigos === 0) {
             </nav>
         </section>
 
-        <section class="bg-white  mb-3" style="min-height: 70vh">
-            <table class="table table-responsive-md table-hover table-sm caption-top mb-5">
+        <div class="bg-white table-responsive mb-3" style="min-height: 70vh">
+            <table class="table table-hover table-sm caption-top mb-5">
                 <caption>Lista de Artigos</caption>
                 <thead>
                     <tr class="">
@@ -96,7 +96,7 @@ if ($quantidadeArtigos === 0) {
                                         </a>
                                     </td>
                                     <td class="py-2"><a class="text-decoration-none" href="<?=__SYSTEM_ADMIN_URL__?>/mostrar-artigo?id=<?php echo $art['id']; ?>"><?php echo $art['titulo'];?></a></td>
-                                    <td class="py-2">19 May, 2024</td>
+                                    <td class="py-2"><?php echo date('d-m-Y', strtotime($art['created_at']))?></td>
                                     <td class="py-2">
                                         <?php if ($art['status'] == 1): ?>
                                             <a class="btn btn-success pe-none btn-sm" style="width: 4.5rem;">Ativo</a>
@@ -161,7 +161,7 @@ if ($quantidadeArtigos === 0) {
                     <li class="page-item <?= $numeroPagina == $quantidadePaginas ? 'disabled' : 'block'?>"><a class="page-link" href="?pagina=<?=$quantidadePaginas?>">Última</a></li>
                 </ul>
             </nav>
-        </section>
+        </div>
     </div>
 </section>
 

@@ -7,6 +7,9 @@
 .light-theme .bg-secondary-extra-light {
   background-color: #d9dbe0 !important;
 }
+.light-theme .bg-transparent {
+  background-color: transparent !important;
+}
 .light-theme .text-white {
   color: #FFFFFF !important;
 }
@@ -90,7 +93,7 @@ datalist {
 }
 
 .main-title {
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   color: #BB0404;
 }
 
@@ -194,6 +197,9 @@ button[type=submit]:hover {
 }
 .light-theme .bg-secondary-extra-light {
   background-color: #d9dbe0 !important;
+}
+.light-theme .bg-transparent {
+  background-color: transparent !important;
 }
 .light-theme .text-white {
   color: #FFFFFF !important;
@@ -323,6 +329,9 @@ button[type=submit]:hover {
 }
 .light-theme .bg-secondary-extra-light {
   background-color: #d9dbe0 !important;
+}
+.light-theme .bg-transparent {
+  background-color: transparent !important;
 }
 .light-theme .text-white {
   color: #FFFFFF !important;
