@@ -4,6 +4,9 @@
 .light-theme .bg-white {
   background-color: #FFFFFF !important;
 }
+.light-theme .bg-secondary-extra-light {
+  background-color: #d9dbe0 !important;
+}
 .light-theme .text-white {
   color: #FFFFFF !important;
 }
@@ -40,6 +43,10 @@
 
 .fs-3 {
   font-size: 0.8rem !important;
+}
+
+.fs-4 {
+  font-size: 0.7rem !important;
 }
 
 body {
@@ -185,6 +192,9 @@ button[type=submit]:hover {
 .light-theme .bg-white {
   background-color: #FFFFFF !important;
 }
+.light-theme .bg-secondary-extra-light {
+  background-color: #d9dbe0 !important;
+}
 .light-theme .text-white {
   color: #FFFFFF !important;
 }
@@ -221,6 +231,10 @@ button[type=submit]:hover {
 
 .fs-3 {
   font-size: 0.8rem !important;
+}
+
+.fs-4 {
+  font-size: 0.7rem !important;
 }
 
 #sidebarMenu {
@@ -307,6 +321,9 @@ button[type=submit]:hover {
 .light-theme .bg-white {
   background-color: #FFFFFF !important;
 }
+.light-theme .bg-secondary-extra-light {
+  background-color: #d9dbe0 !important;
+}
 .light-theme .text-white {
   color: #FFFFFF !important;
 }
@@ -343,6 +360,10 @@ button[type=submit]:hover {
 
 .fs-3 {
   font-size: 0.8rem !important;
+}
+
+.fs-4 {
+  font-size: 0.7rem !important;
 }
 
 /*# sourceMappingURL=style.css.map */

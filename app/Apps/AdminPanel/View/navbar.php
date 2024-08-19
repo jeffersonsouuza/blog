@@ -7,8 +7,8 @@ $usuarios = new User( DatabaseConnection::create());
 $usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
 ?>
 
-<nav id="navbarMenu" class="navbar navbar-expand-lg bg-white d-none d-lg-block">
-    <div class="container-fluid py-2">
+<nav id="navbarMenu" class="navbar navbar-expand-lg bg-white d-none d-lg-block px-md-4 shadow-sm mb-1">
+    <div class="container-fluid px-0 py-2">
         <div class="col-md-3 col-lg-5">
             <h2 class="fw-bold m-0 nav-title fs-6 mb-1"><span class="period-of-the-day"></span>, <?=strtok($usuario[0]['nome'], ' ')?></h2>
             <p class="current-date"></p>
@@ -20,7 +20,7 @@ $usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
             </div>
             <div class="dropdown">
                 <div class="click-area-nav" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi-person-circle fs-4 ms-4"></i>
+                    <i class="bi-person-circle ms-4" style="font-size: 1.5rem"></i>
                     <i class="bi-arrow-down-short fs-6" id="toggle-class-nav"></i>
                 </div>
                 <ul class="dropdown-menu dropdown-menu-end shadow-sm mt-4 py-4 px-2">

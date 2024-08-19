@@ -32,30 +32,45 @@ if ($quantidadeArtigos === 0) {
 
 ?>
 
-<section class="overflow-auto">
-    <div class="container-fluid pb-3 pt-2">
-        <div class="row mb-3 w-100 p-0">
-            <div class="col-md-6 px-0">
-                <h1 class="fw-bold main-title"><?=$title?></h1>
-            </div>
-            <div class="col-md-6 pt-3 pt-md-0 px-0 d-md-flex justify-content-md-end align-items-md-center">
+<section class="overflow-auto bg-white p-md-4">
+    <div class="container-fluid px-0">
+        <section class="w-100" style="min-height: 8vh">
+            <div class="row ">
+                <div class="col-md-6 px-0">
+                    <h1 class="fw-bold main-title"><?=$title?></h1>
+                </div>
+                <div class="col-md-6 pt-3 pt-md-0 px-0 d-md-flex justify-content-md-end align-items-md-center">
                 <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Voltar">
                     <a type="button" href="javascript:history.back()" class="btn btn-outline-secondary btn-sm">
                         <i class="bi-arrow-return-left"></i>
                     </a>
                 </span>
-                <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Novo Artigo">
+                    <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Novo Artigo">
                     <a type="button" href="<?=__SYSTEM_ADMIN_URL__?>/novo-artigo" class="btn btn-outline-secondary btn-sm ms-2">
                         <i class="bi-plus-lg"></i>
                     </a>
                 </span>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <hr class="mb-3">
+        <section class="mb-4">
+            <nav class="" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a class="text-decoration-none text-secondary fw-bold fs-4" href="<?=__SYSTEM_ADMIN_URL__?>/dashboard">
+                            Home
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <span class="badge bg-secondary-extra-light text-secondary fw-bold fs-4">Artigos</span>
+                    </li>
+                </ol>
+            </nav>
+        </section>
 
-        <div class="mb-3">
-            <table class="table table-responsive-md table-hover table-sm caption-top">
+        <section class="bg-white  mb-3" style="min-height: 70vh">
+            <table class="table table-responsive-md table-hover table-sm caption-top mb-5">
                 <caption>Lista de Artigos</caption>
                 <thead>
                     <tr class="">
@@ -133,22 +148,22 @@ if ($quantidadeArtigos === 0) {
                     <?php endif; ?>
                 </tbody>
             </table>
-        </div>
+
+            <nav class="pagina-navegacao" aria-label="Page navigation">
+                <ul class="pagination pagination-sm mb-3">
+                    <li class="page-item <?= $numeroPagina > 1 ? 'block' : 'disabled'?>"><a class="page-link" href="?pagina=<?=$numeroPagina - 1?>">Anterior</a></li>
+
+                    <?php for ($i = 1; $i <= $quantidadePaginas; $i++): ?>
+                        <li class="page-item"><a class="page-link" href="?pagina=<?= $i ?>"><?= $i ?></a></li>
+                    <?php endfor; ?>
+
+                    <li class="page-item <?= $numeroPagina >= $quantidadePaginas ? 'disabled' : 'block'?>"><a class="page-link" href="?pagina=<?=$numeroPagina + 1?>">Próxima</a></li>
+                    <li class="page-item <?= $numeroPagina == $quantidadePaginas ? 'disabled' : 'block'?>"><a class="page-link" href="?pagina=<?=$quantidadePaginas?>">Última</a></li>
+                </ul>
+            </nav>
+        </section>
     </div>
 </section>
-
-<nav class="pagina-navegacao" aria-label="Page navigation">
-    <ul class="pagination pagination-sm mb-3">
-        <li class="page-item <?= $numeroPagina > 1 ? 'block' : 'disabled'?>"><a class="page-link" href="?pagina=<?=$numeroPagina - 1?>">Anterior</a></li>
-
-        <?php for ($i = 1; $i <= $quantidadePaginas; $i++): ?>
-            <li class="page-item"><a class="page-link" href="?pagina=<?= $i ?>"><?= $i ?></a></li>
-        <?php endfor; ?>
-
-        <li class="page-item <?= $numeroPagina >= $quantidadePaginas ? 'disabled' : 'block'?>"><a class="page-link" href="?pagina=<?=$numeroPagina + 1?>">Próxima</a></li>
-        <li class="page-item <?= $numeroPagina == $quantidadePaginas ? 'disabled' : 'block'?>"><a class="page-link" href="?pagina=<?=$quantidadePaginas?>">Última</a></li>
-    </ul>
-</nav>
 
 <?php
 include __ADMIN_FOLDER__ . '/View/endLayout.php';
