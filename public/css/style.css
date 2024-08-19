@@ -109,7 +109,7 @@ datalist {
 }
 
 table tr {
-  font-size: 0.8rem !important !important;
+  font-size: 0.8rem !important;
 }
 
 label {
@@ -152,6 +152,18 @@ button[type=submit]:hover {
 }
 .dropdown-menu a:hover {
   background-color: #F2F2F7;
+}
+
+.loading {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 2055;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 /* Define a barra de rolagem */
@@ -246,7 +258,7 @@ button[type=submit]:hover {
 #sidebarMenu {
   position: relative;
   overflow: hidden;
-  font-size: 0.9rem !important !important;
+  font-size: 0.9rem !important;
 }
 #sidebarMenu .new-article {
   border-color: #BB0404;

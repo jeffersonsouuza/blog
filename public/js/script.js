@@ -37,3 +37,15 @@ Array.prototype.slice.call(document.querySelectorAll('.needs-validation'))
 			form.classList.add('was-validated')
 		}, false)
 	});
+
+//Habilita o Loader
+document.addEventListener('click', function(event) {
+	const element = event.target;
+	
+	if (element.tagName === 'A' && element.href) {
+		document.querySelector('.loading').style.display = 'block';
+	} else if (element.tagName === 'BUTTON' && element.type !== 'button') {
+		document.querySelector('.loading').style.display = 'block';
+	}
+});
+

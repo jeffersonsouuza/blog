@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,3 +22,4 @@
 <style><?php require("public/css/style.css");?></style>
 
 <body class="vh-100 light-theme">
+    <?php require  __PUBLIC_FOLDER__ . '/view/shared/loader.php' ?>

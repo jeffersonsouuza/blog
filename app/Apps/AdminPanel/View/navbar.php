@@ -101,11 +101,11 @@ $usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
             <p class="text-uppercase text-body-secondary mb-3">configurações</p>
             <ul class="list-group mb-3">
                 <li class="list-group-item bg-body-tertiary border border-0 rounded-1 shadow-sm mb-4 p-4">
-                    <a class="text-capitalize text-decoration-none text-secondary fw-bold" href="#collapseExample"
+                    <span class="text-capitalize text-decoration-none text-secondary fw-bold" href="#collapseExample"
                        data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample">
                         Perfil
                         <i class="bi-arrow-down-short" id="toggleIconUser"></i>
-                    </a>
+                    </span>
                     <div class="collapse" id="collapseExample">
                         <ul class="navbar-nav flex-column list-group">
                             <li class="my-3">
