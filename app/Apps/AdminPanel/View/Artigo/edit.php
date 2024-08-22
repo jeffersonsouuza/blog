@@ -7,14 +7,14 @@ include __ADMIN_FOLDER__ . '/View/startLayout.php';
 
 <section class="overflow-auto bg-white p-4">
     <div class="container-fluid px-0">
-        <section class="w-100 mb-4 mb-md-0" style="min-height: 8vh">
-            <div class="row py-0">
+        <section class="w-100 mb-4 mb-md-0">
+            <div class="row mb-3 py-0">
                 <div class="col-md-6 px-0">
-                    <h1 class="fw-bold main-title"><?=$title.' #'.$art['id']?></h1>
+                    <h1 class="fw-bold h2 text-danger"><?=$title.' #'.$art['id']?></h1>
                 </div>
                 <div class="col-md-6 pt-3 pt-md-0 px-0 d-md-flex justify-content-md-end align-items-md-center">
                     <span>
-                        <a type="button" class="btn btn-<?=StatusArtigo::ATIVO == $art['status']?'success':'danger'?> pe-none">
+                        <a type="button" class="btn btn-<?=StatusArtigo::ATIVO == $art['status']?'success':'danger'?> btn-sm pe-none">
                             <?=StatusArtigo::ATIVO == $art['status']?'Ativo':'Inativo'?>
                         </a>
                     </span>
@@ -43,36 +43,36 @@ include __ADMIN_FOLDER__ . '/View/startLayout.php';
         </section>
 
         <section class="mb-4">
-            <nav class="" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <nav class="" style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a class="text-decoration-none text-secondary fw-bold fs-4" href="<?=__SYSTEM_ADMIN_URL__?>/dashboard">
+                        <a class="text-decoration-none fw-medium text-secondary-light fs-4" href="<?=__SYSTEM_ADMIN_URL__?>/dashboard">
                             Home
                         </a>
                     </li>
                     <li class="breadcrumb-item">
-                        <a class="text-decoration-none text-secondary fw-bold fs-4" href="<?=__SYSTEM_ADMIN_URL__?>/listar-artigos">
+                        <a class="text-decoration-none text-secondary-light fw-medium fs-4" href="<?=__SYSTEM_ADMIN_URL__?>/listar-artigos">
                             Artigos
                         </a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">
-                        <span class="badge bg-secondary-extra-light text-secondary fw-bold fs-4">Editar</span>
+                        <span class="text-active fw-medium fs-4">Editar</span>
                     </li>
                 </ol>
             </nav>
         </section>
 
-        <section class="bg-white  mb-3" style="min-height: 70vh">
+        <section class="bg-white mb-3" style="min-height: 70vh">
             <form action="<?=__SYSTEM_ADMIN_URL__?>/salvar-edicao" method="POST" class="p-0 needs-validation" novalidate>
                 <div class="row">
                     <div class="col-lg-8 col-xl-6 position-relative px-0">
                         <div class="mb-3">
-                            <label class="form-label m-1 m-1" for="titulo">Digite o novo título do artigo:</label>
+                            <label class="form-label ms-1 mb-2 h6 text-secondary-extra-light fw-bold" id="label" for="titulo">Digite o novo título do artigo:</label>
                             <input class="form-control" type="text" name="titulo" id="titulo" value="<?php echo $art['titulo']; ?>" required/>
                             <div class="invalid-feedback">Preencha o titulo corretamente.</div>
                         </div>
                         <div class="mb-3">
-                            <label for="status" class="form-label m-1">Status</label>
+                            <label for="status" class="form-label ms-1 mb-2 h6 text-secondary-extra-light fw-bold">Status</label>
                             <select class="form-select" id="status" name="status" required>
                                 <option value="<?= StatusArtigo::ATIVO?>" <?= $art['status'] === StatusArtigo::ATIVO ? 'selected' : '' ?>>
                                     <?= StatusArtigo::name(StatusArtigo::ATIVO)?>
@@ -83,7 +83,7 @@ include __ADMIN_FOLDER__ . '/View/startLayout.php';
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label m-1" for="conteudo">Digite o novo conteúdo do artigo:</label>
+                            <label class="form-label ms-1 mb-2 h6 text-secondary-extra-light fw-bold" for="conteudo">Digite o novo conteúdo do artigo:</label>
                             <textarea class="form-control" name="conteudo" id="titulo" rows="13" required><?=$art['conteudo']?></textarea>
                             <div class="invalid-feedback">Preencha o conteúdo corretamente.</div>
                         </div>
@@ -106,15 +106,15 @@ include __ADMIN_FOLDER__ . '/View/startLayout.php';
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+        <div class="modal-content bg-white">
             <div class="modal-header">
-                <h2 class="modal-title fs-5 text-blue-light" id="exampleModalLabel">Excluir Artigo  <?='#'.$art['id']?></h2>
+                <h2 class="modal-title h3 text-secondary" id="exampleModalLabel">Excluir Artigo <?='#'.$art['id']?></h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <h3 class="mb-3 h6">Você realmente deseja excluir este artigo?</h3>
-                <p class="text-blue-light fw-bold mb-2">Titulo do Artigo:</p>
-                <p class="text-secondary-extra-light"><?=$art['titulo']?></p>
+                <h3 class="mb-3 h5">Você realmente deseja excluir este artigo?</h3>
+                <p class="text-secondary fw-bold mb-2">Titulo do Artigo:</p>
+                <p class="text-active"><?=$art['titulo']?></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>

@@ -22,6 +22,27 @@ export default class CurrenteDate {
 		return this.data.getFullYear();
 	}
 	
+	getHoras() {
+		return this.data.getHours();
+	}
+	
+	getPeriodoDoDia() {
+		const periodoDoDia = [
+			[22, 'Trabalhando até tarde'],
+			[18, 'Boa noite'],
+			[12, 'Boa tarde'],
+			[6,  'Bom dia'],
+			[0,  'Uau, madrugador']
+		];
+		
+		for (let i = 0; i < periodoDoDia.length; i++) {
+			if (this.getHoras() >= periodoDoDia[i][0]) {
+				this.htmlClass.textContent = periodoDoDia[i][1];
+				break;
+			}
+		}
+	}
+	
 	getDataCompleta() {
 		return `${this.getDiaSemana()}, ${this.getDia()} de ${this.getMes()} de ${this.getAno()}`;
 	}

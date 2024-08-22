@@ -1,7 +1,10 @@
-// Cores do Projeto
+// Cores do Projeto - Light
 $white: #FFFFFF;
+$active: #D0D1D2;
+$transparent: transparent;
 
-$secondary: #2F3F67;
+$secondary: #11263C;
+$secondary-light: rgba(60, 60, 67, 0.6);
 $secondary-extra-light: #5C6E9A;
 
 $body-tertiary: #F2F2F7;
@@ -23,8 +26,51 @@ $danger-extra-light: #F04855;
     background-color: #d9dbe0 !important;
   }
 
-  .bg-transparent {
-    background-color: transparent !important;
+  .text-white {
+    color: $white !important;
+  }
+
+  .text-secondary {
+    color: $secondary !important;
+  }
+
+  .text-secondary-light {
+    color: $secondary-light !important;
+  }
+
+  .text-secondary-extra-light {
+    color: $secondary-extra-light !important;
+  }
+
+  .text-danger {
+    color: $danger !important;
+  }
+
+  .text-danger-light {
+    color: $danger-light !important;
+  }
+
+  .text-danger-extra-light {
+    color: $danger-extra-light !important;
+  }
+
+  .text-active {
+    color: $active !important;
+  }
+}
+
+// Cores do Projeto - Dark
+.dark-theme {
+  .bg-body-tertiary {
+    background-color: #1C1C1E !important
+  }
+
+  .bg-white {
+    background-color: #2C2C2E !important;
+  }
+
+  .bg-secondary-extra-light {
+    background-color: #d9dbe0 !important;
   }
 
   .text-white {
@@ -32,15 +78,15 @@ $danger-extra-light: #F04855;
   }
 
   .text-secondary {
-    color: #2F3F67 !important;
+    color: $white !important;
   }
 
   .text-secondary-extra-light {
-    color: #5C6E9A !important;
+    color: rgba(235, 235, 245, 0.6) !important;
   }
 
   .text-danger {
-    color: #BB0404 !important;
+    color: #FF7977 !important;
   }
 
   .text-danger-light {
@@ -50,36 +96,76 @@ $danger-extra-light: #F04855;
   .text-danger-extra-light {
     color: #EB2E64 !important;
   }
-}
 
-.dark-theme {
-  .bg-body-tertiary {
-    background-color: #000000 !important
-  }
-
-  .bg-white {
-    background-color: #000000 !important;
+  .text-active {
+    color: #D0D1D2 !important;
   }
 }
 
+.bg-transparent {
+  background-color: $transparent !important;
+}
 
-// Tamanho da Fonte
-$font-1: 1rem !important;
-$font-2: 0.9rem !important;
-$font-3: 0.8rem !important;
+// Tamanho da Fonte - parágrafo
+$font-1: 1rem;
+$font-2: 0.9rem;
+$font-3: 0.875rem;
+$font-4: 0.75rem;
+$font-5: 0.5rem;
+$font-6: 0.4rem;
 
 .fs-1 {
-  font-size: 1rem !important;
+  font-size: $font-1 !important;
 }
 
 .fs-2 {
-  font-size: 0.9rem !important;
+  font-size: $font-2 !important;
 }
 
 .fs-3 {
-  font-size: 0.8rem !important;
+  font-size: $font-3 !important;
 }
 
 .fs-4 {
-  font-size: 0.7rem !important;
+  font-size: $font-4 !important;
+}
+
+.fs-5 {
+  font-size: $font-5 !important;
+}
+
+.fs-6 {
+  font-size: $font-6 !important;
+}
+
+// Tamanho da Fonte - título
+$h-1: 1.875rem;
+$h-2: 1.625rem;
+$h-3: 1.375rem;
+$h-4: 1.125rem;
+$h-5: 1rem;
+$h-6: 0.8rem;
+
+.h1 {
+  font-size: $h-1 !important;
+}
+
+.h2 {
+  font-size: $h-2 !important;
+}
+
+.h3 {
+  font-size: $h-3 !important;
+}
+
+.h4 {
+  font-size: $h-4 !important;
+}
+
+.h5 {
+  font-size: $h-5 !important;
+}
+
+.h6 {
+  font-size: $h-6 !important;
 }

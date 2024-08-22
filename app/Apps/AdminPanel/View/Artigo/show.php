@@ -7,10 +7,10 @@ include __ADMIN_FOLDER__ . '/View/startLayout.php';
 
 <section class="overflow-auto bg-white p-4">
     <div class="container-fluid px-0">
-        <section class="w-100 mb-4 mb-md-0" style="min-height: 8vh">
+        <section class="w-100 mb-4 mb-md-0">
             <div class="row mb-3">
                 <div class="col-md-6 px-0">
-                    <h1 class="fw-bold main-title"><?=$title.' #'.$art['id']?></h1>
+                    <h1 class="fw-bold h2 text-danger"><?=$title.' #'.$art['id']?></h1>
                 </div>
                 <div class="col-md-6 pt-3 pt-md-0 px-0 d-md-flex justify-content-md-end align-items-md-center">
                     <span>
@@ -48,42 +48,37 @@ include __ADMIN_FOLDER__ . '/View/startLayout.php';
         <section
 
         <section class="mb-4">
-            <nav class="" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <nav class="" style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a class="text-decoration-none text-secondary fw-bold fs-4" href="<?=__SYSTEM_ADMIN_URL__?>/dashboard">
+                        <a class="text-decoration-none fw-medium text-secondary-light fs-4" href="<?=__SYSTEM_ADMIN_URL__?>/dashboard">
                             Home
                         </a>
                     </li>
                     <li class="breadcrumb-item">
-                        <a class="text-decoration-none text-secondary fw-bold fs-4" href="<?=__SYSTEM_ADMIN_URL__?>/listar-artigos">
+                        <a class="text-decoration-none text-secondary-light fw-medium fs-4" href="<?=__SYSTEM_ADMIN_URL__?>/listar-artigos">
                             Artigos
                         </a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">
-                        <span class="badge bg-secondary-extra-light text-secondary fw-bold fs-4">Visualizar Artigo</span>
+                        <span class="text-active fw-medium fs-4">Visualizar</span>
                     </li>
                 </ol>
             </nav>
         </section>
 
-        <section class="bg-white mb-3" style="min-height: 70vh">
+        <section class="bg-white mb-3 border border-1 p-4 rounded" style="min-height: 70vh">
             <div class="row">
                 <div class="col-lg-8 col-xl-6 position-relative px-0">
-                    <div class="mb-3">
-                        <label class="form-label m-1" for="titulo">Título do artigo:</label>
-                        <input class="form-control bg-transparent" type="text" name="titulo" id="titulo" value="<?php echo $art['titulo']; ?>" disabled/>
+                    <div class="mb-4">
+                        <h3 class="mb-1 h6 text-secondary fw-bold">Título do artigo:</h3>
+                        <p class="ms-2"><?php echo $art['titulo']; ?></p>
                     </div>
                     <div class="mb-3">
-                        <label for="status" class="form-label m-1">Status:</label>
-                        <input class="form-control bg-transparent" type="text" id="status" name="status" value="<?= StatusArtigo::name($art['status'])?>" disabled>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label m-1" for="conteudo">Conteúdo do artigo:</label>
-                        <textarea class="form-control bg-transparent" name="conteudo" id="titulo" rows="13" disabled><?=$art['conteudo']?></textarea>
+                        <h3 class="mb-1 h6 text-secondary fw-bold">Conteúdo do artigo:</h3>
+                        <p class="ms-2"><?=$art['conteudo']?></p>
                     </div>
                 </div>
-
                 <div class="col-lg-4 col-xl-6">
 
                 </div>
@@ -96,13 +91,13 @@ include __ADMIN_FOLDER__ . '/View/startLayout.php';
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title fs-5 text-blue-light" id="exampleModalLabel">Excluir Artigo <?='#'.$art['id']?></h2>
+                <h2 class="modal-title h3 text-secondary" id="exampleModalLabel">Excluir Artigo <?='#'.$art['id']?></h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <h3 class="mb-3 h6">Você realmente deseja excluir este artigo?</h3>
-                <p class="text-blue-light fw-bold mb-2">Titulo do Artigo:</p>
-                <p class="text-secondary-extra-light"><?=$art['titulo']?></p>
+                <h3 class="mb-3 h5">Você realmente deseja excluir este artigo?</h3>
+                <p class="text-secondary fw-bold mb-2">Titulo do Artigo:</p>
+                <p class=""><?=$art['titulo']?></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
