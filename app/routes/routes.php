@@ -27,6 +27,8 @@ $rotas = [
     "/admin/logout" => LogoutUserAction::class,
 
     '/admin/dashboard' => Dashboard::class,
+    '/admin' => Dashboard::class,
+    '/' => Dashboard::class,
     '/admin/listar-artigos' => IndexController::class,
     '/admin/mostrar-artigo' => ShowController::class,
     '/admin/novo-artigo' => CreatController::class,

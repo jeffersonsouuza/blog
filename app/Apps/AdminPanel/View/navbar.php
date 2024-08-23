@@ -16,6 +16,7 @@ $usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
             <p class="current-date text-secondary-extra-light"></p>
         </div>
         <div class="col-md-6 col-lg-7">
+            <p><?php echo $translations['contact']; ?></p>
             <ul class="navbar-nav d-flex align-items-center justify-content-end">
                 <li class="nav-item d-flex align-items-center justify-content-end user-profile border-end px-3">
                     <div class="text-end">
@@ -30,32 +31,32 @@ $usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
                         <ul class="dropdown-menu dropdown-menu-end shadow-sm mt-4 p-4 bg-white">
                             <li class="">
                                 <a class="dropdown-item py-3 text-secondary" href="<?=__SYSTEM_ADMIN_URL__?>/usuario">
-                                    <i class="bi-person mx-2 text-danger"></i>
+                                    <i class="bi-person me-3 text-danger"></i>
                                     Perfil do Usuário
                                 </a>
                             </li>
                             <li class="">
                                 <a class="dropdown-item py-3 text-secondary" href="<?=__SYSTEM_ADMIN_URL__?>/alterar-senha">
-                                    <i class="bi-lock mx-2 text-danger"></i>
+                                    <i class="bi-lock me-3 text-danger"></i>
                                     Alterar Senha
                                 </a>
                             </li>
                             <li class="">
                                 <a class="dropdown-item py-3 text-secondary" href="<?=__SYSTEM_ADMIN_URL__?>/cadastrar-usuario">
-                                    <i class="bi-person-plus mx-2 text-danger"></i>
+                                    <i class="bi-person-plus me-3 text-danger"></i>
                                     Cadastrar Usuário
                                 </a>
                             </li>
                             <li class="">
                                 <a class="dropdown-item py-3 text-secondary" href="<?=__SYSTEM_ADMIN_URL__?>/logout">
-                                    <i class="bi-box-arrow-right mx-2 text-danger"></i>
+                                    <i class="bi-box-arrow-right me-3 text-danger"></i>
                                     Sair
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </li>
-                <li class="nav-item px-3">
+                <li class="nav-item border-end px-3">
                     <div class="dropdown">
                         <div class="click-area-theme" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi-moon-stars-fill text-secondary-extra-light" id="toggleThemeIcon" style="font-size: 1.1rem"></i>
@@ -64,14 +65,36 @@ $usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
                         <ul class="dropdown-menu dropdown-menu-end shadow-sm mt-4 p-4 bg-white">
                             <li class="toggleThemeLight">
                                 <a type="button" class="dropdown-item py-3 text-secondary">
-                                    <i class="bi-brightness-high-fill mx-2 text-danger"></i>
+                                    <i class="bi-brightness-high-fill me-3 text-danger"></i>
                                     Light
                                 </a>
                             </li>
                             <li class="toggleThemeDark">
                                 <a type="button" class="dropdown-item py-3 text-secondary">
-                                    <i class="bi-moon-stars-fill mx-2 text-danger"></i>
+                                    <i class="bi-moon-stars-fill me-3 text-danger"></i>
                                     Dark
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item px-3">
+                    <div class="dropdown">
+                        <div class="click-area-theme" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="<?=__SYSTEM_ROOT_URL__?>/public/imagens/bandeira-brasil.png" class="rounded-1" width="30" height="20"  alt="...">
+                            <i class="bi-caret-down-fill fs-4 text-secondary-extra-light" id="toggle-class-theme"></i>
+                        </div>
+                        <ul class="dropdown-menu dropdown-menu-end shadow-sm mt-4 p-4 bg-white">
+                            <li class="toggleThemeLight">
+                                <a type="button" class="dropdown-item py-3 text-secondary" href="?lang=br">
+                                    <img src="<?=__SYSTEM_ROOT_URL__?>/public/imagens/bandeira-brasil.png" class="rounded-1 me-3" width="30" height="20"  alt="...">
+                                    Português
+                                </a>
+                            </li>
+                            <li class="toggleThemeDark">
+                                <a type="button" class="dropdown-item py-3 text-secondary">
+                                    <img src="<?=__SYSTEM_ROOT_URL__?>/public/imagens/bandeira-americana.png" class="rounded-1 me-3" width="30" height="20"  alt="...">
+                                    Inglês
                                 </a>
                             </li>
                         </ul>

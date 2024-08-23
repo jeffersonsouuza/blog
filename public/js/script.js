@@ -28,6 +28,7 @@ toggleState.init();
 let toggleThemeIcon = new ClassSwitcher(
 	'.toggleThemeLight, .toggleThemeDark',
 	'#toggleThemeIcon',
+	'activeClassTheme',
 	'bi-sun-fill', 'bi-moon-stars-fill'
 );
 toggleThemeIcon.init();

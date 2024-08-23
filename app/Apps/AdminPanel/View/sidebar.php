@@ -35,8 +35,8 @@
         <div>
             <p class="ms-2 ms-xl-3 text-uppercase text-secondary-extra-light">configurações</p>
             <ul class="navbar-nav flex-column list-group">
-                <li class="nav-item list-group-item border border-0 p-0 ms-lg-2 ms-xl-3">
-                    <a class="nav-link click-area bg-white text-secondary" aria-current="page" href="#collapseExample"
+                <li class="nav-item list-group-item bg-white border border-0 p-0 ms-lg-2 ms-xl-3">
+                    <a class="nav-link click-area text-secondary" aria-current="page" href="#collapseExample"
                        data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample">
                         <i class="bi-person me-2"></i>
                         Perfil

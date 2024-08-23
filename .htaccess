@@ -1,0 +1,7 @@
+#RewriteEngine On
+#
+## Redirecionar de /lang para ?lang
+#RewriteCond %{REQUEST_URI} ^/(br|eng)/
+#RewriteRule ^(br|eng)/?$ index.php?lang=$1 [L,QSA]
+#
+## Outras regras de reescrita...
