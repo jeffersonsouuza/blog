@@ -1,6 +1,11 @@
 <?php
 
+global $lang;
+
 require_once __ROOT_FOLDER__ . "/vendor/autoload.php";
+require_once 'app/Core/languageHandler.php';
+$title = $lang['article'][1];
+
 include __ADMIN_FOLDER__ . '/View/startLayout.php';
 
 use app\Core\DatabaseConnection;

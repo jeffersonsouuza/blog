@@ -1,10 +1,11 @@
 <?php
 
-// Example translations
-$translations = [
-    'welcome' => 'Welcome to our website!',
-    'contact' => 'Contact Us',
-    // Other translations...
+$lang = [
+    'title' => 'Dashboard',
+    'logo' => 'Logo BrasaTour',
+    'profile' => 'Perfil do Usuário',
+
+    'artigos' => 'Artigos',
 ];
 
 

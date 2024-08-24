@@ -1,7 +1,11 @@
 <?php
 
+//global $lang;
+
 use app\Core\DatabaseConnection;
 use app\Entity\Usuarios\User;
+
+//require_once 'app/Core/languageHandler.php';
 
 $usuarios = new User( DatabaseConnection::create());
 $usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
@@ -16,41 +20,40 @@ $usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
             <p class="current-date text-secondary-extra-light"></p>
         </div>
         <div class="col-md-6 col-lg-7">
-            <p><?php echo $translations['contact']; ?></p>
             <ul class="navbar-nav d-flex align-items-center justify-content-end">
                 <li class="nav-item d-flex align-items-center justify-content-end user-profile border-end px-3">
                     <div class="text-end">
-                        <p class="py-0 my-0 text-secondary fw-medium"><?=$usuario[0]['nome']?></p>
+<!--                        <p class="py-0 my-0 text-secondary fw-medium">--><?php //=$usuario[0]['nome']?><!--</p>-->
 <!--                        <p class="py-0 my-0 text-secondary-extra-light">Administrador</p>-->
                     </div>
                     <div class="dropdown">
-                        <div class="click-area-nav" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button type="button" class="click-area-nav border-0 bg-transparent" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi-person-circle ms-3 text-secondary-extra-light" style="font-size: 1.1rem"></i>
                             <i class="bi-caret-down-fill fs-4 text-secondary-extra-light" id="toggle-class-nav"></i>
-                        </div>
+                        </button>
                         <ul class="dropdown-menu dropdown-menu-end shadow-sm mt-4 p-4 bg-white">
                             <li class="">
                                 <a class="dropdown-item py-3 text-secondary" href="<?=__SYSTEM_ADMIN_URL__?>/usuario">
                                     <i class="bi-person me-3 text-danger"></i>
-                                    Perfil do Usuário
+                                    <?=$lang['profile-user']?>
                                 </a>
                             </li>
                             <li class="">
                                 <a class="dropdown-item py-3 text-secondary" href="<?=__SYSTEM_ADMIN_URL__?>/alterar-senha">
                                     <i class="bi-lock me-3 text-danger"></i>
-                                    Alterar Senha
+                                    <?=$lang['change-password']?>
                                 </a>
                             </li>
                             <li class="">
                                 <a class="dropdown-item py-3 text-secondary" href="<?=__SYSTEM_ADMIN_URL__?>/cadastrar-usuario">
                                     <i class="bi-person-plus me-3 text-danger"></i>
-                                    Cadastrar Usuário
+                                    <?=$lang['register-user']?>
                                 </a>
                             </li>
                             <li class="">
                                 <a class="dropdown-item py-3 text-secondary" href="<?=__SYSTEM_ADMIN_URL__?>/logout">
                                     <i class="bi-box-arrow-right me-3 text-danger"></i>
-                                    Sair
+                                    <?=$lang['logout']?>
                                 </a>
                             </li>
                         </ul>
@@ -58,21 +61,21 @@ $usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
                 </li>
                 <li class="nav-item border-end px-3">
                     <div class="dropdown">
-                        <div class="click-area-theme" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button type="button" class="click-area-theme border-0 bg-transparent" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi-moon-stars-fill text-secondary-extra-light" id="toggleThemeIcon" style="font-size: 1.1rem"></i>
                             <i class="bi-caret-down-fill fs-4 text-secondary-extra-light" id="toggle-class-theme"></i>
-                        </div>
+                        </button>
                         <ul class="dropdown-menu dropdown-menu-end shadow-sm mt-4 p-4 bg-white">
                             <li class="toggleThemeLight">
                                 <a type="button" class="dropdown-item py-3 text-secondary">
                                     <i class="bi-brightness-high-fill me-3 text-danger"></i>
-                                    Light
+                                    <?=$lang['light-theme']?>
                                 </a>
                             </li>
                             <li class="toggleThemeDark">
                                 <a type="button" class="dropdown-item py-3 text-secondary">
                                     <i class="bi-moon-stars-fill me-3 text-danger"></i>
-                                    Dark
+                                    <?=$lang['dark-theme']?>
                                 </a>
                             </li>
                         </ul>
@@ -80,21 +83,21 @@ $usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
                 </li>
                 <li class="nav-item px-3">
                     <div class="dropdown">
-                        <div class="click-area-theme" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="<?=__SYSTEM_ROOT_URL__?>/public/imagens/bandeira-brasil.png" class="rounded-1" width="30" height="20"  alt="...">
-                            <i class="bi-caret-down-fill fs-4 text-secondary-extra-light" id="toggle-class-theme"></i>
-                        </div>
+                        <button type="button" class="border-0 bg-transparent" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="<?=__SYSTEM_ROOT_URL__?>/public/imagens/bandeira-brasil.png" class="rounded-1 pe-auto" width="30" height="20"  alt="...">
+                            <i class="bi-caret-down-fill fs-4 text-secondary-extra-light"></i>
+                        </button>
                         <ul class="dropdown-menu dropdown-menu-end shadow-sm mt-4 p-4 bg-white">
-                            <li class="toggleThemeLight">
-                                <a type="button" class="dropdown-item py-3 text-secondary" href="?lang=br">
+                            <li>
+                                <a type="button" class="dropdown-item py-3 text-secondary" href="?lang=pt_BR">
                                     <img src="<?=__SYSTEM_ROOT_URL__?>/public/imagens/bandeira-brasil.png" class="rounded-1 me-3" width="30" height="20"  alt="...">
-                                    Português
+                                    <?=$lang['portuguese']?>
                                 </a>
                             </li>
-                            <li class="toggleThemeDark">
-                                <a type="button" class="dropdown-item py-3 text-secondary">
+                            <li>
+                                <a type="button" class="dropdown-item py-3 text-secondary" href="?lang=en">
                                     <img src="<?=__SYSTEM_ROOT_URL__?>/public/imagens/bandeira-americana.png" class="rounded-1 me-3" width="30" height="20"  alt="...">
-                                    Inglês
+                                    <?=$lang['english']?>
                                 </a>
                             </li>
                         </ul>
@@ -110,8 +113,8 @@ $usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
         <div class="d-flex justify-content-center align-items-center">
             <a class="navbar-brand" href="<?=__SYSTEM_ADMIN_URL__?>/dashboard">
                 <figure class="">
-                    <img class="logo-light" src="<?=__SYSTEM_ROOT_URL__?>/public/imagens/logo-brasatour.png" width="2929" height="512" alt="Logo BrasaTour">
-                    <img class="logo-dark" src="<?=__SYSTEM_ROOT_URL__?>/public/imagens/logo-brasatour-dark-theme.png" width="2929" height="512" alt="Logo BrasaTour">
+                    <img class="logo-light" src="<?=__SYSTEM_ROOT_URL__?>/public/imagens/logo-brasatour.png" width="2929" height="512" alt="<?=$lang['logo']?>">
+                    <img class="logo-dark" src="<?=__SYSTEM_ROOT_URL__?>/public/imagens/logo-brasatour-dark-theme.png" width="2929" height="512" alt="<?=$lang['logo']?>">
                 </figure>
             </a>
         </div>
@@ -135,16 +138,16 @@ $usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
     </div>
     <div class="offcanvas-body">
         <div class="container-fluid p-3">
-            <p class="text-uppercase text-secondary-extra-light mb-3 fs-3">menu</p>
+            <p class="text-uppercase text-secondary-extra-light mb-3 fs-3"><?=$lang['menu']?></p>
             <ul class="list-group mb-3">
                 <li class="list-group-item bg-body-tertiary border border-0 rounded-1 shadow-sm mb-4 p-4">
                     <a class="text-capitalize text-decoration-none text-secondary fw-bold fs-1" href="<?=__SYSTEM_ADMIN_URL__?>/dashboard">
-                        Dashboard
+                        <?=$lang['dashboard']?>
                     </a>
                 </li>
                 <li class="list-group-item bg-body-tertiary border border-0 rounded-1 shadow-sm mb-4 p-4">
                     <a class="text-capitalize text-decoration-none text-secondary fw-bold fs-1" href="<?=__SYSTEM_ADMIN_URL__?>/listar-artigos">
-                        Artigos
+                        <?=$lang['article'][1]?>
                     </a>
                 </li>
             </ul>
@@ -156,7 +159,7 @@ $usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
                 <li class="list-group-item bg-body-tertiary border border-0 rounded-1 shadow-sm mb-4 p-4 nav-user-mobile">
                     <a class="text-capitalize text-decoration-none text-secondary fw-bold fs-1" href="#collapseExample"
                        data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample">
-                        Perfil
+                        <?=$lang['profile']?>
                         <i class="bi-caret-down-fill fs-4" id="toggle-icon-user-mobile"></i>
                     </a>
                     <div class="collapse" id="collapseExample">
@@ -164,19 +167,19 @@ $usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
                             <li class="my-3">
                                 <a class="dropdown-item" href="<?=__SYSTEM_ADMIN_URL__?>/usuario">
                                     <i class="bi-arrow-return-right mx-2 text-danger"></i>
-                                    Dados da Conta
+                                    <?=$lang['account-details']?>
                                 </a>
                             </li>
                             <li class="mb-3">
                                 <a class="dropdown-item" href="<?=__SYSTEM_ADMIN_URL__?>/alterar-senha">
                                     <i class="bi-arrow-return-right mx-2 text-danger"></i>
-                                    Alterar Senha
+                                    <?=$lang['change-password']?>
                                 </a>
                             </li>
                             <li class="mb-3">
                                 <a class="dropdown-item" href="<?=__SYSTEM_ADMIN_URL__?>/cadastrar-usuario">
                                     <i class="bi-arrow-return-right mx-2 text-danger"></i>
-                                    Cadastrar Usuário
+                                    <?=$lang['register-user']?>
                                 </a>
                             </li>
                         </ul>
@@ -190,13 +193,13 @@ $usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
                 <li class="list-group-item shadow-sm px-4 py-3 bg-body-tertiary">
                     <a class="text-capitalize text-decoration-none text-danger fw-bold fs-1" href="<?=__SYSTEM_ADMIN_URL__?>/dashboard">
                         <i class="bi-box-arrow-up-right fs-1 me-2 me-xl-3"></i>
-                        Ver Blog
+                        <?=$lang['access-blog']?>
                     </a>
                 </li>
                 <li class="list-group-item shadow-sm px-4 py-3 bg-body-tertiary">
                     <a class="text-capitalize text-decoration-none text-secondary fw-bold fs-1" href="<?=__SYSTEM_ADMIN_URL__?>/logout">
                         <i class="bi-box-arrow-right fs-1 me-2 me-xl-3"></i>
-                        Sair
+                        <?=$lang['logout']?>
                     </a>
                 </li>
             </ul>

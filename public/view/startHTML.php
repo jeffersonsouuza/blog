@@ -1,5 +1,6 @@
-<?php require_once __APP_FOLDER__. '/Core/LanguageHandler.php'; ?>
-
+<?php
+    require_once 'app/Core/languageHandler.php';
+?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">

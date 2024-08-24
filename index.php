@@ -17,7 +17,7 @@ session_start();
 $ehRotaDeLogin = mb_stripos($caminho, 'login');
 
 if (!isset($_SESSION['logado']) && $caminho !== '/login' && $ehRotaDeLogin === false) {
-   header('Location: /blog-php/index.php/admin/login');
+   header('Location: /brasatour-blog/index.php/admin/login');
    exit();
 }
 

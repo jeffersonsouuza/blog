@@ -11,8 +11,6 @@ class EditController implements InterfaceController
 
     public function processaRequisicao(): void
     {
-        $title = 'Editar Artigo';
-
         $artigo = new Article(DatabaseConnection::create());
         $art = $artigo->procurarPorId($_GET['id']);
 

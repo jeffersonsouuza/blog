@@ -18,7 +18,7 @@ include __PUBLIC_FOLDER__ . '/view/startHTML.php';
         <?php foreach ($artigos as $artigo): ?>
             <?php if ($artigo['status'] == 1): ?>
                 <h2>
-                    <a href="/blog-php/index.php/artigo?id=<?php echo $artigo['id']; ?>">
+                    <a href="/brasatour-blog/index.php/artigo?id=<?php echo $artigo['id']; ?>">
                         <?php echo $artigo['titulo']; ?>
                     </a>
                 </h2>

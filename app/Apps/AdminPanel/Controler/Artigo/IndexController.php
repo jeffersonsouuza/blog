@@ -11,10 +11,6 @@ class IndexController implements InterfaceController
 
     public function processaRequisicao(): void
     {
-
-        $title = 'Artigos';
-
         require __ADMIN_FOLDER__ . "/View/Artigo/index.php";
-
     }
 }

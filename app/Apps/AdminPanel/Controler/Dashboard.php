@@ -9,7 +9,6 @@ class Dashboard implements InterfaceController
 
     public function processaRequisicao(): void
     {
-        $title = 'Dashboard';
 
 //        $artigo = new Artigo(DatabaseConnection::create());
 //        $art = $artigo->procurarPorId($_GET['id']);
