@@ -59,7 +59,11 @@ class CurrenteDate {
         }
     }
 
-    public function getDataCompleta() {
+    public function getDataCompletaPtBR() {
         return $this->getDiaSemana() . ', ' . $this->getDia() . ' de ' . $this->getMes() . ' de ' . $this->getAno();
+    }
+
+    public function getDataCompletaEN() {
+        return $this->getMes() . ' ' . $this->getDia() . 'th, ' . $this->getAno();
     }
 }

@@ -11,7 +11,8 @@ $usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
 
 $currentDate = new CurrenteDate();
 $periodOfTheDay = $currentDate->getPeriodoDoDia();
-$fullDate = $currentDate->getDataCompleta();
+$fullDateBR = $currentDate->getDataCompletaPtBR();
+$fullDateUSA  = $currentDate->getDataCompletaEN();
 ?>
 
 <nav id="navbarMenu" class="navbar navbar-expand-lg bg-white d-none d-lg-block px-md-4 shadow-sm">
@@ -20,7 +21,13 @@ $fullDate = $currentDate->getDataCompleta();
             <h2 class="text-secondary fw-medium m-0 h4 mb-1">
                 <span class="period-of-the-day"><?=$periodOfTheDay?></span>, <?=strtok($usuario[0]['nome'], ' ')?>
             </h2>
-            <p class="current-date text-secondary-extra-light"><?=$fullDate?></p>
+            <p class="current-date text-secondary-extra-light">
+                <?php if ($_SESSION['lang']  === 'pt_BR') {
+                    echo $fullDateBR;
+                } elseif ($_SESSION['lang']  === 'en') {
+                    echo $fullDateUSA;
+                } ?>
+            </p>
         </div>
         <div class="col-md-6 col-lg-7">
             <ul class="navbar-nav d-flex align-items-center justify-content-end">
