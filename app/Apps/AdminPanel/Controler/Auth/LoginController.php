@@ -8,8 +8,6 @@ class LoginController  implements InterfaceController
 {
     public function processaRequisicao(): void
     {
-        $title = "Login";
-
         require __ADMIN_FOLDER__ . '/View/Auth/login.php';
     }
 }

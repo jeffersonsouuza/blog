@@ -1,5 +1,11 @@
 <?php
+
+global $lang;
+
 use app\Entity\Artigos\Status as StatusArtigo;
+
+require_once 'app/Core/languageHandler.php';
+$title = $lang['new-article'];
 
 include __ADMIN_FOLDER__ . '/View/startLayout.php';
 ?>
@@ -12,7 +18,7 @@ include __ADMIN_FOLDER__ . '/View/startLayout.php';
                     <h1 class="fw-bold h2 text-danger"><?=$title?></h1>
                 </div>
                 <div class="col-md-6 pt-3 pt-md-0 px-0 d-md-flex justify-content-md-end align-items-md-center">
-                    <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Voltar">
+                    <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="<?=$lang['return']?>">
                         <a type="button" href="javascript:history.back()" class="btn btn-outline-secondary ms-2">
                             <i class="bi-arrow-return-left"></i>
                         </a>
@@ -26,16 +32,16 @@ include __ADMIN_FOLDER__ . '/View/startLayout.php';
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
                         <a class="text-decoration-none fw-medium text-secondary-light fs-4" href="<?=__SYSTEM_ADMIN_URL__?>/dashboard">
-                            Home
+                            <?=$lang['home']?>
                         </a>
                     </li>
                     <li class="breadcrumb-item">
                         <a class="text-decoration-none text-secondary-light fw-medium fs-4" href="<?=__SYSTEM_ADMIN_URL__?>/listar-artigos">
-                            Artigos
+                            <?=$lang['article'][1]?>
                         </a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">
-                        <span class="text-active fw-medium fs-4">Visualizar</span>
+                        <span class="text-active fw-medium fs-4"><?=$lang['new-article']?></span>
                     </li>
                 </ol>
             </nav>
@@ -46,24 +52,28 @@ include __ADMIN_FOLDER__ . '/View/startLayout.php';
                 <div class="row">
                     <div class="col-lg-8 col-xl-6 position-relative px-0">
                         <div class="mb-3">
-                            <label class="form-label ms-1 mb-2 h6 text-secondary-extra-light fw-bold" for="titulo">Digite o novo título do artigo:</label>
+                            <label class="form-label ms-1 mb-2 h6 text-secondary-extra-light fw-bold" for="titulo"><?=$lang['label-new-article']?>:</label>
                             <input class="form-control" type="text" name="titulo" id="titulo" value="" required/>
-                            <div class="invalid-feedback">Preencha o titulo corretamente.</div>
+                            <div class="invalid-feedback"><?=$lang['invalid-new-article']?>.</div>
                         </div>
                         <div class="mb-3">
                             <label for="status" class="form-label ms-1 mb-2 h6 text-secondary-extra-light fw-bold">Status</label>
                             <select class="form-select" id="status" name="status" required>
-                                <option class="text-active bg-secondary" value="<?= StatusArtigo::ATIVO?>">Ativo</option>
-                                <option class="text-active bg-secondary" value="<?= StatusArtigo::INATIVO?>">Inativo</option>
+                                <option class="text-active bg-secondary" value="<?= StatusArtigo::ATIVO?>">
+                                    <?= StatusArtigo::name(StatusArtigo::ATIVO)?>
+                                </option>
+                                <option class="text-active bg-secondary" value="<?= StatusArtigo::INATIVO?>">
+                                    <?= StatusArtigo::name(StatusArtigo::INATIVO)?>
+                                </option>
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label ms-1 mb-2 h6 text-secondary-extra-light fw-bold" for="conteudo">Digite o novo conteúdo do artigo:</label>
+                            <label class="form-label ms-1 mb-2 h6 text-secondary-extra-light fw-bold" for="conteudo"><?=$lang['label-new-content']?>:</label>
                             <textarea class="form-control" name="conteudo" id="titulo" rows="13" required></textarea>
-                            <div class="invalid-feedback">Preencha o conteúdo corretamente.</div>
+                            <div class="invalid-feedback"><?=$lang['invalid-new-content']?>.</div>
                         </div>
                         <div class="col-md-6 my-4 w-100">
-                            <button type="submit" class="btn btn-primary w-100">Criar Artigo</button>
+                            <button type="submit" class="btn btn-primary w-100"><?=$lang['create-new-article']?></button>
                         </div>
                     </div>
 

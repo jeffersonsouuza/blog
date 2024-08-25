@@ -1,4 +1,10 @@
 <?php
+
+global $lang;
+
+require_once 'app/Core/languageHandler.php';
+$title = $lang['login'];
+
 include __PUBLIC_FOLDER__ . '/view/startHTML.php';
 ?>
 
@@ -20,22 +26,22 @@ include __PUBLIC_FOLDER__ . '/view/startHTML.php';
                 <img class="img-fluid logo-login" src="<?=__SYSTEM_ROOT_URL__?>/public/imagens/logo-brasatour.png" width="2929" height="512" alt="Jericoacoara">
             </figure>
 
-            <h2 class="lh-sm h5 fw-medium mb-4">Bem Vindo!</h2>
+            <h2 class="lh-sm h5 fw-medium mb-4"><?=$lang['welcome']?>!</h2>
 
             <form action="<?=__SYSTEM_ADMIN_URL__?>/realizar-login" method="POST">
                 <div class="form-group mb-4">
                     <label class="ms-1" for="email">Login</label>
-                    <input type="email" name="email" id="email" class="form-control" placeholder="digite o email">
+                    <input type="email" name="email" id="email" class="form-control" placeholder="<?=$lang['enter-email']?>">
                 </div>
 
                 <div class="form-group mb-4">
-                    <label class="ms-1" for="senha">Senha</label>
-                    <input type="password" name="senha" id="senha" class="form-control" placeholder="digite a senha">
+                    <label class="ms-1" for="senha"><?=$lang['password']?></label>
+                    <input type="password" name="senha" id="senha" class="form-control" placeholder="<?=$lang['enter-password']?>">
                     <div class="pt-2 d-flex justify-content-end link-forget-password">
-                        <a href="" class="text-decoration-none">esqueceu sua senha?</a>
+                        <a href="" class="text-decoration-none"><?=$lang['forget-password']?>?</a>
                     </div>
                 </div>
-                <button class="btn btn-primary mb-4 w-100">Entrar</button>
+                <button class="btn btn-primary mb-4 w-100"><?=$lang['sign-in']?></button>
             </form>
             <hr class="my-5">
             <footer class="d-flex justify-content-center align-items-end">

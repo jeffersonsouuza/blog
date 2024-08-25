@@ -53,7 +53,7 @@ $usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
                             <li class="">
                                 <a class="dropdown-item py-3 text-secondary" href="<?=__SYSTEM_ADMIN_URL__?>/logout">
                                     <i class="bi-box-arrow-right me-3 text-danger"></i>
-                                    <?=$lang['logout']?>
+                                    <?=$lang['sign-out']?>
                                 </a>
                             </li>
                         </ul>
@@ -199,7 +199,7 @@ $usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
                 <li class="list-group-item shadow-sm px-4 py-3 bg-body-tertiary">
                     <a class="text-capitalize text-decoration-none text-secondary fw-bold fs-1" href="<?=__SYSTEM_ADMIN_URL__?>/logout">
                         <i class="bi-box-arrow-right fs-1 me-2 me-xl-3"></i>
-                        <?=$lang['logout']?>
+                        <?=$lang['sign-out']?>
                     </a>
                 </li>
             </ul>

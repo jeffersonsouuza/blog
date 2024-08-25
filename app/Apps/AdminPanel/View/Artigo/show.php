@@ -1,6 +1,11 @@
 <?php
 
+global $lang;
+
 use app\Entity\Artigos\Status as StatusArtigo;
+
+require_once 'app/Core/languageHandler.php';
+$title = $lang['article'][0];
 
 include __ADMIN_FOLDER__ . '/View/startLayout.php';
 ?>
@@ -14,31 +19,34 @@ include __ADMIN_FOLDER__ . '/View/startLayout.php';
                 </div>
                 <div class="col-md-6 pt-3 pt-md-0 px-0 d-md-flex justify-content-md-end align-items-md-center">
                     <span>
-                        <a type="button" class="btn btn-<?=StatusArtigo::ATIVO == $art['status']?'success':'danger'?> btn-sm pe-none">
-                            <?=StatusArtigo::ATIVO == $art['status']?'Ativo':'Inativo'?>
+                        <a type="button" class="btn btn-<?=StatusArtigo::ATIVO == $art['status']?'success':'danger'?> pe-none">
+                            <?= StatusArtigo::ATIVO == $art['status'] ?
+                                StatusArtigo::name(StatusArtigo::ATIVO) :
+                                StatusArtigo::name(StatusArtigo::INATIVO)
+                            ?>
                         </a>
                     </span>
-                    <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Voltar">
+                    <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="<?=$lang['return']?>">
                         <a type="button" href="javascript:history.back()" class="btn btn-outline-secondary ms-2">
                             <i class="bi-arrow-return-left"></i>
                         </a>
                     </span>
-                    <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Visualizar">
+                    <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="<?=$lang['view']?>">
                         <a type="button" href="" class="btn btn-outline-primary ms-2">
                             <i class="bi-box-arrow-up-right"></i>
                         </a>
                     </span>
-                    <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Adicionar">
+                    <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="<?=$lang['add']?>">
                         <a type="button" href="<?=__SYSTEM_ADMIN_URL__?>/novo-artigo" class="btn btn-outline-secondary ms-2">
                             <i class="bi-plus-lg"></i>
                         </a>
                     </span>
-                    <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Editar">
+                    <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="<?=$lang['edit']?>">
                         <a type="button" href="<?=__SYSTEM_ADMIN_URL__?>/editar-artigo?id=<?php echo $art['id']; ?>" class="btn btn-outline-secondary ms-2">
                             <i class="bi-pencil-square"></i>
                         </a>
                     </span>
-                    <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Excluir">
+                    <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="<?=$lang['delete']?>">
                         <button type="button" class="btn btn-outline-danger ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             <i class="bi-x-square"></i>
                         </button>
@@ -52,16 +60,16 @@ include __ADMIN_FOLDER__ . '/View/startLayout.php';
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
                         <a class="text-decoration-none fw-medium text-secondary-light fs-4" href="<?=__SYSTEM_ADMIN_URL__?>/dashboard">
-                            Home
+                            <?=$lang['home']?>
                         </a>
                     </li>
                     <li class="breadcrumb-item">
                         <a class="text-decoration-none text-secondary-light fw-medium fs-4" href="<?=__SYSTEM_ADMIN_URL__?>/listar-artigos">
-                            Artigos
+                            <?=$lang['article'][1]?>
                         </a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">
-                        <span class="text-active fw-medium fs-4">Visualizar</span>
+                        <span class="text-active fw-medium fs-4"><?=$lang['view']?></span>
                     </li>
                 </ol>
             </nav>
@@ -71,11 +79,11 @@ include __ADMIN_FOLDER__ . '/View/startLayout.php';
             <div class="row">
                 <div class="col-lg-8 col-xl-6 position-relative px-0">
                     <div class="mb-4">
-                        <h3 class="mb-1 h6 text-secondary fw-bold">Título do artigo:</h3>
+                        <h3 class="mb-1 h6 text-secondary fw-bold"><?=$lang['title-article']?>:</h3>
                         <p class="ms-2"><?php echo $art['titulo']; ?></p>
                     </div>
                     <div class="mb-3">
-                        <h3 class="mb-1 h6 text-secondary fw-bold">Conteúdo do artigo:</h3>
+                        <h3 class="mb-1 h6 text-secondary fw-bold"><?=$lang['content-article']?>:</h3>
                         <p class="ms-2"><?=$art['conteudo']?></p>
                     </div>
                 </div>
@@ -91,17 +99,17 @@ include __ADMIN_FOLDER__ . '/View/startLayout.php';
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title h3 text-secondary" id="exampleModalLabel">Excluir Artigo <?='#'.$art['id']?></h2>
+                <h2 class="modal-title h3 text-secondary" id="exampleModalLabel"><?=$lang['delete'] . ' ' . $lang['article'][0] . ' ' . '#'.$art['id']?></h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <h3 class="mb-3 h5">Você realmente deseja excluir este artigo?</h3>
-                <p class="text-secondary fw-bold mb-2">Titulo do Artigo:</p>
+                <h3 class="mb-3 h5"><?=$lang['warning-delete']?></h3>
+                <p class="text-secondary fw-bold mb-2"><?=$lang['title-article']?>:</p>
                 <p class=""><?=$art['titulo']?></p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button typeof="submit" form="excluir" class="btn btn-outline-danger">Excluir</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?=$lang['cancel']?></button>
+                <button typeof="submit" form="excluir" class="btn btn-outline-danger"><?=$lang['delete']?></button>
             </div>
         </div>
         <form action="<?=__SYSTEM_ADMIN_URL__?>/salvar-excluir" method="POST" id="excluir" class="p-0">

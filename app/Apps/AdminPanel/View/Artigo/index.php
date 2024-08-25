@@ -2,6 +2,8 @@
 
 global $lang;
 
+use app\Entity\Artigos\Status as StatusArtigo;
+
 require_once __ROOT_FOLDER__ . "/vendor/autoload.php";
 require_once 'app/Core/languageHandler.php';
 $title = $lang['article'][1];
@@ -45,12 +47,12 @@ if ($quantidadeArtigos === 0) {
                     <h1 class="fw-bold h2 text-danger"><?=$title?></h1>
                 </div>
                 <div class="col-md-6 pt-3 pt-md-0 px-0 d-md-flex justify-content-md-end align-items-md-center">
-                    <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Voltar">
+                    <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="<?=$lang['return']?>">
                         <a type="button" href="javascript:history.back()" class="btn btn-outline-secondary">
                             <i class="bi-arrow-return-left"></i>
                         </a>
                     </span>
-                        <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Novo Artigo">
+                        <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="<?=$lang['new-article']?>">
                         <a type="button" href="<?=__SYSTEM_ADMIN_URL__?>/novo-artigo" class="btn btn-outline-secondary ms-2">
                             <i class="bi-plus-lg"></i>
                         </a>
@@ -64,11 +66,11 @@ if ($quantidadeArtigos === 0) {
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
                         <a class="text-decoration-none fw-medium text-secondary-light fs-4" href="<?=__SYSTEM_ADMIN_URL__?>/dashboard">
-                            Home
+                            <?=$lang['home']?>
                         </a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">
-                        <span class="text-active fw-medium fs-4">Artigos</span>
+                        <span class="text-active fw-medium fs-4"><?=$lang['article'][1]?></span>
                     </li>
                 </ol>
             </nav>
@@ -76,16 +78,16 @@ if ($quantidadeArtigos === 0) {
 
         <section class="table-responsive mb-3" style="min-height: 70vh">
             <table class="table table-hover table-sm caption-top mb-5">
-                <caption class="mb-3 text-secondary">Lista de Artigos</caption>
+                <caption class="mb-3 text-secondary"><?=$lang['list-article']?></caption>
                 <thead>
                     <tr class="">
                         <th class="py-2 align-middle bg-white text-secondary-extra-light" scope="col">#</th>
                         <th class="py-2 align-middle bg-white text-secondary-extra-light" scope="col">View</th>
-                        <th class="py-2 align-middle bg-white text-secondary-extra-light" scope="col">Titulo do Artigo</th>
-                        <th class="py-2 align-middle bg-white text-secondary-extra-light" scope="col">Data do Post</th>
+                        <th class="py-2 align-middle bg-white text-secondary-extra-light" scope="col"><?=$lang['title-article']?></th>
+                        <th class="py-2 align-middle bg-white text-secondary-extra-light" scope="col"><?=$lang['date-post']?></th>
                         <th class="py-2 align-middle bg-white text-secondary-extra-light" scope="col">Status</th>
-                        <th class="py-2 align-middle bg-white text-secondary-extra-light" scope="col">Editar</th>
-                        <th class="py-2 align-middle bg-white text-secondary-extra-light" scope="col">Excluir</th>
+                        <th class="py-2 align-middle bg-white text-secondary-extra-light" scope="col"><?=$lang['edit']?></th>
+                        <th class="py-2 align-middle bg-white text-secondary-extra-light" scope="col"><?=$lang['delete']?></th>
                     </tr>
                 </thead>
 
@@ -103,10 +105,10 @@ if ($quantidadeArtigos === 0) {
                                     <td class="py-2 align-middle bg-white"><a class="text-decoration-none" href="<?=__SYSTEM_ADMIN_URL__?>/mostrar-artigo?id=<?php echo $art['id']; ?>"><?php echo $art['titulo'];?></a></td>
                                     <td class="py-2 align-middle bg-white text-secondary"><?php echo date('d-m-Y', strtotime($art['created_at']))?></td>
                                     <td class="py-2 align-middle bg-white">
-                                        <?php if ($art['status'] == 1): ?>
-                                            <a class="btn btn-success pe-none btn-sm" style="width: 4.5rem;">Ativo</a>
+                                        <?php if (StatusArtigo::ATIVO == $art['status']): ?>
+                                            <a class="btn btn-success pe-none" style="width: 4.5rem;"><?=StatusArtigo::name(StatusArtigo::ATIVO)?></a>
                                         <?php else: ?>
-                                            <a class="btn btn-danger pe-none btn-sm" style="width: 4.5rem;">Inativo</a>
+                                            <a class="btn btn-danger pe-none" style="width: 4.5rem;"><?=StatusArtigo::name(StatusArtigo::INATIVO)?></a>
                                         <?php endif; ?>
                                     </td>
                                     <td class="py-2 align-middle bg-white">
@@ -125,17 +127,17 @@ if ($quantidadeArtigos === 0) {
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content bg-white py-3">
                                         <div class="modal-header">
-                                            <h2 class="modal-title h3 text-secondary" id="exampleModalLabel">Excluir Artigo  <?='#'.$art['id']?></h2>
+                                            <h2 class="modal-title h3 text-secondary" id="exampleModalLabel"><?=$lang['delete'] . ' ' . $lang['article'][0] . ' ' . '#'.$art['id']?></h2>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <h3 class="mb-3 h5">Você realmente deseja excluir este artigo?</h3>
-                                            <p class="text-secondary fw-bold mb-2">Titulo do Artigo:</p>
-                                            <p class="text-active"><?=$art['titulo']?></p>
+                                            <h3 class="mb-3 h5"><?=$lang['warning-delete']?></h3>
+                                            <p class="text-secondary fw-bold mb-2"><?=$lang['title-article']?>:</p>
+                                            <p class=""><?=$art['titulo']?></p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                            <button typeof="submit" form="excluir" class="btn btn-outline-danger">Excluir</button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?=$lang['cancel']?></button>
+                                            <button typeof="submit" form="excluir" class="btn btn-outline-danger"><?=$lang['delete']?></button>
                                         </div>
                                     </div>
                                     <form action="<?=__SYSTEM_ADMIN_URL__?>/salvar-excluir" method="POST" id="excluir" class="p-0">
@@ -148,7 +150,7 @@ if ($quantidadeArtigos === 0) {
                         <?php endforeach; ?>
                     <?php else: ?>
                         <tr>
-                            <th class="align-middle text-center py-3" colspan="7">Nenhum registro foi encontrado.</th>
+                            <th class="align-middle text-center py-3" colspan="7"><?=$lang['warning-registration']?>.</th>
                         </tr>
                     <?php endif; ?>
                 </tbody>
@@ -173,7 +175,7 @@ if ($quantidadeArtigos === 0) {
                     </li>
                     <li class="page-item <?= $numeroPagina == $quantidadePaginas ? 'disabled' : 'block'?>">
                         <a class="page-link bg-white" href="?pagina=<?=$quantidadePaginas?>">
-                            Última
+                            <?=$lang['last']?>
                         </a>
                     </li>
                 </ul>

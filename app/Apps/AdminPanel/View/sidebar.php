@@ -79,7 +79,7 @@
                 <li class="nav-item list-group-item border border-0 p-0 mb-2 ms-lg-2 ms-xl-3 bg-white text-secondary">
                     <a class="nav-link" aria-current="page" href="<?=__SYSTEM_ADMIN_URL__?>/logout">
                         <i class="bi-box-arrow-right me-2"></i>
-                        <?=$lang['logout']?>
+                        <?=$lang['sign-out']?>
                     </a>
                 </li>
             </ul>

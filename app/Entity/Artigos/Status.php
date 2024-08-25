@@ -9,10 +9,11 @@ class Status
 
     public static function name(int $status): string
     {
+        global $lang;
         return match ($status) {
-            self::ATIVO => 'Ativo',
-            self::INATIVO => 'Inativo',
-            default => 'Desconhecido',
+            self::ATIVO => $lang['active'],
+            self::INATIVO => $lang['inactive'],
+            default => $lang['unknown'],
         };
     }
 }

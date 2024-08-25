@@ -28,7 +28,6 @@ export default class CurrenteDate {
 	
 	getPeriodoDoDia() {
 		const periodoDoDia = [
-			[22, 'Trabalhando até tarde'],
 			[18, 'Boa noite'],
 			[12, 'Boa tarde'],
 			[6,  'Bom dia'],

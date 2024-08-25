@@ -13,6 +13,8 @@ class CreateUserAction implements InterfaceController
 
     public function processaRequisicao(): void
     {
+        global $lang;
+
         $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
         $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
 
@@ -20,7 +22,7 @@ class CreateUserAction implements InterfaceController
         $usuarios = $usuario->exibirTodos();
 
         if ($email === "" || $senha === "") {
-            $this->defineMensagem('danger', 'E-mail ou senha inválidos');
+            $this->defineMensagem('danger', $lang['warning-invalid-email-password']);
         }
 
         $verificarUsuario = $this->verificarCadastro($email, $usuarios);
@@ -35,9 +37,10 @@ class CreateUserAction implements InterfaceController
 
     public function verificarCadastro(string $email, array $usuarios): bool
     {
+        global $lang;
         foreach ($usuarios as $user) {
             if ($user['email'] === $email) {
-                $this->defineMensagem('danger', 'Usuário ja cadastrado');
+                $this->defineMensagem('danger', $lang['warning-invalid-register-user']);
                 header('Location: ' . __SYSTEM_ADMIN_URL__ . '/login');
                 return false;
             }
@@ -47,10 +50,11 @@ class CreateUserAction implements InterfaceController
 
     private function cadastrarUsuario(string $email, string $senha): void
     {
+        global $lang;
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && $email && $senha) {
             $usuario = new User(DatabaseConnection::create());
             $usuario->adicionar($email, md5($senha));
-            $this->defineMensagem('success', 'Usuário Cadastrado!');
+            $this->defineMensagem('success', $lang['warning-success-register-user']);
             header('Location: ' . __SYSTEM_ADMIN_URL__ . '/listar-artigos');
             exit();
         }

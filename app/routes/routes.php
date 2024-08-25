@@ -1,6 +1,6 @@
 <?php
 
-use app\Apps\AdminPanel\Controler\Artigo\CreatController;
+use app\Apps\AdminPanel\Controler\Artigo\CreateController;
 use app\Apps\AdminPanel\Controler\Artigo\EditController;
 use app\Apps\AdminPanel\Controler\Artigo\IndexController;
 use app\Apps\AdminPanel\Controler\Artigo\ShowController;
@@ -31,7 +31,7 @@ $rotas = [
     '/' => Dashboard::class,
     '/admin/listar-artigos' => IndexController::class,
     '/admin/mostrar-artigo' => ShowController::class,
-    '/admin/novo-artigo' => CreatController::class,
+    '/admin/novo-artigo' => CreateController::class,
     '/admin/salvar-artigo' => CreateArticleAction::class,
     '/admin/editar-artigo' => EditController::class,
     '/admin/salvar-edicao' => EditArticleAction::class,

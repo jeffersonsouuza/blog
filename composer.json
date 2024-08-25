@@ -16,6 +16,7 @@
     ],
     "require": {
         "ext-mysqli": "*",
-        "ext-mbstring": "*"
+        "ext-mbstring": "*",
+        "ext-cassandra": "*"
     }
 }

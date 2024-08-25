@@ -1,11 +1,62 @@
 <?php
 
 $lang = [
-    'title' => 'Dashboard',
+    'logout' => 'Logout',
+    'login' => 'Login',
+    'sign-in' => 'Sign In',
+    'sign-out' => 'Sign Out',
+    'enter-email' => 'enter email',
+    'enter-password' => 'enter password',
+    'forget-password' => 'forgot you password',
+
+    'profile-user' => 'User Profile',
+    'profile' => 'Profile',
+    'change-password' => 'Change Password',
+    'register-user' => 'Register User',
+    'account-details' => 'Account Details',
+
+    'article' => ['Article', 'Articles'],
+    'new-article' => 'New Article',
+    'create-new-article' => 'Create New Article',
+    'list-article' => 'List of Articles',
+    'title-article' => 'Title of Article',
+    'date-post' => 'Date of Post',
+    'warning-delete' => 'Do you really want to delete this article?',
+    'warning-registration' => 'No records found',
+    'content-article' => 'Article Content',
+    'label-new-article' => 'Enter the article title',
+    'label-new-content' => 'Enter the content of the article',
+    'invalid-new-article' => 'Fill in the title correctly',
+    'invalid-new-content' => 'Fill in the content correctly',
+
+    'access-blog' => 'See Blog',
+
+    'edit' => 'Edit',
+    'add' => 'Add',
+    'delete' => 'Delete',
+    'return' => 'Return',
+    'cancel' => 'Cancel',
+    'view' => 'View',
+
     'logo' => 'Logo BrasaTour',
-    'profile' => 'Perfil do Usuário',
+    'light-theme' => 'Light',
+    'dark-theme' => 'Dark',
+    'portuguese' => 'Portuguese',
+    'english' => 'English',
+    'menu' => 'menu',
+    'dashboard' => 'Dashboard',
+    'setting' => ['setting', 'settings'],
+    'home' => 'Home',
+    'active' => 'Active',
+    'inactive' => 'Inactive',
+    'last' => 'Last',
+    'welcome' => 'Welcome',
+    'password' => 'Password',
+    'disconnected-database' => 'Disconnected Database',
+    'unknown' => 'Unknown',
 
-    'artigos' => 'Artigos',
+    'warning-invalid-email-password' => 'Invalid email or password',
+    'warning-invalid-register-user' => 'User already registered',
+    'warning-success-register-user' => 'User registered successfully!',
+    'warning-success-login' => 'Connected User!',
 ];
-
-
