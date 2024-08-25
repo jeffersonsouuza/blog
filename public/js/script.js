@@ -1,5 +1,4 @@
 import ToggleImageInterval from "./Classes/ToggleImageInterval.js";
-import CurrenteDate from "./Classes/CurrenteDate.js";
 import StateSwitcher from "./Classes/StateSwitcher.js";
 import ClassSwitcher from "./Classes/ClassSwitcher.js";
 import SwitchMode from "./Classes/SwitchMode.js";
@@ -10,12 +9,6 @@ let toggleImageLogin = new ToggleImageInterval(
 	3000
 );
 toggleImageLogin.init();
-
-let periodOfTheDay = new CurrenteDate('period-of-the-day');
-periodOfTheDay.getPeriodoDoDia();
-
-let currenteDate = new CurrenteDate('current-date');
-currenteDate.init();
 
 let toggleState = new StateSwitcher(
 	['.click-area'],

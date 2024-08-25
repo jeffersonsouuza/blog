@@ -12,10 +12,17 @@ class LoginUserAction implements InterfaceController
 
     use FlashMessageTrait;
 
+    private array $lang;
+
+    public function __construct()
+    {
+        global $lang;
+        require_once 'app/Core/languageHandler.php';
+        $this->lang = $lang;
+    }
+
      public function processaRequisicao(): void
     {
-
-        global $lang;
         $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
         $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
@@ -24,26 +31,25 @@ class LoginUserAction implements InterfaceController
         if ($email && $senha) {
             $login = $this->login($email, $senha);
         } else {
-            $this->defineMensagem('danger', $lang['warning-invalid-email-password']);
+            $this->defineMensagem('danger', $this->lang['warning-invalid-email-password']);
             header($redirecionarLogin);
             return;
         }
 
         if (!$login) {
-            $this->defineMensagem('danger', $lang['warning-invalid-email-password']);
+            $this->defineMensagem('danger', $this->lang['warning-invalid-email-password']);
             header($redirecionarLogin);
         }
     }
 
     public function login($email, $senha): bool
     {
-        global $lang;
         $usuario = new User(DatabaseConnection::create());
         $usuariosLista = $usuario->exibirTodos();
 
         foreach ($usuariosLista as $user) {
             if ($user['email'] === $email && $user['senha'] === md5($senha)) {
-                $this->defineMensagem('success', $lang['warning-success-login']);
+                $this->defineMensagem('success', $this->lang['warning-success-login']);
                 $_SESSION['logado'] = true;
                 $_SESSION['id_usuario'] = $user['id'];
                 $_SESSION['email_usuario'] = $user['email'];
@@ -54,5 +60,4 @@ class LoginUserAction implements InterfaceController
 
         return false;
     }
-
 }

@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require __DIR__ . '/vendor/autoload.php';
 require_once 'boot.php';
@@ -11,8 +12,6 @@ if (!array_key_exists($caminho, $rotas)) {
     http_response_code(404);
     exit();
 }
-
-session_start();
 
 $ehRotaDeLogin = mb_stripos($caminho, 'login');
 

@@ -2,41 +2,54 @@
 
 namespace app\Core;
 
+use DateTime;
+
 class CurrenteDate {
-    private $data;
+    private DateTime $data;
+    private array $lang;
 
     public function __construct() {
-        $this->data = new DateTime(); // Utiliza a classe DateTime do PHP
+        global $lang;
+        require_once 'app/Core/languageHandler.php';
+
+        $this->data = new DateTime();
+        $this->lang = $lang;
     }
 
     public function getDiaSemana() {
-        $diasSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
-        return $diasSemana[(int)$this->data->format('w')]; // 'w' retorna o índice do dia da semana (0 para Domingo, 6 para Sábado)
+        $diasSemana = [
+            $this->lang['Sunday'], $this->lang['Monday'], $this->lang['Tuesday'], $this->lang['Wednesday'],
+            $this->lang['Thursday'], $this->lang['Friday'], $this->lang['Saturday']
+        ];
+        return $diasSemana[(int)$this->data->format('w')];
     }
 
     public function getDia() {
-        return (int)$this->data->format('d'); // 'd' retorna o dia do mês com dois dígitos (01 a 31)
+        return (int)$this->data->format('d');
     }
 
     public function getMes() {
-        $meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
-        return $meses[(int)$this->data->format('n') - 1]; // 'n' retorna o número do mês sem zero à esquerda (1 a 12)
+        $meses = [
+            $this->lang['January'], $this->lang['February'], $this->lang['March'], $this->lang['April'],
+            $this->lang['May'], $this->lang['June'], $this->lang['July'], $this->lang['August'], $this->lang['September'],
+            $this->lang['October'], $this->lang['November'], $this->lang['December']];
+        return $meses[(int)$this->data->format('n') - 1];
     }
 
     public function getAno() {
-        return (int)$this->data->format('Y'); // 'Y' retorna o ano com quatro dígitos
+        return (int)$this->data->format('Y');
     }
 
     public function getHoras() {
-        return (int)$this->data->format('H'); // 'H' retorna a hora no formato 24 horas (00 a 23)
+        return (int)$this->data->format('H');
     }
 
     public function getPeriodoDoDia() {
         $periodoDoDia = [
-            [18, 'Boa noite'],
-            [12, 'Boa tarde'],
-            [6,  'Bom dia'],
-            [0,  'Uau, madrugador']
+            [18, $this->lang['good-evening']],
+            [12, $this->lang['good-afternoon']],
+            [6,  $this->lang['good-morning']],
+            [0,  $this->lang['early-riser']]
         ];
 
         foreach ($periodoDoDia as $periodo) {
@@ -50,5 +63,3 @@ class CurrenteDate {
         return $this->getDiaSemana() . ', ' . $this->getDia() . ' de ' . $this->getMes() . ' de ' . $this->getAno();
     }
 }
-
-?>

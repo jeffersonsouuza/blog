@@ -1,23 +1,26 @@
 <?php
 
-//global $lang;
+global $lang;
 
+use app\Core\CurrenteDate;
 use app\Core\DatabaseConnection;
 use app\Entity\Usuarios\User;
 
-//require_once 'app/Core/languageHandler.php';
-
 $usuarios = new User( DatabaseConnection::create());
 $usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
+
+$currentDate = new CurrenteDate();
+$periodOfTheDay = $currentDate->getPeriodoDoDia();
+$fullDate = $currentDate->getDataCompleta();
 ?>
 
 <nav id="navbarMenu" class="navbar navbar-expand-lg bg-white d-none d-lg-block px-md-4 shadow-sm">
     <div class="container-fluid px-0 py-2">
         <div class="col-md-3 col-lg-5">
             <h2 class="text-secondary fw-medium m-0 h4 mb-1">
-                <span class="period-of-the-day"></span>, <?=strtok($usuario[0]['nome'], ' ')?>
+                <span class="period-of-the-day"><?=$periodOfTheDay?></span>, <?=strtok($usuario[0]['nome'], ' ')?>
             </h2>
-            <p class="current-date text-secondary-extra-light"></p>
+            <p class="current-date text-secondary-extra-light"><?=$fullDate?></p>
         </div>
         <div class="col-md-6 col-lg-7">
             <ul class="navbar-nav d-flex align-items-center justify-content-end">
@@ -84,7 +87,11 @@ $usuario = $usuarios->exibirDadosUsuario($_SESSION['id_usuario']);
                 <li class="nav-item px-3">
                     <div class="dropdown">
                         <button type="button" class="border-0 bg-transparent" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="<?=__SYSTEM_ROOT_URL__?>/public/imagens/bandeira-brasil.png" class="rounded-1 pe-auto" width="30" height="20"  alt="...">
+                            <?php if ($_SESSION['lang']  === 'pt_BR'):?>
+                                <img src="<?=__SYSTEM_ROOT_URL__?>/public/imagens/bandeira-brasil.png" class="rounded-1 pe-auto flag-image" width="1280" height="896" alt="<?=$lang['flag-Brazil']?>">
+                            <?php elseif ($_SESSION['lang']  === 'en'):?>
+                                <img src="<?=__SYSTEM_ROOT_URL__?>/public/imagens/bandeira-americana.png" class="rounded-1 pe-auto flag-image" width="1200" height="632" alt="<?=$lang['flag-United-States']?>">
+                            <?php endif;?>
                             <i class="bi-caret-down-fill fs-4 text-secondary-extra-light"></i>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end shadow-sm mt-4 p-4 bg-white">

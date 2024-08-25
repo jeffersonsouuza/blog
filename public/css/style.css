@@ -247,6 +247,11 @@ button[type=submit]:hover {
   color: #11263C !important;
 }
 
+.flag-image {
+  width: 30px;
+  height: 20px;
+}
+
 /* Define a barra de rolagem */
 /* Para navegadores WebKit */
 ::-webkit-scrollbar {
