@@ -1,15 +1,25 @@
+# BRAZATOUR
 
-## Índice
+## Descrição
+BRAZATOUR é um sistema de blog de viagens no Brasil, onde os usuários poderão explorar destinos turísticos, compartilhar experiências e descobrir dicas valiosas sobre viagens. Este projeto está em construção.
 
-* [Título e Imagem de capa](#Título-e-Imagem-de-capa)
-* [Descrição do Projeto](#descrição-do-projeto)
-* [Status do Projeto](#status-do-Projeto)
-* [Funcionalidades](#funcionalidades-e-demonstração-da-aplicação)
-* [Acesso ao Projeto](#acesso-ao-projeto)
-* [Tecnologias utilizadas](#tecnologias-utilizadas)
-* [Pessoas Desenvolvedoras do Projeto](#pessoas-desenvolvedoras)
-* [Conclusão](#conclusão)
+## Tecnologias Utilizadas
+- PHP
+- HTML
+- CSS
+- JavaScript
 
-## 🛠️ Abrir e rodar o projeto
+## Status do Projeto
+- Em construção
 
-**Para rodar o projeto será necessário:**
+## Como Contribuir
+Se você deseja contribuir para o projeto, fique à vontade para abrir um *issue* ou enviar um *pull request*. Qualquer ajuda é bem-vinda!
+
+## Contato
+Para mais informações, entre em contato:
+- **E-mail:** jeffersonsouza274@gmail.com
+- **Telefone:** (27) 99578-6767
+
+## Licença
+Este projeto está licenciado sob a [Licença MIT](LICENSE).
+
